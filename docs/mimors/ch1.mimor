@@ -1,0 +1,25 @@
+<metadata theme-color="sky" />
+
+<front-cover>
+  1: The Lines Sleep Tonight
+</front-cover>
+
+<question>
+  What is the equation of a line?
+
+  <answer>
+    y = w * x + b
+
+    x is the argument of line,
+    w and b are parameters of line.
+  </answer>
+</question>
+
+<question>
+  What is learning?
+
+  <answer>
+    Finding the parameters of a function
+    from a data set is known as learning.
+  </answer>
+</question>
