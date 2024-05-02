@@ -1,6 +1,6 @@
-function line(x: number): (w: number, b: number) => number {
-  return (w, b) => w * x + b;
+function line(x: number): (θ: [number, number]) => number {
+  return (θ) => θ[0] * x + θ[1]
 }
 
-console.log(line(1));
-console.log(line(1)(2, 3));
+console.log(line(1))
+console.log(line(1)([2, 3]))

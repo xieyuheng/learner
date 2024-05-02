@@ -15,6 +15,13 @@
   </answer>
 </question>
 
+<cloze>
+  Functions that accept parameters after
+  the arguments are known as
+
+  <blank>parameterized functions</blank>
+</cloze>
+
 <question>
   What is learning?
 
