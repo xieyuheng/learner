@@ -1,7 +1,10 @@
 {
   "name": "@xieyuheng/learner",
   "version": "0.3.0",
-  "repository": "github:xieyuheng/learner",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xieyuheng/learner.git"
+  },
   "type": "module",
   "main": "./lib/index.js",
   "files": [
