@@ -1,0 +1,25 @@
+{
+  "name": "@xieyuheng/learner",
+  "version": "0.3.0",
+  "repository": "github:xieyuheng/learner",
+  "type": "module",
+  "main": "./lib/index.js",
+  "files": [
+    "src",
+    "lib"
+  ],
+  "scripts": {
+    "build": "rm -rf lib && tsc",
+    "build:watch": "rm -rf lib && tsc --watch",
+    "test": "node --test",
+    "format": "prettier src docs --write"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^20.12.8",
+    "prettier": "^3.2.5",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "typescript": "^5.4.5"
+  },
+  "license": "GPL-3.0-or-later"
+}

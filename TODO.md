@@ -1,1 +1,0 @@
-setup ts project
