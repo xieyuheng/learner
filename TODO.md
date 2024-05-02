@@ -1,4 +1,3 @@
-1: The Lines Sleep Tonight
 2: The More We Learn, the Tenser We Become
 Interlude I: The More We Extend, the Less Tensor We Get
 3: Running Down a Slippery Slope

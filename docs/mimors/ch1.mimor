@@ -30,3 +30,21 @@
     from a data set is known as learning.
   </answer>
 </question>
+
+这个定义很关键，
+因为能够把握住关键概念的定义，
+可以帮助我们推广和修改理论。
+
+注意这里对 Parameters 的限制是 number。
+
+The Rule of Parameters
+(Initial Version)
+Every parameter is a number.
+
+<cloze>
+  Can we define a function that determines parameters for any data set?
+
+  Yes, we can, and such a function is an example of
+  what is known as
+  <blank>machine learning</blank>.
+</cloze>
