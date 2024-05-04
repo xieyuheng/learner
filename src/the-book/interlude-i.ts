@@ -52,6 +52,7 @@ export function extendUnaryFunction  (fn: (x: number) => number): (x: Tensor) =>
 }
 
 export const sqrt = extendUnaryFunction(Math.sqrt)
+export const square = extendUnaryFunction((x) => x * x)
 
 export function sum1(xs: Array<number>): number {
   return xs.reduce((x, result) => x + result, 0)
