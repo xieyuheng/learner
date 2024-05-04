@@ -1,0 +1,35 @@
+<metadata theme-color="blue" />
+
+<front-cover>
+  3: Running Down a Slippery Slope
+</front-cover>
+
+<question>
+  What is the successive approximations method
+  for finding well fitted parameters?
+
+  <answer>
+    We determine parameters by
+    arbitrarily starting them at 0.0.
+    We then repeatedly revise the parameters to bring it
+    as close as we wish to what it must finally be.
+  </answer>
+</question>
+
+<cloze>
+  To revise parameters to bring the predicted ys closer to the given line-ys,
+  we need to know how far away we are from the well-fitted parameters.
+
+  We need a single scalar that tells us
+  how close or how far away we are.
+  This scalar is known as
+  <blank>the loss</blank>.
+</cloze>
+
+<question>
+  Why can't the loss be a tensor1?
+
+  <answer>
+    With a scalar, it is simpler to decide how to revise parameters.
+  </answer>
+</question>

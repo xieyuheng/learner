@@ -32,6 +32,31 @@ export function addSameShape(x: Tensor, y: Tensor): Tensor {
   return zip(x, y).map(([x, y]) => addSameShape(x, y))
 }
 
+export function sub(x: Tensor, y: Tensor): Tensor {
+  if (rank(x) > rank(y)) {
+    assertNotScalar(x)
+    return x.map((x) => sub(x, y))
+  }
+
+  if (rank(x) < rank(y)) {
+    assertNotScalar(y)
+    return y.map((y) => sub(x, y))
+  }
+
+  return subSameShape(x, y)
+}
+
+export function subSameShape(x: Tensor, y: Tensor): Tensor {
+  if (isScalar(x) && isScalar(y)) {
+    return x - y
+  }
+
+  assertNotScalar(x)
+  assertNotScalar(y)
+
+  return zip(x, y).map(([x, y]) => subSameShape(x, y))
+}
+
 export function mul(x: Tensor, y: Tensor): Tensor {
   if (rank(x) > rank(y)) {
     assertNotScalar(x)
