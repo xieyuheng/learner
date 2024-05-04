@@ -1,4 +1,3 @@
-interlude-i -- extract `extendBinaryFunction`
 interlude-i -- square -- with test
 chapter-3 -- l2Loss
 

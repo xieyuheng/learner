@@ -7,80 +7,41 @@ import {
   type Tensor,
 } from "./chapter-2.js"
 
-export function add(x: Tensor, y: Tensor): Tensor {
-  if (rank(x) > rank(y)) {
+export function extendBinaryFunction(
+  fn: (x: number, y: number) => number,
+): (x: Tensor, y: Tensor) => Tensor {
+  function extendedFn(x: Tensor, y: Tensor): Tensor {
+    if (rank(x) > rank(y)) {
+      assertNotScalar(x)
+      return x.map((x) => extendedFn(x, y))
+    }
+
+    if (rank(x) < rank(y)) {
+      assertNotScalar(y)
+      return y.map((y) => extendedFn(x, y))
+    }
+
+    return extendedFnSameShape(x, y)
+  }
+
+
+  function extendedFnSameShape(x: Tensor, y: Tensor): Tensor {
+    if (isScalar(x) && isScalar(y)) {
+      return fn(x, y)
+    }
+
     assertNotScalar(x)
-    return x.map((x) => add(x, y))
-  }
-
-  if (rank(x) < rank(y)) {
     assertNotScalar(y)
-    return y.map((y) => add(x, y))
+
+    return zip(x, y).map(([x, y]) => extendedFnSameShape(x, y))
   }
 
-  return addSameShape(x, y)
+  return extendedFn
 }
 
-export function addSameShape(x: Tensor, y: Tensor): Tensor {
-  if (isScalar(x) && isScalar(y)) {
-    return x + y
-  }
-
-  assertNotScalar(x)
-  assertNotScalar(y)
-
-  return zip(x, y).map(([x, y]) => addSameShape(x, y))
-}
-
-export function sub(x: Tensor, y: Tensor): Tensor {
-  if (rank(x) > rank(y)) {
-    assertNotScalar(x)
-    return x.map((x) => sub(x, y))
-  }
-
-  if (rank(x) < rank(y)) {
-    assertNotScalar(y)
-    return y.map((y) => sub(x, y))
-  }
-
-  return subSameShape(x, y)
-}
-
-export function subSameShape(x: Tensor, y: Tensor): Tensor {
-  if (isScalar(x) && isScalar(y)) {
-    return x - y
-  }
-
-  assertNotScalar(x)
-  assertNotScalar(y)
-
-  return zip(x, y).map(([x, y]) => subSameShape(x, y))
-}
-
-export function mul(x: Tensor, y: Tensor): Tensor {
-  if (rank(x) > rank(y)) {
-    assertNotScalar(x)
-    return x.map((x) => mul(x, y))
-  }
-
-  if (rank(x) < rank(y)) {
-    assertNotScalar(y)
-    return y.map((y) => mul(x, y))
-  }
-
-  return mulSameShape(x, y)
-}
-
-export function mulSameShape(x: Tensor, y: Tensor): Tensor {
-  if (isScalar(x) && isScalar(y)) {
-    return x * y
-  }
-
-  assertNotScalar(x)
-  assertNotScalar(y)
-
-  return zip(x, y).map(([x, y]) => mulSameShape(x, y))
-}
+export const add = extendBinaryFunction((x, y) => x + y)
+export const sub = extendBinaryFunction((x, y) => x - y)
+export const mul = extendBinaryFunction((x, y) => x * y)
 
 export function sqrt(x: Tensor): Tensor {
   if (isScalar(x)) {
