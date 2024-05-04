@@ -1,7 +1,17 @@
 import { zip } from "../utils/zip.js"
-import { assertNotScalar, isScalar, type Tensor } from "./chapter-2.js"
+import { assertNotScalar, isScalar, rank, type Tensor } from "./chapter-2.js"
 
 export function add(x: Tensor, y: Tensor): Tensor {
+  if (rank(x) > rank(y)) {
+    assertNotScalar(x)
+    return x.map((x) => add(x, y))
+  }
+
+  if (rank(x) < rank(y)) {
+    assertNotScalar(y)
+    return y.map((y) => add(x, y))
+  }
+
   return addSameShape(x, y)
 }
 

@@ -1,4 +1,8 @@
-Interlude I: The More We Extend, the Less Tensor We Get
+interlude-i -- mul
+interlude-i -- sqrt
+interlude-i -- sum
+interlude-i -- fix new version of `line`
+
 3: Running Down a Slippery Slope
 4: Slip-slidin’ Away
 Interlude II: Too Many Toys Make Us Hyperactive
