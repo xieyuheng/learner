@@ -53,7 +53,14 @@ export function mulSameShape(x: Tensor, y: Tensor): Tensor {
 }
 
 
-// sqrt0
+export function sqrt(x: Tensor): Tensor {
+  if (isScalar(x)) {
+    return Math.sqrt(x)
+  }
+
+  return x.map(x => sqrt(x))
+}
+
 // sqrt
 // sum
 // sum1

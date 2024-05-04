@@ -1,4 +1,3 @@
-interlude-i -- sqrt
 interlude-i -- sum
 interlude-i -- new version of `line`
 
