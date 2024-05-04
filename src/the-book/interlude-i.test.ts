@@ -1,6 +1,6 @@
 import assert from "node:assert"
 import { test } from "node:test"
-import { add, mul, sqrt, sum } from "./interlude-i.js"
+import { add, mul, sqrt, sum, line } from "./interlude-i.js"
 
 test("interlude-i -- add", () => {
   assert.deepStrictEqual(add(1, 1), 2)
@@ -79,4 +79,9 @@ test("interlude-i -- sum", () => {
       [11, 15],
     ],
   )
+})
+
+test("interlude-i -- line", () => {
+  assert.deepStrictEqual(line(1)([2, 3]), 5)
+  assert.deepStrictEqual(line([2, 7, 5, 11])([4, 6]), [14, 34, 26, 50])
 })

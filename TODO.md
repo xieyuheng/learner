@@ -1,5 +1,3 @@
-interlude-i -- new version of `line`
-
 3: Running Down a Slippery Slope
 4: Slip-slidin’ Away
 Interlude II: Too Many Toys Make Us Hyperactive
