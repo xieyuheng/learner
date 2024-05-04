@@ -69,6 +69,6 @@ export function sum(x: Tensor): Tensor {
   return x.map((x) => sum(x))
 }
 
-export function line(x: Tensor): (θ: [number, number]) => Tensor {
-  return (θ) => add(mul(θ[0], x), θ[1])
+export function line(x: Tensor): (ps: [number, number]) => Tensor {
+  return (ps) => add(mul(ps[0], x), ps[1])
 }

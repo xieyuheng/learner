@@ -1,0 +1,15 @@
+<metadata theme-color="blue" />
+
+<front-cover>
+  4: Slip-slidin’ Away
+</front-cover>
+
+<question>
+  What is gradient?
+
+  <answer>
+    A gradient is a general way of understanding
+    the rate of change of a parameterized function
+    with respect to all its parameters.
+  </answer>
+</question>

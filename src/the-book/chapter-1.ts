@@ -1,3 +1,3 @@
-export function line(x: number): (θ: [number, number]) => number {
-  return (θ) => θ[0] * x + θ[1]
+export function line(x: number): (ps: [number, number]) => number {
+  return (ps) => ps[0] * x + ps[1]
 }
