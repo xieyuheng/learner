@@ -2,7 +2,7 @@ import assert from "node:assert"
 import { test } from "node:test"
 import { shape } from "./chapter-2.js"
 
-test("ch2 -- shape", () => {
+test("chapter-2 -- shape", () => {
   assert.deepStrictEqual(shape(1), [])
   assert.deepStrictEqual(shape([1]), [1])
   assert.deepStrictEqual(shape([1, 2, 3]), [3])
