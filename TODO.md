@@ -1,4 +1,3 @@
-interlude-i -- sum
 interlude-i -- new version of `line`
 
 3: Running Down a Slippery Slope

@@ -16,6 +16,12 @@ export function assertNotScalar(t: Tensor): asserts t is Array<Tensor> {
   }
 }
 
+export function assertTensor1(t: Tensor): asserts t is Array<number> {
+  if (rank(t) !== 1) {
+    throw new Error(`[assertTensor1] ${t}`)
+  }
+}
+
 export function shape(t: Tensor): Array<number> {
   const result: Array<number> = []
   while (!isScalar(t)) {
