@@ -1,3 +1,10 @@
+Appendix A: Ghost in the Machine
+Appendix B: I Could Have Raced All Day
+
+chapter-4 -- revise
+appendix-a -- ∇
+chapter-4 -- gradient-descent
+
 4: Slip-slidin’ Away
 Interlude II: Too Many Toys Make Us Hyperactive
 5: Target Practice
@@ -17,6 +24,4 @@ Interlude VII: Are Your Signals Crossed?
 14: It's Really Not That Convoluted
 15: …But It Is Correlated!
 Epilogue - We've Only Just Begun
-Appendix A: Ghost in the Machine
-Appendix B: I Could Have Raced All Day
 References
