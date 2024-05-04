@@ -24,7 +24,6 @@ export function extendBinaryFunction(
     return extendedFnSameShape(x, y)
   }
 
-
   function extendedFnSameShape(x: Tensor, y: Tensor): Tensor {
     if (isScalar(x) && isScalar(y)) {
       return fn(x, y)
@@ -41,7 +40,9 @@ export const add = extendBinaryFunction((x, y) => x + y)
 export const sub = extendBinaryFunction((x, y) => x - y)
 export const mul = extendBinaryFunction((x, y) => x * y)
 
-export function extendUnaryFunction  (fn: (x: number) => number): (x: Tensor) => Tensor {
+export function extendUnaryFunction(
+  fn: (x: number) => number,
+): (x: Tensor) => Tensor {
   return function extendedFn(x: Tensor): Tensor {
     if (isScalar(x)) {
       return fn(x)
