@@ -1,5 +1,11 @@
 import { zip } from "../utils/zip.js"
-import { assertNotScalar, isScalar, assertTensor1, rank, type Tensor } from "./chapter-2.js"
+import {
+  assertNotScalar,
+  assertTensor1,
+  isScalar,
+  rank,
+  type Tensor,
+} from "./chapter-2.js"
 
 export function add(x: Tensor, y: Tensor): Tensor {
   if (rank(x) > rank(y)) {
@@ -70,9 +76,9 @@ export function sum(x: Tensor): Tensor {
     return sum1(x)
   }
 
-  return x.map(x => sum(x))
+  return x.map((x) => sum(x))
 }
 
 export function line(x: Tensor): (θ: [number, number]) => Tensor {
-  return (θ) => add(mul(θ[0],  x), θ[1])
+  return (θ) => add(mul(θ[0], x), θ[1])
 }
