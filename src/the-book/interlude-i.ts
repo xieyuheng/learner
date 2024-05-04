@@ -10,7 +10,7 @@ import {
 export function extendBinaryFunction(
   fn: (x: number, y: number) => number,
 ): (x: Tensor, y: Tensor) => Tensor {
-  function extendedFn(x: Tensor, y: Tensor): Tensor {
+  return function extendedFn(x: Tensor, y: Tensor): Tensor {
     if (rank(x) > rank(y)) {
       assertNotScalar(x)
       return x.map((x) => extendedFn(x, y))
@@ -35,21 +35,23 @@ export function extendBinaryFunction(
 
     return zip(x, y).map(([x, y]) => extendedFnSameShape(x, y))
   }
-
-  return extendedFn
 }
 
 export const add = extendBinaryFunction((x, y) => x + y)
 export const sub = extendBinaryFunction((x, y) => x - y)
 export const mul = extendBinaryFunction((x, y) => x * y)
 
-export function sqrt(x: Tensor): Tensor {
-  if (isScalar(x)) {
-    return Math.sqrt(x)
-  }
+export function extendUnaryFunction  (fn: (x: number) => number): (x: Tensor) => Tensor {
+  return function extendedFn(x: Tensor): Tensor {
+    if (isScalar(x)) {
+      return fn(x)
+    }
 
-  return x.map((x) => sqrt(x))
+    return x.map((x) => extendedFn(x))
+  }
 }
+
+export const sqrt = extendUnaryFunction(Math.sqrt)
 
 export function sum1(xs: Array<number>): number {
   return xs.reduce((x, result) => x + result, 0)
