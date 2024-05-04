@@ -1,7 +1,6 @@
-interlude-i -- mul
 interlude-i -- sqrt
 interlude-i -- sum
-interlude-i -- fix new version of `line`
+interlude-i -- new version of `line`
 
 3: Running Down a Slippery Slope
 4: Slip-slidin’ Away
