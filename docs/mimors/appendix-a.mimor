@@ -1,0 +1,7 @@
+This is a superset of what is traditionally known in the history of neural networks as back propagation.
+The back propagation algorithm is an instance of reverse mode automatic differentiation.
+
+这里的 reverse mode automatic differentiation
+也许就是 Sussman 实现符号微分的方式，
+并且也是 Sussman 坚持使用动态类型语言的原因，
+即可以自由地扩展函数的定义。
