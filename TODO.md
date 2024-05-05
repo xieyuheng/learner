@@ -1,8 +1,8 @@
 Appendix A: Ghost in the Machine
 Appendix B: I Could Have Raced All Day
 
-chapter-4 -- revise
 appendix-a -- ∇
+chapter-4 -- revise
 chapter-4 -- gradient-descent
 
 4: Slip-slidin’ Away

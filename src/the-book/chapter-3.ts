@@ -1,7 +1,7 @@
 import { type Tensor } from "./chapter-2.js"
 import { square, sub, sum } from "./interlude-i.js"
 
-export function l2Loss<Parameters extends Array<number>>(
+export function l2Loss<Parameters extends Tensor>(
   target: (xs: Tensor) => (ps: Parameters) => Tensor,
 ): (xs: Tensor, ys: Tensor) => (ps: Parameters) => number {
   return function expectant(xs, ys) {
