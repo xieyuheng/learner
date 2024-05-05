@@ -16,3 +16,11 @@ is an instance of reverse mode automatic differentiation.
 也许这与 Lambda 编码的想法类似，
 在 Lambda 编码中，被编码为 Lambda 表达式的数据本身带有很多信息，
 而数据解构子很简单。
+
+类似，在参数中积累 lambda 的技巧在 "The Seasoned Schemer" 中也有使用。
+
+假设这里使用的技巧与 Lambda 编码的技巧相似；
+又知道 Lambda 编码是可以反向使用的，
+即可以正向把 datatype 编码为 Lambda 表达式，
+也可以反向把 Lambda 表达式解码为 datatype；
+那么这里使用的技巧，是否可以解码为 datatype 呢？
