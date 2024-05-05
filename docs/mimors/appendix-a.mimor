@@ -1,3 +1,9 @@
+<metadata theme-color="blue" />
+
+<front-cover>
+  Appendix A: Ghost in the Machine
+</front-cover>
+
 This is a superset of what is traditionally known in the history of neural networks as back propagation.
 The back propagation algorithm is an instance of reverse mode automatic differentiation.
 
