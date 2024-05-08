@@ -95,6 +95,14 @@ export function collectGradients(
   if (isScalar(y)) {
     return scalarLink(y)(y, 1, state)
   } else {
-    throw new Error("TODO")
+    return collectGradientsForArray(y, state)
   }
+}
+
+export function collectGradientsForArray(
+  y: Array<Tensor>,
+  state: GradientState,
+): GradientState {
+  return state
+
 }
