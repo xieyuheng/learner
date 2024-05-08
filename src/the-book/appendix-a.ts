@@ -65,7 +65,7 @@ export function emptyGradientState(): GradientState {
   return new Map()
 }
 
-export function gradientStateGetOrDefault(
+export function gradientStateGetWithDefault(
   state: GradientState,
   x: Scalar,
   defaultValue: number,
@@ -85,7 +85,7 @@ export function gradientStateSet(
 
 export function gradientOnce(y: Tensor, wrt: Tensor): Tensor {
   const state = collectGradients(y, emptyGradientState())
-  return tensorMap((x) => gradientStateGetOrDefault(state, x, 0), wrt)
+  return tensorMap((x) => gradientStateGetWithDefault(state, x, 0), wrt)
 }
 
 export type Link = (
@@ -121,6 +121,6 @@ export function endOfChain(
   z: number,
   state: GradientState,
 ): GradientState {
-  const g = gradientStateGetOrDefault(state, d, 0)
+  const g = gradientStateGetWithDefault(state, d, 0)
   return gradientStateSet(state, d, z + g)
 }
