@@ -42,11 +42,9 @@ export function endOfChain(): any {
 
 export type Tensor = Scalar | Array<Tensor>
 
-// export type DifferentiableFn = <Parameters extends Tensor>(
-//   ps: Parameters,
-// ) => number
-
-export type DifferentiableFn = (x: Tensor) => number
+// The effect of `gradient` on a `DifferentiableFn`
+// is `sum` of all elements of it's result tensor.
+export type DifferentiableFn = (x: Tensor) => Tensor
 
 export function tensorMap(fn: (x: Scalar) => Scalar, tensor: Tensor): Tensor {
   if (isScalar(tensor)) {
