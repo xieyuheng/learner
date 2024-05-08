@@ -139,8 +139,21 @@ export function mulScalar(da: Scalar, db: Scalar): Scalar {
   })
 }
 
-export function expScalar(da: Scalar): Scalar {
+export function expScalarByHand(da: Scalar): Scalar {
   return Dual(Math.exp(scalarReal(da)), (_d, z, state) => {
     return scalarLink(da)(da, Math.exp(scalarReal(da)) * z, state)
   })
 }
+
+export function prim1(
+  realFn: (ra: number) => number,
+  derivativeFn: (ra: number, z: number) => number,
+): (da: Scalar) => Scalar {
+  return (da) => {
+    return Dual(realFn(scalarReal(da)), (_d, z, state) => {
+      return scalarLink(da)(da, derivativeFn(scalarReal(da), z), state)
+    })
+  }
+}
+
+export const expScalar = prim1(Math.exp, (ra, z) => Math.exp(ra) * z)
