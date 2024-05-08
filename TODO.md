@@ -1,4 +1,3 @@
-appendix-a -- `mulScalar`
 appendix-a -- `expScalar`
 
 appendix-a -- `prim1`

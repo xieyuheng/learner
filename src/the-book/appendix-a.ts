@@ -125,15 +125,16 @@ export function endOfChain(
   return gradientStateSet(state, d, z + g)
 }
 
-export function addScalar(
-  da: Scalar,
-  db: Scalar,
-): Scalar {
-  return Dual(
-    scalarReal(da) + scalarReal(db),
-    (_d, z, state) => {
-      state = scalarLink(da)(da, (1 * z), state);
-      return scalarLink(db)(db, (1 * z), state)
-    }
-  )
+export function addScalar(da: Scalar, db: Scalar): Scalar {
+  return Dual(scalarReal(da) + scalarReal(db), (_d, z, state) => {
+    state = scalarLink(da)(da, 1 * z, state)
+    return scalarLink(db)(db, 1 * z, state)
+  })
+}
+
+export function mulScalar(da: Scalar, db: Scalar): Scalar {
+  return Dual(scalarReal(da) * scalarReal(db), (_d, z, state) => {
+    state = scalarLink(da)(da, scalarReal(db) * z, state)
+    return scalarLink(db)(db, scalarReal(da) * z, state)
+  })
 }
