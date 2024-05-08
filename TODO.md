@@ -1,6 +1,11 @@
 appendix-a -- `gradientOnce`
+appendix-a -- `collectGradients`
 appendix-a -- `endOfChain`
 appendix-a -- `Dual` type of `link`
+
+appendix-a -- [maybe] `DifferentiableFn` need not return `number`
+
+- it can return `Tensor` and the effect of `gradient` is `sum` of all elements.
 
 Appendix A: Ghost in the Machine
 

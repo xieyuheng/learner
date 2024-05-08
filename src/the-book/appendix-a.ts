@@ -69,3 +69,5 @@ export function gradient(fn: DifferentiableFn, x: Tensor): Tensor {
 export function gradientOnce(y: Tensor, wrt: Tensor): Tensor {
   throw new Error("TODO")
 }
+
+export type GradientState = Map<Scalar, number>
