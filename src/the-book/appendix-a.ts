@@ -66,8 +66,28 @@ export function gradient(fn: DifferentiableFn, x: Tensor): Tensor {
   return gradientOnce(fn(wrt), wrt)
 }
 
-export function gradientOnce(y: Tensor, wrt: Tensor): Tensor {
-  throw new Error("TODO")
+export type GradientState = Map<Scalar, number>
+
+export function emptyGradientState(): GradientState {
+  return new Map()
 }
 
-export type GradientState = Map<Scalar, number>
+export function gradientStateGetOrDefault(
+  state: GradientState,
+  x: Scalar,
+  defaultValue: number,
+): number {
+  return state.get(x) || defaultValue
+}
+
+export function gradientOnce(y: Tensor, wrt: Tensor): Tensor {
+  const state = collectGradients(y, emptyGradientState())
+  return tensorMap((x) => gradientStateGetOrDefault(state, x, 0), wrt)
+}
+
+export function collectGradients(
+  y: Tensor,
+  state: GradientState,
+): GradientState {
+  throw new Error("TODO")
+}

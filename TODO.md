@@ -1,4 +1,3 @@
-appendix-a -- `gradientOnce`
 appendix-a -- `collectGradients`
 appendix-a -- `endOfChain`
 appendix-a -- `Dual` type of `link`
