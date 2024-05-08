@@ -1,4 +1,5 @@
-appendix-a -- `endOfChain`
+appendix-a -- `prim1`
+appendix-a -- `prim2`
 
 Appendix A: Ghost in the Machine
 

@@ -36,10 +36,6 @@ export function scalarLink(x: Scalar): Link {
   }
 }
 
-export function endOfChain(): any {
-  //
-}
-
 export type Tensor = Scalar | Array<Tensor>
 
 // The effect of `gradient` on a `DifferentiableFn`
@@ -77,13 +73,23 @@ export function gradientStateGetOrDefault(
   return state.get(x) || defaultValue
 }
 
+export function gradientStateSet(
+  state: GradientState,
+  x: Scalar,
+  value: number,
+): GradientState {
+  const newState = new Map([...state])
+  newState.set(x, value)
+  return newState
+}
+
 export function gradientOnce(y: Tensor, wrt: Tensor): Tensor {
   const state = collectGradients(y, emptyGradientState())
   return tensorMap((x) => gradientStateGetOrDefault(state, x, 0), wrt)
 }
 
 export type Link = (
-  y: Tensor,
+  y: Scalar,
   accumulator: number,
   state: GradientState,
 ) => GradientState
@@ -104,8 +110,17 @@ export function collectGradientsForArray(
   state: GradientState,
 ): GradientState {
   for (const y of ys) {
-    state  = collectGradients(y, state)
+    state = collectGradients(y, state)
   }
 
   return state
+}
+
+export function endOfChain(
+  d: Scalar,
+  z: number,
+  state: GradientState,
+): GradientState {
+  const g = gradientStateGetOrDefault(state, d, 0)
+  return gradientStateSet(state, d, z + g)
 }
