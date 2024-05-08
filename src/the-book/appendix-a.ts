@@ -37,9 +37,11 @@ export function endOfChain(): any {
 
 export type Tensor = Scalar | Array<Tensor>
 
-export type DifferentiableFn = <Parameters extends Tensor>(
-  ps: Parameters,
-) => number
+// export type DifferentiableFn = <Parameters extends Tensor>(
+//   ps: Parameters,
+// ) => number
+
+export type DifferentiableFn = (x: Tensor) => number
 
 export function tensorMap(fn: (x: Scalar) => Scalar, tensor: Tensor): Tensor {
   if (isScalar(tensor)) {
@@ -51,4 +53,13 @@ export function tensorMap(fn: (x: Scalar) => Scalar, tensor: Tensor): Tensor {
 
 export function scalarTruncate(x: Scalar): Scalar {
   return Dual(scalarReal(x), endOfChain)
+}
+
+export function gradient(fn: DifferentiableFn, x: Tensor): Tensor {
+  const wrt = tensorMap(scalarTruncate, x)
+  return gradientOnce(fn(wrt), wrt)
+}
+
+export function gradientOnce(y: Tensor, wrt: Tensor): Tensor {
+  throw new Error("TODO")
 }
