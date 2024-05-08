@@ -157,3 +157,15 @@ export function prim1(
 }
 
 export const expScalar = prim1(Math.exp, (ra, z) => Math.exp(ra) * z)
+
+export function prim2(
+  realFn: (ra: number, rb: number) => number,
+  gradientFn: (ra: number, rb: number, z: number) => [number],
+): (da: Scalar, db: Scalar) => Scalar {
+  throw new Error()
+  // return (da, db) => {
+  //   return Dual(realFn(scalarReal(da), scalarReal(db)), (_d, z, state) => {
+  //     return scalarLink(da)(da, gradientFn(scalarReal(da), z), state)
+  //   })
+  // }
+}
