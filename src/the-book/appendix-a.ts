@@ -45,6 +45,10 @@ export function tensorMap(fn: (x: Scalar) => Scalar, tensor: Tensor): Tensor {
   if (isScalar(tensor)) {
     return fn(tensor)
   } else {
-    return tensor.map(e => tensorMap(fn, e))
+    return tensor.map((e) => tensorMap(fn, e))
   }
+}
+
+export function scalarTruncate(x: Scalar): Scalar {
+  return Dual(scalarReal(x), endOfChain)
 }
