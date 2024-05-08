@@ -12,7 +12,7 @@ export function isDual(x: any): x is Dual {
 export type Scalar = number | Dual
 
 export function isScalar(x: any): x is Scalar {
-  return typeof x === "number" && isDual(x)
+  return typeof x === "number" || isDual(x)
 }
 
 export function scalarReal(x: Scalar): number {
