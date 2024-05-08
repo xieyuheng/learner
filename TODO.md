@@ -1,4 +1,3 @@
-appendix-a -- `tensorMap`
 appendix-a -- `endOfChain`
 appendix-a -- `Dual` type of `link`
 appendix-a -- `gradient`

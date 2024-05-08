@@ -40,3 +40,11 @@ export type Tensor = Scalar | Array<Tensor>
 export type DifferentiableFn = <Parameters extends Tensor>(
   ps: Parameters,
 ) => number
+
+export function tensorMap(fn: (x: Scalar) => Scalar, tensor: Tensor): Tensor {
+  if (isScalar(tensor)) {
+    return fn(tensor)
+  } else {
+    return tensor.map(e => tensorMap(fn, e))
+  }
+}
