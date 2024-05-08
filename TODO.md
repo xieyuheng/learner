@@ -1,7 +1,8 @@
-Appendix A: Ghost in the Machine
-Appendix B: I Could Have Raced All Day
+appendix-a -- Dual type of Link
+appendix-a -- gradient
 
-appendix-a -- ∇
+Appendix A: Ghost in the Machine
+
 chapter-4 -- revise
 chapter-4 -- gradient-descent
 
@@ -24,4 +25,5 @@ Interlude VII: Are Your Signals Crossed?
 14: It's Really Not That Convoluted
 15: …But It Is Correlated!
 Epilogue - We've Only Just Begun
+Appendix B: I Could Have Raced All Day
 References
