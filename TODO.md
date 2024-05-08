@@ -1,7 +1,6 @@
+appendix-a -- `gradientOnce`
 appendix-a -- `endOfChain`
 appendix-a -- `Dual` type of `link`
-appendix-a -- `gradientOnce`
-
 
 Appendix A: Ghost in the Machine
 
