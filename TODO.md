@@ -1,5 +1,20 @@
+appendix-a -- `addScalar`
+appendix-a -- `mulScalar`
+appendix-a -- `expScalar`
+
 appendix-a -- `prim1`
+appendix-a -- `expScalar` -- redefine by `prim1`
+
 appendix-a -- `prim2`
+appendix-a -- `addScalar` -- redefine by `prim2`
+appendix-a -- `mulScalar` -- redefine by `prim2`
+
+appendix-a -- `extend1`
+appendix-a -- `exp` -- `expScalar` + `extend1`
+
+appendix-a -- `extend2`
+appendix-a -- `add` -- `addScalar` + `extend2`
+appendix-a -- `mul` -- `mulScalar` + `extend2`
 
 Appendix A: Ghost in the Machine
 
