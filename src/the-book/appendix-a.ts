@@ -124,3 +124,16 @@ export function endOfChain(
   const g = gradientStateGetWithDefault(state, d, 0)
   return gradientStateSet(state, d, z + g)
 }
+
+export function addScalar(
+  da: Scalar,
+  db: Scalar,
+): Scalar {
+  return Dual(
+    scalarReal(da) + scalarReal(db),
+    (_d, z, state) => {
+      state = scalarLink(da)(da, (1 * z), state);
+      return scalarLink(db)(db, (1 * z), state)
+    }
+  )
+}

@@ -1,4 +1,3 @@
-appendix-a -- `addScalar`
 appendix-a -- `mulScalar`
 appendix-a -- `expScalar`
 
