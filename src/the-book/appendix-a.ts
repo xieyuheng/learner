@@ -1,4 +1,3 @@
-export type Link = any
 export type Dual = { "@type": "Dual"; real: number; link: Link }
 
 export function Dual(real: number, link: Link): Dual {
@@ -85,9 +84,19 @@ export function gradientOnce(y: Tensor, wrt: Tensor): Tensor {
   return tensorMap((x) => gradientStateGetOrDefault(state, x, 0), wrt)
 }
 
+export type Link = (
+  y: Tensor,
+  accumulator: number,
+  state: GradientState,
+) => GradientState
+
 export function collectGradients(
   y: Tensor,
   state: GradientState,
 ): GradientState {
-  throw new Error("TODO")
+  if (isScalar(y)) {
+    return scalarLink(y)(y, 1, state)
+  } else {
+    throw new Error("TODO")
+  }
 }

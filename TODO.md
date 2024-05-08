@@ -1,6 +1,5 @@
 appendix-a -- `collectGradients`
 appendix-a -- `endOfChain`
-appendix-a -- `Dual` type of `link`
 
 appendix-a -- [maybe] `DifferentiableFn` need not return `number`
 
