@@ -32,4 +32,18 @@ test("appendix-a -- scalarTruncate", () => {
       [Dual(4, endOfChain), Dual(5, endOfChain), Dual(6, endOfChain)],
     ],
   )
+
+  assert.deepStrictEqual(
+    tensorMap(
+      scalarTruncate,
+      [
+        [Dual(1, endOfChain), Dual(2, endOfChain), Dual(3, endOfChain)],
+        [Dual(4, endOfChain), Dual(5, endOfChain), Dual(6, endOfChain)],
+      ],
+    ),
+    [
+      [Dual(1, endOfChain), Dual(2, endOfChain), Dual(3, endOfChain)],
+      [Dual(4, endOfChain), Dual(5, endOfChain), Dual(6, endOfChain)],
+    ],
+  )
 })
