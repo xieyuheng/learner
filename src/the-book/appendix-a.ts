@@ -100,9 +100,12 @@ export function collectGradients(
 }
 
 export function collectGradientsForArray(
-  y: Array<Tensor>,
+  ys: Array<Tensor>,
   state: GradientState,
 ): GradientState {
-  return state
+  for (const y of ys) {
+    state  = collectGradients(y, state)
+  }
 
+  return state
 }

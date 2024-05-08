@@ -1,4 +1,3 @@
-appendix-a -- `collectGradientsForArray`
 appendix-a -- `endOfChain`
 
 Appendix A: Ghost in the Machine
