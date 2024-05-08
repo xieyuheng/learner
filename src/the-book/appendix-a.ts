@@ -1,6 +1,7 @@
-export type Dual = { "@type": "Dual"; real: number; link: any }
+export type Link = any
+export type Dual = { "@type": "Dual"; real: number; link: Link }
 
-export function Dual(real: number, link: any): Dual {
+export function Dual(real: number, link: Link): Dual {
   return { "@type": "Dual", real, link }
 }
 
@@ -20,4 +21,16 @@ export function scalarReal(x: Scalar): number {
   } else {
     return x
   }
+}
+
+export function scalarLink(x: Scalar): Link {
+  if (isDual(x)) {
+    return x.link
+  } else {
+    return endOfChain
+  }
+}
+
+export function endOfChain(): any {
+  //
 }
