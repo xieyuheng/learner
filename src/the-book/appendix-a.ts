@@ -13,3 +13,11 @@ export type Scalar = number | Dual
 export function isScalar(x: any): x is Scalar {
   return typeof x === "number" && isDual(x)
 }
+
+export function scalarReal(x: Scalar): number {
+  if (isDual(x)) {
+    return x.real
+  } else {
+    return x
+  }
+}

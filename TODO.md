@@ -1,4 +1,4 @@
-appendix-a -- `scalarReal` and `scalarLink`
+appendix-a -- `scalarLink`
 appendix-a -- `Dual` type of `link`
 appendix-a -- `gradient`
 
