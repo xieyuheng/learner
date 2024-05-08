@@ -1,5 +1,6 @@
+appendix-a -- `scalarReal` and `scalarLink`
 appendix-a -- `Dual` type of `link`
-appendix-a -- gradient
+appendix-a -- `gradient`
 
 Appendix A: Ghost in the Machine
 
