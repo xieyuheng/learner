@@ -147,11 +147,11 @@ export function expScalarByHand(da: Scalar): Scalar {
 
 export function prim1(
   realFn: (ra: number) => number,
-  derivativeFn: (ra: number, z: number) => number,
+  gradientFn: (ra: number, z: number) => number,
 ): (da: Scalar) => Scalar {
   return (da) => {
     return Dual(realFn(scalarReal(da)), (_d, z, state) => {
-      return scalarLink(da)(da, derivativeFn(scalarReal(da), z), state)
+      return scalarLink(da)(da, gradientFn(scalarReal(da), z), state)
     })
   }
 }
