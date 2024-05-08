@@ -138,3 +138,9 @@ export function mulScalar(da: Scalar, db: Scalar): Scalar {
     return scalarLink(db)(db, scalarReal(da) * z, state)
   })
 }
+
+export function expScalar(da: Scalar): Scalar {
+  return Dual(Math.exp(scalarReal(da)), (_d, z, state) => {
+    return scalarLink(da)(da, Math.exp(scalarReal(da)) * z, state)
+  })
+}

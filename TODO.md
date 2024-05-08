@@ -1,5 +1,3 @@
-appendix-a -- `expScalar`
-
 appendix-a -- `prim1`
 appendix-a -- `expScalar` -- redefine by `prim1`
 
