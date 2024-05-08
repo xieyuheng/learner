@@ -1,4 +1,4 @@
-appendix-a -- Dual type of Link
+appendix-a -- `Dual` type of `link`
 appendix-a -- gradient
 
 Appendix A: Ghost in the Machine
