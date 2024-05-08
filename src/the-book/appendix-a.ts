@@ -34,3 +34,9 @@ export function scalarLink(x: Scalar): Link {
 export function endOfChain(): any {
   //
 }
+
+export type Tensor = Scalar | Array<Tensor>
+
+export type DifferentiableFn = <Parameters extends Tensor>(
+  ps: Parameters,
+) => number
