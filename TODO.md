@@ -1,4 +1,3 @@
-extract `gradient.ts`
 extract `extend.ts`
 
 add `extend1` and `extend2` to `tensor/`
