@@ -1,4 +1,3 @@
-update `toys-by-hand.ts` by `extend.ts`
 gradient.test.ts
 
 appendix-a -- `extend1`
