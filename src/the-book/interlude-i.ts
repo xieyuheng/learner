@@ -7,7 +7,7 @@ import {
   type Tensor,
 } from "./chapter-2.js"
 
-export function extendBinaryFunction(
+export function extend2(
   fn: (x: number, y: number) => number,
 ): (x: Tensor, y: Tensor) => Tensor {
   return function extendedFn(x: Tensor, y: Tensor): Tensor {
@@ -36,11 +36,11 @@ export function extendBinaryFunction(
   }
 }
 
-export const add = extendBinaryFunction((x, y) => x + y)
-export const sub = extendBinaryFunction((x, y) => x - y)
-export const mul = extendBinaryFunction((x, y) => x * y)
+export const add = extend2((x, y) => x + y)
+export const sub = extend2((x, y) => x - y)
+export const mul = extend2((x, y) => x * y)
 
-export function extendUnaryFunction(
+export function extend1(
   fn: (x: number) => number,
 ): (x: Tensor) => Tensor {
   return function extendedFn(x: Tensor): Tensor {
@@ -52,8 +52,8 @@ export function extendUnaryFunction(
   }
 }
 
-export const sqrt = extendUnaryFunction(Math.sqrt)
-export const square = extendUnaryFunction((x) => x * x)
+export const sqrt = extend1(Math.sqrt)
+export const square = extend1((x) => x * x)
 
 export function sum1(xs: Array<number>): number {
   return xs.reduce((x, result) => x + result, 0)
