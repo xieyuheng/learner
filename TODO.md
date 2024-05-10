@@ -1,4 +1,5 @@
-update `toys.ts` by `extend.ts`
+update `toys-by-hand.ts` by `extend.ts`
+gradient.test.ts
 
 appendix-a -- `extend1`
 appendix-a -- `exp` -- `expScalar` + `extend1`
