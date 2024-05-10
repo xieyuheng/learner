@@ -1,5 +1,5 @@
+extract `GradientState.js`
 extract `gradient.ts`
-extract `Tensor.ts`
 extract `extend.ts`
 
 add `extend1` and `extend2` to `tensor/`
