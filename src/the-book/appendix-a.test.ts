@@ -1,6 +1,14 @@
 import assert from "node:assert"
 import { test } from "node:test"
-import { Dual, endOfChain, addScalar, mulScalar, scalarTruncate, tensorMap, gradient } from "./appendix-a.js"
+import {
+  Dual,
+  addScalar,
+  endOfChain,
+  gradient,
+  mulScalar,
+  scalarTruncate,
+  tensorMap,
+} from "./appendix-a.js"
 
 test("appendix-a -- tensorMap", () => {
   assert.deepStrictEqual(
