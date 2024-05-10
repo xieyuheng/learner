@@ -1,4 +1,3 @@
-[system-a] toys -- log
 [system-a] toys -- expt
 
 [system-a] chapter-4 -- revise
