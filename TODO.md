@@ -1,5 +1,7 @@
-[system-a] chapter-4 -- revise
-[system-a] chapter-4 -- gradientDescent
+[system-a] chapter-4 -- `revise`
+[system-a] test `revise`
+[system-a] chapter-4 -- `gradientDescent`
+[system-a] test `gradientDescent`
 
 # the book
 
