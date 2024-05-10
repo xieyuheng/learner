@@ -1,5 +1,3 @@
-[system-a] toys -- expt
-
 [system-a] chapter-4 -- revise
 [system-a] chapter-4 -- gradientDescent
 
