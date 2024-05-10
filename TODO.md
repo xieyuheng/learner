@@ -1,8 +1,8 @@
+[system-a] toys -- lt, gt, lteq, gteq, eq
+
 [system-a] toys -- div
 [system-a] toys -- log
 [system-a] toys -- expt
-[system-a] comparator
-[system-a] toys -- lt, gt, lteq, gteq, eq
 
 Appendix A: Ghost in the Machine
 
