@@ -39,3 +39,24 @@ export const mulScalar = prim2(
   (x, y) => x * y,
   (ra, rb, z) => [rb * z, ra * z],
 )
+
+// export const add = extend2((x, y) => x + y)
+// export const sub = extend2((x, y) => x - y)
+// export const mul = extend2((x, y) => x * y)
+
+// export const sqrt = extend1(Math.sqrt)
+// export const square = extend1((x) => x * x)
+
+// export function sum1(xs: Array<number>): number {
+//   return xs.reduce((x, result) => x + result, 0)
+// }
+
+// export function sum(x: Tensor): Tensor {
+//   assertNotScalar(x)
+//   if (rank(x) === 1) {
+//     assertTensor1(x)
+//     return sum1(x)
+//   }
+
+//   return x.map((x) => sum(x))
+// }

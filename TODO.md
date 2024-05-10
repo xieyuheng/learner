@@ -1,4 +1,3 @@
-extract `extend.ts`
 update `toys.ts` by `extend.ts`
 
 appendix-a -- `extend1`
