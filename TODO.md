@@ -1,5 +1,3 @@
-gradient.test.ts
-
 appendix-a -- `extend1`
 appendix-a -- `exp` -- `expScalar` + `extend1`
 
