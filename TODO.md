@@ -1,4 +1,3 @@
-extract `prim.ts`
 extract `gradient.ts`
 extract `Tensor.ts`
 extract `extend.ts`
