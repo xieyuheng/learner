@@ -1,4 +1,5 @@
-import { extend1, extend2, prim1, prim2 } from "../index.js"
+import { extend1, extend2 } from "./extend.js"
+import { prim1, prim2 } from "./prim.js"
 
 export const expScalar = prim1(Math.exp, (ra, z) => Math.exp(ra) * z)
 

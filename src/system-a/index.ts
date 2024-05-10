@@ -1,7 +1,5 @@
 export * from "./GradientState.js"
 export * from "./Scalar.js"
 export * from "./Tensor.js"
-export * from "./extend.js"
 export * from "./gradient.js"
-export * from "./prim.js"
 export * from "./toys/index.js"

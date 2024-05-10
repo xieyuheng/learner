@@ -1,4 +1,4 @@
-import { Dual, scalarLink, scalarReal, type Scalar } from "./index.js"
+import { Dual, scalarLink, scalarReal, type Scalar } from "../index.js"
 
 export function prim1(
   realFn: (ra: number) => number,
