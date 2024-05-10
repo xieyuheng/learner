@@ -1,16 +1,7 @@
-appendix-a -- `extend1`
-appendix-a -- `exp` -- `expScalar` + `extend1`
-
-appendix-a -- `extend2`
-appendix-a -- `add` -- `addScalar` + `extend2`
-appendix-a -- `mul` -- `mulScalar` + `extend2`
-
 Appendix A: Ghost in the Machine
 
 chapter-4 -- revise
-chapter-4 -- gradient-descent
-
-4: Slip-slidin’ Away
+chapter-4 -- gradientDescent
 
 5: Target Practice
 Interlude III: The Shape of Things to Come
