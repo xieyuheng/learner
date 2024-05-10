@@ -1,6 +1,8 @@
+`Tensor.ts` -- `assertScalar`
+`Tensor.ts` -- `assertNotScalar`
+`Tensor.ts` -- `assertTensor1`
 extract `extend.ts`
-
-add `extend1` and `extend2` to `tensor/`
+update `toys.ts` by `extend.ts`
 
 appendix-a -- `extend1`
 appendix-a -- `exp` -- `expScalar` + `extend1`
