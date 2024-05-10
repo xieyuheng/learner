@@ -40,9 +40,7 @@ export const add = extend2((x, y) => x + y)
 export const sub = extend2((x, y) => x - y)
 export const mul = extend2((x, y) => x * y)
 
-export function extend1(
-  fn: (x: number) => number,
-): (x: Tensor) => Tensor {
+export function extend1(fn: (x: number) => number): (x: Tensor) => Tensor {
   return function extendedFn(x: Tensor): Tensor {
     if (isScalar(x)) {
       return fn(x)
