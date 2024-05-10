@@ -178,3 +178,8 @@ export const addScalar = prim2(
   (x, y) => x + y,
   (_ra, _rb, z) => [z, z],
 )
+
+export const mulScalar = prim2(
+  (x, y) => x * y,
+  (ra, rb, z) => [rb * z, ra * z],
+)
