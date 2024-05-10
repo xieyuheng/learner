@@ -1,3 +1,4 @@
+import { comparator } from "./comparator.js"
 import { extend1, extend2 } from "./extend.js"
 import { prim1, prim2 } from "./prim.js"
 
@@ -28,3 +29,9 @@ export const add = extend2(addScalar)
 export const sub = extend2(subScalar)
 export const mul = extend2(mulScalar)
 export const sqrt = extend1(sqrtScalar)
+
+export const lt = comparator((x, y) => x < y)
+export const gt = comparator((x, y) => x > y)
+export const lteq = comparator((x, y) => x <= y)
+export const gteq = comparator((x, y) => x >= y)
+export const eq = comparator((x, y) => x === y)

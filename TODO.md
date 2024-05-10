@@ -1,5 +1,3 @@
-[system-a] toys -- lt, gt, lteq, gteq, eq
-
 [system-a] toys -- div
 [system-a] toys -- log
 [system-a] toys -- expt
