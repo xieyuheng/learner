@@ -40,8 +40,9 @@ export type Tensor = Scalar | Array<Tensor>
 
 // The effect of `gradient` on a `DifferentiableFn`
 // is `sum` of all elements of it's result tensor.
-export type DifferentiableFn = (x: Tensor) => Tensor
-// export type DifferentiableFn = (...args: Array<Tensor>) => Tensor
+export type DifferentiableFn =
+  | ((...args: Array<Tensor>) => Tensor)
+  | ((...args: Array<Scalar>) => Tensor)
 
 export function tensorMap(fn: (x: Scalar) => Scalar, tensor: Tensor): Tensor {
   if (isScalar(tensor)) {
@@ -55,9 +56,9 @@ export function scalarTruncate(x: Scalar): Scalar {
   return Dual(scalarReal(x), endOfChain)
 }
 
-export function gradient(fn: DifferentiableFn, x: Tensor): Tensor {
-  const wrt = tensorMap(scalarTruncate, x)
-  return gradientOnce(fn(wrt), wrt)
+export function gradient(fn: DifferentiableFn, args: Array<Tensor>): Tensor {
+  const wrt = tensorMap(scalarTruncate, args)
+  return gradientOnce(fn(...(wrt as any)), wrt)
 }
 
 export type GradientState = Map<Scalar, number>

@@ -42,10 +42,10 @@ test("appendix-a -- scalarTruncate", () => {
   )
 })
 
-// test("appendix-a -- gradient", () => {
-//   console.log(gradient((args) => addScalar(...args), [1, 1]))
-//   console.log(gradient((args) => addScalar(...args), [2, 3]))
+test("appendix-a -- gradient", () => {
+  assert.deepStrictEqual(gradient(addScalar, [1, 1]), [1, 1])
+  assert.deepStrictEqual(gradient(addScalar, [2, 3]), [1, 1])
 
-//   console.log(gradient((args) => mulScalar(...args), [1, 1]))
-//   console.log(gradient((args) => mulScalar(...args), [2, 3]))
-// })
+  assert.deepStrictEqual(gradient(mulScalar, [1, 1]), [1, 1])
+  assert.deepStrictEqual(gradient(mulScalar, [2, 3]), [3, 2])
+})
