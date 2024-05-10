@@ -1,6 +1,6 @@
+extract `prim.ts`
 extract `gradient.ts`
 extract `Tensor.ts`
-extract `prim.ts`
 extract `extend.ts`
 
 add `extend1` and `extend2` to `tensor/`
