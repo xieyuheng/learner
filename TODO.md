@@ -1,6 +1,3 @@
-`Tensor.ts` -- `assertScalar`
-`Tensor.ts` -- `assertNotScalar`
-`Tensor.ts` -- `assertTensor1`
 extract `extend.ts`
 update `toys.ts` by `extend.ts`
 
