@@ -1,5 +1,3 @@
-appendix-a -- `prim2`
-appendix-a -- `addScalar` -- redefine by `prim2`
 appendix-a -- `mulScalar` -- redefine by `prim2`
 
 appendix-a -- `extend1`

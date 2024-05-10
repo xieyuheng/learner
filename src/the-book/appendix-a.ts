@@ -125,17 +125,18 @@ export function endOfChain(
   return gradientStateSet(state, d, z + g)
 }
 
-export function addScalar(da: Scalar, db: Scalar): Scalar {
+export function addScalarByHand(da: Scalar, db: Scalar): Scalar {
   return Dual(scalarReal(da) + scalarReal(db), (_d, z, state) => {
     state = scalarLink(da)(da, 1 * z, state)
     return scalarLink(db)(db, 1 * z, state)
   })
 }
 
-export function mulScalar(da: Scalar, db: Scalar): Scalar {
+export function mulScalarByHand(da: Scalar, db: Scalar): Scalar {
   return Dual(scalarReal(da) * scalarReal(db), (_d, z, state) => {
     state = scalarLink(da)(da, scalarReal(db) * z, state)
-    return scalarLink(db)(db, scalarReal(da) * z, state)
+    state = scalarLink(db)(db, scalarReal(da) * z, state)
+    return state
   })
 }
 
@@ -151,7 +152,8 @@ export function prim1(
 ): (da: Scalar) => Scalar {
   return (da) => {
     return Dual(realFn(scalarReal(da)), (_d, z, state) => {
-      return scalarLink(da)(da, gradientFn(scalarReal(da), z), state)
+      const ga = gradientFn(scalarReal(da), z)
+      return scalarLink(da)(da, ga, state)
     })
   }
 }
@@ -160,12 +162,19 @@ export const expScalar = prim1(Math.exp, (ra, z) => Math.exp(ra) * z)
 
 export function prim2(
   realFn: (ra: number, rb: number) => number,
-  gradientFn: (ra: number, rb: number, z: number) => [number],
+  gradientFn: (ra: number, rb: number, z: number) => [number, number],
 ): (da: Scalar, db: Scalar) => Scalar {
-  throw new Error()
-  // return (da, db) => {
-  //   return Dual(realFn(scalarReal(da), scalarReal(db)), (_d, z, state) => {
-  //     return scalarLink(da)(da, gradientFn(scalarReal(da), z), state)
-  //   })
-  // }
+  return (da, db) => {
+    return Dual(realFn(scalarReal(da), scalarReal(db)), (_d, z, state) => {
+      const [ga, gb] = gradientFn(scalarReal(da), scalarReal(db), z)
+      state = scalarLink(da)(da, ga, state)
+      state = scalarLink(da)(da, gb, state)
+      return state
+    })
+  }
 }
+
+export const addScalar = prim2(
+  (x, y) => x + y,
+  (_ra, _rb, z) => [z, z],
+)
