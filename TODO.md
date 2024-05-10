@@ -1,3 +1,10 @@
+extract `gradient.ts`
+extract `Tensor.ts`
+extract `prim.ts`
+extract `extend.ts`
+
+add `extend1` and `extend2` to `tensor/`
+
 appendix-a -- `extend1`
 appendix-a -- `exp` -- `expScalar` + `extend1`
 
