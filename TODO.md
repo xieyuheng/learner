@@ -1,4 +1,3 @@
-extract `GradientState.js`
 extract `gradient.ts`
 extract `extend.ts`
 
