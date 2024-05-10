@@ -1,11 +1,10 @@
-[system-a] toys -- div
 [system-a] toys -- log
 [system-a] toys -- expt
 
-Appendix A: Ghost in the Machine
+[system-a] chapter-4 -- revise
+[system-a] chapter-4 -- gradientDescent
 
-chapter-4 -- revise
-chapter-4 -- gradientDescent
+# the book
 
 5: Target Practice
 Interlude III: The Shape of Things to Come
