@@ -41,6 +41,7 @@ export type Tensor = Scalar | Array<Tensor>
 // The effect of `gradient` on a `DifferentiableFn`
 // is `sum` of all elements of it's result tensor.
 export type DifferentiableFn = (x: Tensor) => Tensor
+// export type DifferentiableFn = (...args: Array<Tensor>) => Tensor
 
 export function tensorMap(fn: (x: Scalar) => Scalar, tensor: Tensor): Tensor {
   if (isScalar(tensor)) {
@@ -168,7 +169,7 @@ export function prim2(
     return Dual(realFn(scalarReal(da), scalarReal(db)), (_d, z, state) => {
       const [ga, gb] = gradientFn(scalarReal(da), scalarReal(db), z)
       state = scalarLink(da)(da, ga, state)
-      state = scalarLink(da)(da, gb, state)
+      state = scalarLink(db)(db, gb, state)
       return state
     })
   }

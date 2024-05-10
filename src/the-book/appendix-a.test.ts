@@ -1,6 +1,6 @@
 import assert from "node:assert"
 import { test } from "node:test"
-import { Dual, endOfChain, scalarTruncate, tensorMap } from "./appendix-a.js"
+import { Dual, endOfChain, addScalar, mulScalar, scalarTruncate, tensorMap, gradient } from "./appendix-a.js"
 
 test("appendix-a -- tensorMap", () => {
   assert.deepStrictEqual(
@@ -41,3 +41,11 @@ test("appendix-a -- scalarTruncate", () => {
     ],
   )
 })
+
+// test("appendix-a -- gradient", () => {
+//   console.log(gradient((args) => addScalar(...args), [1, 1]))
+//   console.log(gradient((args) => addScalar(...args), [2, 3]))
+
+//   console.log(gradient((args) => mulScalar(...args), [1, 1]))
+//   console.log(gradient((args) => mulScalar(...args), [2, 3]))
+// })
