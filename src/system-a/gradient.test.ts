@@ -1,6 +1,7 @@
 import assert from "node:assert"
 import { test } from "node:test"
-import { add, gradient, mul, sum } from "./index.js"
+import { gradient } from "./index.js"
+import { add, mul, sum } from "./toys/index.js"
 
 test("gradient -- add", () => {
   assert.deepStrictEqual(gradient(add, [1, 1]), [1, 1])

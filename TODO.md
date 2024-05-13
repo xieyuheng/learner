@@ -1,5 +1,4 @@
-[system-a] chapter-4 -- `gradientDescent`
-[system-a] test `gradientDescent`
+[system-a] `gradientDescent.test.ts` -- `line`
 
 # the book
 

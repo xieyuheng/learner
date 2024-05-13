@@ -1,13 +1,13 @@
 import type { Tensor } from "./index.js"
 
-export function revise<Ps extends Tensor>(
-  fn: (ps: Ps) => Ps,
-  counter: number,
-  ps: Ps,
-): Ps {
-  while (counter > 0) {
+export function revise<Parameters extends Tensor>(
+  fn: (ps: Parameters) => Parameters,
+  revs: number,
+  ps: Parameters,
+): Parameters {
+  while (revs > 0) {
     ps = fn(ps)
-    counter--
+    revs--
   }
 
   return ps
