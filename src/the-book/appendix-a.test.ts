@@ -13,11 +13,11 @@ import {
 test("appendix-a -- tensorMap", () => {
   assert.deepStrictEqual(
     tensorMap(
-      (x) => (x as number) + 1,
       [
         [1, 2, 3],
         [4, 5, 6],
       ],
+      (x) => (x as number) + 1,
     ),
     [
       [2, 3, 4],
@@ -28,10 +28,13 @@ test("appendix-a -- tensorMap", () => {
 
 test("appendix-a -- scalarTruncate", () => {
   assert.deepStrictEqual(
-    tensorMap(scalarTruncate, [
-      [1, 2, 3],
-      [4, 5, 6],
-    ]),
+    tensorMap(
+      [
+        [1, 2, 3],
+        [4, 5, 6],
+      ],
+      scalarTruncate,
+    ),
     [
       [Dual(1, endOfChain), Dual(2, endOfChain), Dual(3, endOfChain)],
       [Dual(4, endOfChain), Dual(5, endOfChain), Dual(6, endOfChain)],
@@ -39,10 +42,13 @@ test("appendix-a -- scalarTruncate", () => {
   )
 
   assert.deepStrictEqual(
-    tensorMap(scalarTruncate, [
-      [Dual(1, endOfChain), Dual(2, endOfChain), Dual(3, endOfChain)],
-      [Dual(4, endOfChain), Dual(5, endOfChain), Dual(6, endOfChain)],
-    ]),
+    tensorMap(
+      [
+        [Dual(1, endOfChain), Dual(2, endOfChain), Dual(3, endOfChain)],
+        [Dual(4, endOfChain), Dual(5, endOfChain), Dual(6, endOfChain)],
+      ],
+      scalarTruncate,
+    ),
     [
       [Dual(1, endOfChain), Dual(2, endOfChain), Dual(3, endOfChain)],
       [Dual(4, endOfChain), Dual(5, endOfChain), Dual(6, endOfChain)],

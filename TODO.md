@@ -1,4 +1,3 @@
-[the-book] `tensorMap` -- change arguments order
 [system-a] `tensorEvery`
 [system-a] `tensorAlmostEqual`
 [system-a] `gradientDescent.test.ts` -- use `tensorAlmostEqual`

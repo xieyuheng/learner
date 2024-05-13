@@ -44,11 +44,11 @@ export type DifferentiableFn =
   | ((...args: Array<Tensor>) => Tensor)
   | ((...args: Array<Scalar>) => Tensor)
 
-export function tensorMap(fn: (x: Scalar) => Scalar, tensor: Tensor): Tensor {
+export function tensorMap(tensor: Tensor, fn: (x: Scalar) => Scalar): Tensor {
   if (isScalar(tensor)) {
     return fn(tensor)
   } else {
-    return tensor.map((e) => tensorMap(fn, e))
+    return tensor.map((e) => tensorMap(e, fn))
   }
 }
 
@@ -57,7 +57,7 @@ export function scalarTruncate(x: Scalar): Scalar {
 }
 
 export function gradient(fn: DifferentiableFn, args: Array<Tensor>): Tensor {
-  const wrt = tensorMap(scalarTruncate, args)
+  const wrt = tensorMap(args, scalarTruncate)
   return gradientOnce(fn(...(wrt as any)), wrt)
 }
 
@@ -87,7 +87,7 @@ export function gradientStateSet(
 
 export function gradientOnce(y: Tensor, wrt: Tensor): Tensor {
   const state = collectGradients(y, emptyGradientState())
-  return tensorMap((x) => gradientStateGetWithDefault(state, x, 0), wrt)
+  return tensorMap(wrt, (x) => gradientStateGetWithDefault(state, x, 0))
 }
 
 export type Link = (
