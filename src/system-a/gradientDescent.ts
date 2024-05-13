@@ -22,7 +22,7 @@ export function gradientDescent(
     return zip(ps, gs).map(([p, g]) => sub(p, mul(learningRate, g)))
   }
 
-  const rs = tensorMap(scalarReal, revise(fn, revs, ps))
+  const rs = tensorMap(revise(fn, revs, ps), scalarReal)
   assertTensor1(rs)
   return rs
 }

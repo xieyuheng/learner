@@ -34,11 +34,11 @@ export function assertTensor1(t: Tensor): asserts t is Array<number> {
   }
 }
 
-export function tensorMap(fn: (x: Scalar) => Scalar, tensor: Tensor): Tensor {
+export function tensorMap(tensor: Tensor, fn: (x: Scalar) => Scalar): Tensor {
   if (isScalar(tensor)) {
     return fn(tensor)
   } else {
-    return tensor.map((e) => tensorMap(fn, e))
+    return tensor.map((e) => tensorMap(e, fn))
   }
 }
 
