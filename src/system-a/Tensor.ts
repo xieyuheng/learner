@@ -1,4 +1,5 @@
-import { isScalar, type Scalar } from "./index.js"
+import { isScalar, scalarReal, type Scalar } from "./index.js"
+import { sub } from "./toys/index.js"
 
 export type Tensor = Scalar | Array<Tensor>
 
@@ -42,7 +43,10 @@ export function tensorMap(tensor: Tensor, fn: (x: Scalar) => Scalar): Tensor {
   }
 }
 
-export function tensorEvery(tensor: Tensor, p: (x: Scalar) => boolean, ): boolean {
+export function tensorEvery(
+  tensor: Tensor,
+  p: (x: Scalar) => boolean,
+): boolean {
   if (isScalar(tensor)) {
     return p(tensor)
   } else {
@@ -50,8 +54,10 @@ export function tensorEvery(tensor: Tensor, p: (x: Scalar) => boolean, ): boolea
   }
 }
 
-// export const epsilon = 10e-8
-
-// export function tensorAlmostEqual(x: Tensor, y: Tensor): boolean {
-
-// }
+export function tensorAlmostEqual(
+  x: Tensor,
+  y: Tensor,
+  epsilon: number,
+): boolean {
+  return tensorEvery(sub(x, y), (x) => Math.abs(scalarReal(x)) <= epsilon)
+}

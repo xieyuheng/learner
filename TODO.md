@@ -1,6 +1,3 @@
-[system-a] `tensorAlmostEqual`
-[system-a] `gradientDescent.test.ts` -- use `tensorAlmostEqual`
-
 # the book
 
 5: Target Practice
