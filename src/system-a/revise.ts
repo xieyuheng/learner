@@ -1,10 +1,10 @@
 import type { Tensor } from "./index.js"
 
-export function revise(
-  fn: (ps: Tensor) => Tensor,
+export function revise<Ps extends Tensor>(
+  fn: (ps: Ps) => Ps,
   counter: number,
-  ps: Tensor,
-): Tensor {
+  ps: Ps,
+): Ps {
   while (counter > 0) {
     ps = fn(ps)
     counter--
