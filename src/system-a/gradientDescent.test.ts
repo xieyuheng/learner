@@ -10,5 +10,6 @@ test("gradientDescent -- line", () => {
   const lineYs = [1.8, 1.2, 4.2, 3.3]
   const objective = l2Loss(line)(lineXs, lineYs)
   const rs = gradientDescent(objective, [0, 0])
-  assert(tensorAlmostEqual(rs, [1, 0], 0.1))
+  assert(tensorAlmostEqual(rs, [1, 0], 10e-1))  
+  assert(tensorAlmostEqual(rs, [1.05, 0], 10e-6))
 })
