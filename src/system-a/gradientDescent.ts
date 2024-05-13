@@ -1,5 +1,11 @@
 import { zip } from "../utils/zip.js"
-import { assertTensor1, gradient, type Tensor } from "./index.js"
+import {
+  assertTensor1,
+  gradient,
+  scalarReal,
+  tensorMap,
+  type Tensor,
+} from "./index.js"
 import { revise } from "./revise.js"
 import { mul, sub } from "./toys/index.js"
 
@@ -16,5 +22,7 @@ export function gradientDescent(
     return zip(ps, gs).map(([p, g]) => sub(p, mul(learningRate, g)))
   }
 
-  return revise(fn, revs, ps)
+  const rs = tensorMap(scalarReal, revise(fn, revs, ps))
+  assertTensor1(rs)
+  return rs
 }

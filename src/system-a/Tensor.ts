@@ -41,3 +41,17 @@ export function tensorMap(fn: (x: Scalar) => Scalar, tensor: Tensor): Tensor {
     return tensor.map((e) => tensorMap(fn, e))
   }
 }
+
+// export function tensorEvery(p: (x: Scalar) => boolean, tensor: Tensor): boolean {
+//   if (isScalar(tensor)) {
+//     return p(tensor)
+//   } else {
+//     return tensor.map((e) => tensorMap(fn, e))
+//   }
+// }
+
+// export const epsilon = 10e-8
+
+// export function tensorAlmostEqual(x: Tensor, y: Tensor): boolean {
+
+// }
