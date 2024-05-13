@@ -1,4 +1,3 @@
-[system-a] `line`
 [system-a] chapter-4 -- `gradientDescent`
 [system-a] test `gradientDescent`
 
