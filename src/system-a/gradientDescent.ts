@@ -16,13 +16,19 @@ export function gradientDescent(
   objective: (...ps: Array<Tensor>) => number,
   ps: Array<Tensor>,
 ): Array<Tensor> {
-  function fn(ps: Array<Tensor>): Array<Tensor> {
+  const step  = gradientDescentStep(objective)
+  const rs = revise(step, revs, ps)
+  const ns = tensorMap(rs, scalarReal)
+  assertTensor1(ns)
+  return ns
+}
+
+export function gradientDescentStep(
+  objective: (...ps: Array<Tensor>) => number,
+): (ps: Array<Tensor>) => Array<Tensor> {
+  return function step(ps: Array<Tensor>): Array<Tensor> {
     const gs = gradient(objective, ps)
     assertTensor1(gs)
     return zip(ps, gs).map(([p, g]) => sub(p, mul(learningRate, g)))
   }
-
-  const rs = tensorMap(revise(fn, revs, ps), scalarReal)
-  assertTensor1(rs)
-  return rs
 }
