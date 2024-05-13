@@ -42,13 +42,13 @@ export function tensorMap(tensor: Tensor, fn: (x: Scalar) => Scalar): Tensor {
   }
 }
 
-// export function tensorEvery(p: (x: Scalar) => boolean, tensor: Tensor): boolean {
-//   if (isScalar(tensor)) {
-//     return p(tensor)
-//   } else {
-//     return tensor.map((e) => tensorMap(fn, e))
-//   }
-// }
+export function tensorEvery(tensor: Tensor, p: (x: Scalar) => boolean, ): boolean {
+  if (isScalar(tensor)) {
+    return p(tensor)
+  } else {
+    return tensor.every((e) => tensorEvery(e, p))
+  }
+}
 
 // export const epsilon = 10e-8
 

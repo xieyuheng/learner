@@ -1,4 +1,3 @@
-[system-a] `tensorEvery`
 [system-a] `tensorAlmostEqual`
 [system-a] `gradientDescent.test.ts` -- use `tensorAlmostEqual`
 
