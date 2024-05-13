@@ -1,8 +1,14 @@
+import type { Tensor } from "./index.js"
+
 export function revise(
-  fn: any,
+  fn: (ps: Tensor) => Tensor,
   counter: number,
-  ps: Array<number>,
-): Array<number> {
-  //
-  throw new Error()
+  ps: Tensor,
+): Tensor {
+  while (counter > 0) {
+    ps = fn(ps)
+    counter--
+  }
+
+  return ps
 }
