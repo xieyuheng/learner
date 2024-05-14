@@ -1,5 +1,11 @@
 import { zip } from "../utils/zip.js"
-import { assertTensor1, gradient, tensorReal, type Tensor } from "./index.js"
+import {
+  assertTensor1,
+  gradient,
+  tensorReal,
+  type Scalar,
+  type Tensor,
+} from "./index.js"
 import { revise } from "./revise.js"
 import { mul, sub } from "./toys/index.js"
 
@@ -7,7 +13,7 @@ const revs = 1000
 const learningRate = 0.01
 
 export function gradientDescent(
-  objective: (...ps: Array<Tensor>) => number,
+  objective: (...ps: Array<Tensor>) => Scalar,
   ps: Array<Tensor>,
 ): Array<Tensor> {
   const step = gradientDescentStep(objective)
@@ -18,7 +24,7 @@ export function gradientDescent(
 }
 
 export function gradientDescentStep(
-  objective: (...ps: Array<Tensor>) => number,
+  objective: (...ps: Array<Tensor>) => Scalar,
 ): (ps: Array<Tensor>) => Array<Tensor> {
   return function step(ps: Array<Tensor>): Array<Tensor> {
     const gs = gradient(objective, ps)

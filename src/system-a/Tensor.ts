@@ -17,7 +17,7 @@ export function rank(t: Tensor): number {
   return shape(t).length
 }
 
-export function assertScalar(t: Tensor): asserts t is number {
+export function assertScalar(t: Tensor): asserts t is Scalar {
   if (!isScalar(t)) {
     throw new Error(`[assertScalar] ${t}`)
   }

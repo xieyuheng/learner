@@ -10,10 +10,10 @@ test("gradient -- add", () => {
 })
 
 test("gradient -- sum", () => {
-  assert.deepStrictEqual(gradient(sum, [1, 1]), [1, 1])
-  assert.deepStrictEqual(gradient(sum, [1, 1, 1]), [1, 1, 1])
-  assert.deepStrictEqual(gradient(sum, [1, 2, 3]), [1, 1, 1])
-  assert.deepStrictEqual(gradient(sum, [1, 2, 3, 4]), [1, 1, 1, 1])
+  assert.deepStrictEqual(gradient(sum, [[1, 1]]), [[1, 1]])
+  assert.deepStrictEqual(gradient(sum, [[1, 1, 1]]), [[1, 1, 1]])
+  assert.deepStrictEqual(gradient(sum, [[1, 2, 3]]), [[1, 1, 1]])
+  assert.deepStrictEqual(gradient(sum, [[1, 2, 3, 4]]), [[1, 1, 1, 1]])
 })
 
 test("gradient -- mul", () => {
