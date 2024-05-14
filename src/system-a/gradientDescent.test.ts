@@ -14,3 +14,8 @@ test("gradientDescent -- line", () => {
   assert(tensorAlmostEqual(rs, [1, 0], 10e-1))
   assert(tensorAlmostEqual(rs, [1.05, 0], 10e-6))
 })
+
+test("gradientDescent -- quad", () => {
+  const quadXs = [-1, 0, 1, 2, 3]
+  const quadYs = [2.55, 2.1, 4.35, 10.2, 18.25]
+})
