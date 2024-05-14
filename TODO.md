@@ -1,5 +1,7 @@
 # system-a
 
+[system-a] `gradientDescent` -- `quad`
+
 # the book
 
 5: Target Practice
