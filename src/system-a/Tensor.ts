@@ -43,6 +43,10 @@ export function tensorMap(tensor: Tensor, fn: (x: Scalar) => Scalar): Tensor {
   }
 }
 
+export function tensorReal(tensor: Tensor): Tensor {
+  return tensorMap(tensor, scalarReal)
+}
+
 export function tensorEvery(
   tensor: Tensor,
   p: (x: Scalar) => boolean,
