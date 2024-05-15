@@ -31,6 +31,7 @@ test("plane -- gradientDescent", () => {
     [4, 8.09],
   ]
   const ys = [13.99, 15.99, 18, 22.4, 30.2, 37.94]
+
   const objective = l2Loss(plane)(xs, ys)
   const rs = gradientDescent(objective, [[0, 0], 0], {
     revs: 1000,
@@ -38,4 +39,6 @@ test("plane -- gradientDescent", () => {
   })
 
   assert(tensorAlmostEqual(rs, [[3.98, 2.04], 5.78], 10e-3))
+
+  assert(tensorAlmostEqual(plane([2, 3.91])([3.98, 2.04], 5.78), 22.4, 1))
 })
