@@ -2,7 +2,6 @@
 
 # the-book
 
-5: Target Practice
 Interlude III: The Shape of Things to Come
 6: An Apple a Day
 7: The Crazy “ates”
