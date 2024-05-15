@@ -9,6 +9,10 @@ test("quad", () => {
   assert.deepStrictEqual(tensorReal(quad(3)(4.5, 2.1, 7.8)), 54.6)
 })
 
+test("quad -- extended", () => {
+  assert.deepStrictEqual(tensorReal(quad([1, 2, 3])(4.5, 2.1, 7.8)), [14.4, 30, 54.6])
+})
+
 test("quad -- gradientDescent", () => {
   const quadXs = [-1, 0, 1, 2, 3]
   const quadYs = [2.55, 2.1, 4.35, 10.2, 18.25]

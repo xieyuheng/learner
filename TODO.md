@@ -1,6 +1,5 @@
 # system-a
 
-[system-a] `targets/quad` -- test extended
 [system-a] `toys/dot` -- `dot1` -- for simple dot product
 [system-a] `targets/plane`
 
