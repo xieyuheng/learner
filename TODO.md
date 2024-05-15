@@ -1,6 +1,6 @@
 # system-a
 
-[system-a] `toys/dot` -- `dot1` -- for simple dot product
+[system-a] `toys/dot` -- test `dot`
 [system-a] `targets/plane`
 
 # the book
