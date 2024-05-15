@@ -1,6 +1,6 @@
 import { zip } from "../utils/zip.js"
 import {
-  assertTensor1,
+  assertTensorArray,
   gradient,
   tensorReal,
   type Scalar,
@@ -21,7 +21,7 @@ export function gradientDescent(
   const step = gradientDescentStep(objective, options)
   const rs = revise(step, options.revs, ps)
   const ns = tensorReal(rs)
-  assertTensor1(ns)
+  assertTensorArray(ns)
   return ns
 }
 
@@ -31,7 +31,7 @@ export function gradientDescentStep(
 ): (ps: Array<Tensor>) => Array<Tensor> {
   return function step(ps: Array<Tensor>): Array<Tensor> {
     const gs = gradient(objective, ps)
-    assertTensor1(gs)
+    assertTensorArray(gs)
     return zip(ps, gs).map(([p, g]) => sub(p, mul(options.learningRate, g)))
   }
 }

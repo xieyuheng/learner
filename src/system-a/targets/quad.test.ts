@@ -17,9 +17,9 @@ test("quad -- extended", () => {
 })
 
 test("quad -- gradientDescent", () => {
-  const quadXs = [-1, 0, 1, 2, 3]
-  const quadYs = [2.55, 2.1, 4.35, 10.2, 18.25]
-  const objective = l2Loss(quad)(quadXs, quadYs)
+  const xs = [-1, 0, 1, 2, 3]
+  const ys = [2.55, 2.1, 4.35, 10.2, 18.25]
+  const objective = l2Loss(quad)(xs, ys)
   const rs = gradientDescent(objective, [0, 0, 0], {
     revs: 1000,
     learningRate: 0.001,

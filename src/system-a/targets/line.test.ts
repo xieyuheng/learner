@@ -14,9 +14,9 @@ test("line -- extended", () => {
 })
 
 test("line -- gradientDescent", () => {
-  const lineXs = [2, 1, 4, 3]
-  const lineYs = [1.8, 1.2, 4.2, 3.3]
-  const objective = l2Loss(line)(lineXs, lineYs)
+  const xs = [2, 1, 4, 3]
+  const ys = [1.8, 1.2, 4.2, 3.3]
+  const objective = l2Loss(line)(xs, ys)
   const rs = gradientDescent(objective, [0, 0], {
     revs: 1000,
     learningRate: 0.01,

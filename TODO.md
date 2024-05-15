@@ -1,8 +1,6 @@
 # system-a
 
-[system-a] `targets/plane` -- test `gradientDescent`
-
-# the book
+# the-book
 
 5: Target Practice
 Interlude III: The Shape of Things to Come

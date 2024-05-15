@@ -3,6 +3,10 @@ import { sub } from "./toys/index.js"
 
 export type Tensor = Scalar | Array<Tensor>
 
+export function isTensor(x: any): x is Tensor {
+  return isScalar(x) || (x instanceof Array && x.every(isTensor))
+}
+
 export function shape(t: Tensor): Array<number> {
   const result: Array<number> = []
   while (!isScalar(t)) {
@@ -29,10 +33,18 @@ export function assertNotScalar(t: Tensor): asserts t is Array<Tensor> {
   }
 }
 
-export function assertTensor1(t: Tensor): asserts t is Array<number> {
+export function assertTensor1(t: Tensor): asserts t is Array<Scalar> {
   if (rank(t) !== 1) {
     throw new Error(`[assertTensor1] ${t}`)
   }
+}
+
+export function assertTensorArray(x: any): asserts x is Array<Tensor> {
+  if (x instanceof Array && x.every(isTensor)) {
+    return
+  }
+
+  throw new Error(`[assertTensorArray] ${x}`)
 }
 
 export function tensorMap(tensor: Tensor, fn: (x: Scalar) => Scalar): Tensor {
