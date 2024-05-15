@@ -1,6 +1,8 @@
 # system-a
 
-[system-a]
+[system-a] add simple line test
+[system-a] `toys/dot` -- for dot product
+[system-a] `targets/plane`
 
 # the book
 
