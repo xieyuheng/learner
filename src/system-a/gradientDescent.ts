@@ -6,7 +6,6 @@ import {
   type Scalar,
   type Tensor,
 } from "./index.js"
-import { revise } from "./revise.js"
 import { mul, sub } from "./toys/index.js"
 
 export type GradientDescentOptions = {
@@ -35,4 +34,17 @@ export function gradientDescentStep(
     assertTensor1(gs)
     return zip(ps, gs).map(([p, g]) => sub(p, mul(options.learningRate, g)))
   }
+}
+
+export function revise<Parameters extends Tensor>(
+  fn: (ps: Parameters) => Parameters,
+  revs: number,
+  ps: Parameters,
+): Parameters {
+  while (revs > 0) {
+    ps = fn(ps)
+    revs--
+  }
+
+  return ps
 }
