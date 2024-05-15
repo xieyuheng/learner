@@ -1,6 +1,5 @@
 # system-a
 
-[system-a] `toys/dot` -- test `dot`
 [system-a] `targets/plane`
 
 # the book
