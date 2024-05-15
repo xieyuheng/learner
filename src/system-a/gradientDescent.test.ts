@@ -28,5 +28,5 @@ test("gradientDescent -- quad", () => {
     learningRate: 0.001,
   })
 
-  console.log(rs)
+  assert(tensorAlmostEqual(rs, [1.478, 0.99, 2.05], 10e-3))
 })

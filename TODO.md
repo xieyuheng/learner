@@ -1,6 +1,6 @@
 # system-a
 
-[system-a] `gradientDescent` -- `quad`
+[system-a]
 
 # the book
 
