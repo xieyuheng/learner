@@ -1,9 +1,13 @@
 import assert from "assert"
 import { test } from "node:test"
-import { tensorAlmostEqual } from "../Tensor.js"
+import { tensorAlmostEqual, tensorReal } from "../Tensor.js"
 import { gradientDescent } from "../gradientDescent.js"
 import { l2Loss } from "../loss.js"
 import { line } from "./line.js"
+
+test("line", () => {
+  assert.deepStrictEqual(tensorReal(line(1)(2, 3)), 5)
+})
 
 test("line -- gradientDescent", () => {
   const lineXs = [2, 1, 4, 3]
