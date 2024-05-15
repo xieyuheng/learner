@@ -1,6 +1,5 @@
 # system-a
 
-[system-a] `targets/plane` -- simple test
 [system-a] `targets/plane` -- test `gradientDescent`
 
 # the book
