@@ -9,6 +9,10 @@ test("line", () => {
   assert.deepStrictEqual(tensorReal(line(1)(2, 3)), 5)
 })
 
+test("line -- extended", () => {
+  assert.deepStrictEqual(tensorReal(line([1, 2])(2, 3)), [5, 7])
+})
+
 test("line -- gradientDescent", () => {
   const lineXs = [2, 1, 4, 3]
   const lineYs = [1.8, 1.2, 4.2, 3.3]
