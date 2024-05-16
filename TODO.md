@@ -1,6 +1,6 @@
 # system-a
 
-[system-a] `samplingObjective`
+[system-a] using `samplingObjective` in target tests
 
 # the-book
 
