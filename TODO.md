@@ -1,6 +1,7 @@
 # system-a
 
-[system-a] using `samplingObjective` in target tests
+[system-a] `quad` -- test `samplingObjective`
+[system-a] `plane` -- test `samplingObjective`
 
 # the-book
 
