@@ -2,7 +2,6 @@
 
 # the-book
 
-6: An Apple a Day
 7: The Crazy “ates”
 8: The Nearer Your Destination, the Slower You Become
 Interlude IV: Smooth Operator
