@@ -1,7 +1,5 @@
 # system-a
 
-[system-a] `utils/samples`
-
 # the-book
 
 6: An Apple a Day
