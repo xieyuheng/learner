@@ -28,7 +28,7 @@ test("line -- gradientDescent", () => {
   assert(tensorAlmostEqual(rs, [1.05, 0], 10e-6))
 })
 
-test("line -- gradientDescent + samplingObjective ", () => {
+test("line -- gradientDescent & samplingObjective ", () => {
   const xs = [2, 1, 4, 3]
   const ys = [1.8, 1.2, 4.2, 3.3]
 
