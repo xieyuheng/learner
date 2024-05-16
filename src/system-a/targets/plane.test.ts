@@ -33,6 +33,7 @@ test("plane -- gradientDescent", () => {
   const ys = [13.99, 15.99, 18, 22.4, 30.2, 37.94]
 
   const objective = l2Loss(plane)(xs, ys)
+
   const rs = gradientDescent(objective, [[0, 0], 0], {
     revs: 1000,
     learningRate: 0.001,
