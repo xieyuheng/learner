@@ -8,15 +8,13 @@ import {
 } from "./index.js"
 import { mul, sub } from "./toys/index.js"
 
-export type GradientDescentOptions = {
-  revs: number
-  learningRate: number
-}
-
 export function gradientDescent(
   objective: (...ps: Array<Tensor>) => Scalar,
   ps: Array<Tensor>,
-  options: GradientDescentOptions,
+  options: {
+    revs: number
+    learningRate: number
+  },
 ): Array<Tensor> {
   const step = gradientDescentStep(objective, options)
   const rs = revise(step, options.revs, ps)
@@ -27,7 +25,10 @@ export function gradientDescent(
 
 export function gradientDescentStep(
   objective: (...ps: Array<Tensor>) => Scalar,
-  options: GradientDescentOptions,
+  options: {
+    revs: number
+    learningRate: number
+  },
 ): (ps: Array<Tensor>) => Array<Tensor> {
   return function step(ps: Array<Tensor>): Array<Tensor> {
     const gs = gradient(objective, ps)

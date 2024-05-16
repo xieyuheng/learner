@@ -1,5 +1,7 @@
 # system-a
 
+[system-a] `samplingObjective`
+
 # the-book
 
 6: An Apple a Day
