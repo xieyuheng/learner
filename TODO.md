@@ -1,7 +1,7 @@
 # system-a
 
-[system-a] `quad` -- test `samplingObjective`
 [system-a] `plane` -- test `samplingObjective`
+[system-a] `assertTensorAlmostEqual`
 
 # the-book
 
