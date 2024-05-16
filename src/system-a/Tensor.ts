@@ -78,10 +78,12 @@ export function tensorAlmostEqual(
   return tensorEvery(sub(x, y), (x) => Math.abs(scalarReal(x)) <= epsilon)
 }
 
-// export function assertTensorAlmostEqual(
-//   x: Tensor,
-//   y: Tensor,
-//   epsilon: number,
-// ): boolean {
-//   return tensorEvery(sub(x, y), (x) => Math.abs(scalarReal(x)) <= epsilon)
-// }
+export function assertTensorAlmostEqual(
+  x: Tensor,
+  y: Tensor,
+  epsilon: number,
+): void {
+  if (!tensorAlmostEqual(x, y, epsilon)) {
+    throw new Error(`[assertTensorAlmostEqual] [${x}], [${y}], ${epsilon}`)
+  }
+}

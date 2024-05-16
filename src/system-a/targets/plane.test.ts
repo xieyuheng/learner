@@ -1,6 +1,6 @@
 import assert from "node:assert"
 import { test } from "node:test"
-import { tensorAlmostEqual, tensorReal } from "../Tensor.js"
+import { assertTensorAlmostEqual, tensorReal } from "../Tensor.js"
 import { gradientDescent } from "../gradientDescent.js"
 import { l2Loss } from "../loss.js"
 import { samplingObjective } from "../samplingObjective.js"
@@ -40,9 +40,9 @@ test("plane -- gradientDescent", () => {
     learningRate: 0.001,
   })
 
-  assert(tensorAlmostEqual(rs, [[3.98, 2.04], 5.78], 10e-3))
+  assertTensorAlmostEqual(rs, [[3.98, 2.04], 5.78], 10e-3)
 
-  assert(tensorAlmostEqual(plane([2, 3.91])([3.98, 2.04], 5.78), 22.4, 1))
+  assertTensorAlmostEqual(plane([2, 3.91])([3.98, 2.04], 5.78), 22.4, 1)
 })
 
 test("plane -- gradientDescent & samplingObjective", () => {
@@ -65,5 +65,5 @@ test("plane -- gradientDescent & samplingObjective", () => {
     learningRate: 0.001,
   })
 
-  assert(tensorAlmostEqual(rs, [[3.98, 2.04], 5.78], 0.5))
+  assertTensorAlmostEqual(rs, [[3.98, 2.04], 5.78], 0.5)
 })

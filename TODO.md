@@ -1,8 +1,5 @@
 # system-a
 
-[system-a] `plane` -- test `samplingObjective`
-[system-a] `assertTensorAlmostEqual`
-
 # the-book
 
 6: An Apple a Day
