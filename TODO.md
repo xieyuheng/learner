@@ -1,5 +1,8 @@
 # system-a
 
+[system-a] `AccompaniedParameter` or `AccompaniedTensor`
+[system-a] `inflate` and `deflate`
+
 # the-book
 
 7: The Crazy “ates”

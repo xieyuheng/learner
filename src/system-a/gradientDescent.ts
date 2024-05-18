@@ -16,25 +16,16 @@ export function gradientDescent(
     learningRate: number
   },
 ): Array<Tensor> {
-  const step = gradientDescentStep(objective, options)
-  const rs = revise(step, options.revs, ps)
-  const ns = tensorReal(rs)
-  assertTensorArray(ns)
-  return ns
-}
-
-export function gradientDescentStep(
-  objective: (...ps: Array<Tensor>) => Scalar,
-  options: {
-    revs: number
-    learningRate: number
-  },
-): (ps: Array<Tensor>) => Array<Tensor> {
-  return function step(ps: Array<Tensor>): Array<Tensor> {
+  function step(ps: Array<Tensor>): Array<Tensor> {
     const gs = gradient(objective, ps)
     assertTensorArray(gs)
     return zip(ps, gs).map(([p, g]) => sub(p, mul(options.learningRate, g)))
   }
+
+  const rs = revise(step, options.revs, ps)
+  const ns = tensorReal(rs)
+  assertTensorArray(ns)
+  return ns
 }
 
 export function revise<Parameters extends Tensor>(
