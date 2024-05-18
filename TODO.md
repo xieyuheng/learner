@@ -1,11 +1,12 @@
 # system-a
 
-[system-a] what should be the name of the class `{ inflate, deflate, update }`?
-[system-a] `AccompaniedParameter` or `AccompaniedTensor`
+[system-a] `Representation` -- `{ inflate, deflate, update }`
+
+- naked representation
+- lonely representation
 
 # the-book
 
-7: The Crazy “ates”
 8: The Nearer Your Destination, the Slower You Become
 Interlude IV: Smooth Operator
 9: Be Adamant
