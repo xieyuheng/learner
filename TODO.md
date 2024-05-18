@@ -1,7 +1,7 @@
 # system-a
 
+[system-a] what should be the name of the class `{ inflate, deflate, update }`?
 [system-a] `AccompaniedParameter` or `AccompaniedTensor`
-[system-a] `inflate` and `deflate`
 
 # the-book
 

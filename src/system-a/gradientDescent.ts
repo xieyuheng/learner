@@ -28,15 +28,11 @@ export function gradientDescent(
   return ns
 }
 
-export function revise<Parameters extends Tensor>(
-  fn: (ps: Parameters) => Parameters,
-  revs: number,
-  ps: Parameters,
-): Parameters {
+export function revise<T>(step: (target: T) => T, revs: number, target: T): T {
   while (revs > 0) {
-    ps = fn(ps)
+    target = step(target)
     revs--
   }
 
-  return ps
+  return target
 }
