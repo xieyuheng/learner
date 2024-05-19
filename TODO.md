@@ -5,6 +5,8 @@
 - naked representation
 - lonely representation
 
+[system-a] `velocityRepresentation` as an instance of `Representation`
+
 # the-book
 
 8: The Nearer Your Destination, the Slower You Become
