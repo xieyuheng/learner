@@ -1,8 +1,8 @@
 import assert from "node:assert"
 import { test } from "node:test"
-import { shape } from "./Tensor.js"
+import { shape } from "./shape.js"
 
-test("Tensor -- shape", () => {
+test("shape", () => {
   assert.deepStrictEqual(shape(1), [])
   assert.deepStrictEqual(shape([1]), [1])
   assert.deepStrictEqual(shape([1, 2, 3]), [3])

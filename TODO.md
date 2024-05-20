@@ -1,9 +1,5 @@
 # system-a
 
-[system-a] `tensor/` -- extract `shape` and `rank`
-
-- rename Tensor.test.ts to shape.test.ts
-
 [system-a] `tensor/` -- extract `assert`
 
 [system-a] `tensor/` -- `tensorZeros` -- zeros of the same shape
