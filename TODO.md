@@ -1,11 +1,16 @@
 # system-a
 
-[system-a] `lonelyRepresentation`
-[system-a] generalize `gradientDescent`
 [system-a] `gradientDescentNaked `
+[system-a] `lonelyRepresentation`
 [system-a] `gradientDescentLonely`
 [system-a] `velocityRepresentation` -- takes `options: { velocityAccumulationFactor }`
 [system-a] `gradientDescentVelocity`
+
+# question
+
+[question] 如何用类型安全的方式表达 `tensorMap` 和 `gradient`
+这类不改变 `Tensor` 的结构的函数？
+从而避免使用 `assertTensorArray` 或 `assertScalar`。
 
 # the-book
 
