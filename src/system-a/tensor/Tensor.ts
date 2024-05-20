@@ -1,6 +1,5 @@
-import { sub } from "../toys/index.js"
-import { isScalar, scalarReal, type Scalar } from "./Scalar.js"
-import { tensorMap } from "./tensorMap.js"
+import { isScalar, type Scalar } from "./Scalar.js"
+import { tensorAlmostEqual } from "./tensorAlmostEqual.js"
 
 export type Tensor = Scalar | Array<Tensor>
 
@@ -34,29 +33,6 @@ export function assertTensorArray(x: any): asserts x is Array<Tensor> {
   }
 
   throw new Error(`[assertTensorArray] ${x}`)
-}
-
-export function tensorReal(tensor: Tensor): Tensor {
-  return tensorMap(tensor, scalarReal)
-}
-
-export function tensorEvery(
-  tensor: Tensor,
-  p: (x: Scalar) => boolean,
-): boolean {
-  if (isScalar(tensor)) {
-    return p(tensor)
-  } else {
-    return tensor.every((e) => tensorEvery(e, p))
-  }
-}
-
-export function tensorAlmostEqual(
-  x: Tensor,
-  y: Tensor,
-  epsilon: number,
-): boolean {
-  return tensorEvery(sub(x, y), (x) => Math.abs(scalarReal(x)) <= epsilon)
 }
 
 export function assertTensorAlmostEqual(

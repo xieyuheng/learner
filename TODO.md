@@ -1,8 +1,9 @@
 # system-a
 
-[system-a] `tensor/` -- extract `tensorReal`
-[system-a] `tensor/` -- extract `tensorEvery`
-[system-a] `tensor/` -- extract `tensorAlmostEqual`
+[system-a] `tensor/` -- extract `shape` and `rank`
+
+- rename Tensor.test.ts to shape.test.ts
+
 [system-a] `tensor/` -- extract `assert`
 
 [system-a] `tensor/` -- `tensorZeros` -- zeros of the same shape
