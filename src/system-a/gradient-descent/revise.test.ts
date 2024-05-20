@@ -1,8 +1,8 @@
 import assert from "node:assert"
 import { test } from "node:test"
-import { revise } from "./gradientDescent.js"
+import { revise } from "./revise.js"
 
-test("gradientDescent -- revise", () => {
+test("revise", () => {
   function fn(ps: Array<number>): Array<number> {
     return ps.map((p) => p - 3)
   }

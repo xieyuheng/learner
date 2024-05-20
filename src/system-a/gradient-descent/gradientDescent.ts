@@ -3,6 +3,7 @@ import type { Scalar } from "../tensor/index.js"
 import { assertTensorArray, tensorReal, type Tensor } from "../tensor/index.js"
 import type { Representation } from "./Representation.js"
 import { gradient } from "./index.js"
+import { revise } from "./revise.js"
 
 export function gradientDescent<R>(representation: Representation<R>): (
   objective: (...ps: Array<Tensor>) => Scalar,
@@ -24,13 +25,4 @@ export function gradientDescent<R>(representation: Representation<R>): (
     assertTensorArray(ns)
     return ns
   }
-}
-
-export function revise<T>(step: (target: T) => T, revs: number, target: T): T {
-  while (revs > 0) {
-    target = step(target)
-    revs--
-  }
-
-  return target
 }

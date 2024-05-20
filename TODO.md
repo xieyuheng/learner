@@ -1,11 +1,8 @@
 # system-a
 
-[system-a] extract `revise` from `gradientDescent`
-
-- and rename gradientDescent.test.ts to revise.test.ts
-  [system-a] test `gradientDescentLonely`
-  [system-a] `velocityRepresentation` -- takes `options: { velocityAccumulationFactor }`
-  [system-a] `gradientDescentVelocity`
+[system-a] test `gradientDescentLonely`
+[system-a] `velocityRepresentation` -- takes `options: { velocityAccumulationFactor }`
+[system-a] `gradientDescentVelocity`
 
 # question
 
