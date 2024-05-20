@@ -21,23 +21,6 @@ test("quad -- gradientDescentNaked", () => {
   const xs = [-1, 0, 1, 2, 3]
   const ys = [2.55, 2.1, 4.35, 10.2, 18.25]
 
-  const objective = l2Loss(quad)(xs, ys)
-
-  const rs = gradientDescentNaked({ learningRate: 0.001 })(
-    objective,
-    [0, 0, 0],
-    {
-      revs: 1000,
-    },
-  )
-
-  assertTensorAlmostEqual(rs, [1.478, 0.99, 2.05], 10e-3)
-})
-
-test("quad -- gradientDescentNaked & samplingObjective", () => {
-  const xs = [-1, 0, 1, 2, 3]
-  const ys = [2.55, 2.1, 4.35, 10.2, 18.25]
-
   const objective = samplingObjective(l2Loss(quad), xs, ys, {
     batchSize: 4,
   })

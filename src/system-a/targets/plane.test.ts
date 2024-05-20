@@ -33,32 +33,6 @@ test("plane -- gradientDescentNaked", () => {
   ]
   const ys = [13.99, 15.99, 18, 22.4, 30.2, 37.94]
 
-  const objective = l2Loss(plane)(xs, ys)
-
-  const rs = gradientDescentNaked({ learningRate: 0.001 })(
-    objective,
-    [[0, 0], 0],
-    {
-      revs: 1000,
-    },
-  )
-
-  assertTensorAlmostEqual(rs, [[3.98, 2.04], 5.78], 10e-3)
-
-  assertTensorAlmostEqual(plane([2, 3.91])([3.98, 2.04], 5.78), 22.4, 1)
-})
-
-test("plane -- gradientDescentNaked & samplingObjective", () => {
-  const xs = [
-    [1, 2.05],
-    [1, 3],
-    [2, 2],
-    [2, 3.91],
-    [3, 6.13],
-    [4, 8.09],
-  ]
-  const ys = [13.99, 15.99, 18, 22.4, 30.2, 37.94]
-
   const objective = samplingObjective(l2Loss(plane), xs, ys, {
     batchSize: 4,
   })

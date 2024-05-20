@@ -1,8 +1,8 @@
 # system-a
 
-[system-a] extract test function for target `testLine`
-[system-a] extract test function for target `testQuad`
-[system-a] extract test function for target `testPlane`
+[system-a] extract test function for target `testGradientDescentByLine`
+[system-a] extract test function for target `testGradientDescentByQuad`
+[system-a] extract test function for target `testGradientDescentByPlane`
 
 [system-a] test `gradientDescentLonely` by targets
 [system-a] `velocityRepresentation` -- takes `options: { velocityAccumulationFactor }`

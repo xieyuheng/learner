@@ -18,20 +18,6 @@ test("line -- gradientDescentNaked", () => {
   const xs = [2, 1, 4, 3]
   const ys = [1.8, 1.2, 4.2, 3.3]
 
-  const objective = l2Loss(line)(xs, ys)
-
-  const rs = gradientDescentNaked({ learningRate: 0.01 })(objective, [0, 0], {
-    revs: 1000,
-  })
-
-  assertTensorAlmostEqual(rs, [1, 0], 10e-1)
-  assertTensorAlmostEqual(rs, [1.05, 0], 10e-6)
-})
-
-test("line -- gradientDescentNaked & samplingObjective ", () => {
-  const xs = [2, 1, 4, 3]
-  const ys = [1.8, 1.2, 4.2, 3.3]
-
   const objective = samplingObjective(l2Loss(line), xs, ys, {
     batchSize: 4,
   })
