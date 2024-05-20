@@ -5,13 +5,17 @@ import type { Representation } from "./Representation.js"
 import { gradient } from "./index.js"
 import { revise } from "./revise.js"
 
-export function gradientDescent<R>(representation: Representation<R>): (
+export type GradientDescentFn = (
   objective: (...ps: Array<Tensor>) => Scalar,
   ps: Array<Tensor>,
   options: {
     revs: number
   },
-) => Array<Tensor> {
+) => Array<Tensor>
+
+export function gradientDescent<R>(
+  representation: Representation<R>,
+): GradientDescentFn {
   return (objective, ps, options) => {
     function step(rs: Array<R>): Array<R> {
       const ps = rs.map(representation.deflate)
