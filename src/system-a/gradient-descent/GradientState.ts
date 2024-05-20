@@ -1,4 +1,4 @@
-import { type Scalar } from "./index.js"
+import { type Scalar } from "../Scalar.js"
 
 export type GradientState = Map<Scalar, number>
 

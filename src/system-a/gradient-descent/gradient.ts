@@ -1,14 +1,10 @@
+import { isScalar, scalarLink, scalarTruncate, type Scalar } from "../Scalar.js"
+import { tensorMap, type Tensor } from "../Tensor.js"
 import {
   emptyGradientState,
   gradientStateGetWithDefault,
-  isScalar,
-  scalarLink,
-  scalarTruncate,
-  tensorMap,
   type GradientState,
-  type Scalar,
-  type Tensor,
-} from "./index.js"
+} from "./GradientState.js"
 
 // The effect of `gradient` on a `DifferentiableFn`
 // is `sum` of all elements of it's result tensor.

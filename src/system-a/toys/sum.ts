@@ -1,10 +1,10 @@
+import type { Scalar } from "../Scalar.js"
 import {
-  assertNotScalar,
   assertTensor1,
+  assertTensorArray,
   rank,
-  type Scalar,
   type Tensor,
-} from "../index.js"
+} from "../Tensor.js"
 import { addScalar } from "./index.js"
 
 export function sum1(xs: Array<Scalar>): Scalar {
@@ -12,7 +12,7 @@ export function sum1(xs: Array<Scalar>): Scalar {
 }
 
 export function sum(x: Tensor): Tensor {
-  assertNotScalar(x)
+  assertTensorArray(x)
   if (rank(x) === 1) {
     assertTensor1(x)
     return sum1(x)

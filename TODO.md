@@ -2,9 +2,10 @@
 
 [system-a] `Representation` -- `{ inflate, deflate, update }`
 
-- naked representation
-- lonely representation
+- with `velocityAccumulationFactor`
 
+[system-a] `nakedRepresentation`
+[system-a] `lonelyRepresentation`
 [system-a] `velocityRepresentation` as an instance of `Representation`
 
 # the-book

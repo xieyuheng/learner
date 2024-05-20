@@ -1,4 +1,4 @@
-import { type Tensor } from "../index.js"
+import { type Tensor } from "../Tensor.js"
 import { add, mul, square } from "../toys/index.js"
 
 export function quad(x: Tensor): (...ps: [Tensor, Tensor, Tensor]) => Tensor {

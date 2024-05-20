@@ -1,4 +1,4 @@
-import { isScalar, scalarReal, type Scalar } from "./index.js"
+import { isScalar, scalarReal, type Scalar } from "./Scalar.js"
 import { sub } from "./toys/index.js"
 
 export type Tensor = Scalar | Array<Tensor>
@@ -19,18 +19,6 @@ export function shape(t: Tensor): Array<number> {
 
 export function rank(t: Tensor): number {
   return shape(t).length
-}
-
-export function assertScalar(t: Tensor): asserts t is Scalar {
-  if (!isScalar(t)) {
-    throw new Error(`[assertScalar] ${t}`)
-  }
-}
-
-export function assertNotScalar(t: Tensor): asserts t is Array<Tensor> {
-  if (isScalar(t)) {
-    throw new Error(`[assertNotScalar] ${t}`)
-  }
 }
 
 export function assertTensor1(t: Tensor): asserts t is Array<Scalar> {

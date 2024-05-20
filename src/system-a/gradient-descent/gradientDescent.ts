@@ -1,12 +1,8 @@
-import { zip } from "../utils/zip.js"
-import {
-  assertTensorArray,
-  gradient,
-  tensorReal,
-  type Scalar,
-  type Tensor,
-} from "./index.js"
-import { mul, sub } from "./toys/index.js"
+import { zip } from "../../utils/zip.js"
+import type { Scalar } from "../Scalar.js"
+import { assertTensorArray, tensorReal, type Tensor } from "../Tensor.js"
+import { mul, sub } from "../toys/index.js"
+import { gradient } from "./index.js"
 
 export function gradientDescent(
   objective: (...ps: Array<Tensor>) => Scalar,

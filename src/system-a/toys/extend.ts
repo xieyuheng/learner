@@ -1,23 +1,18 @@
 import { zip } from "../../utils/zip.js"
-import {
-  assertNotScalar,
-  isScalar,
-  rank,
-  type Scalar,
-  type Tensor,
-} from "../index.js"
+import { isScalar, type Scalar } from "../Scalar.js"
+import { assertTensorArray, rank, type Tensor } from "../Tensor.js"
 
 export function extend2(
   fn: (x: Scalar, y: Scalar) => Scalar,
 ): (x: Tensor, y: Tensor) => Tensor {
   return function extendedFn(x: Tensor, y: Tensor): Tensor {
     if (rank(x) > rank(y)) {
-      assertNotScalar(x)
+      assertTensorArray(x)
       return x.map((x) => extendedFn(x, y))
     }
 
     if (rank(x) < rank(y)) {
-      assertNotScalar(y)
+      assertTensorArray(y)
       return y.map((y) => extendedFn(x, y))
     }
 
@@ -29,8 +24,8 @@ export function extend2(
       return fn(x, y)
     }
 
-    assertNotScalar(x)
-    assertNotScalar(y)
+    assertTensorArray(x)
+    assertTensorArray(y)
 
     return zip(x, y).map(([x, y]) => extendedFnSameShape(x, y))
   }

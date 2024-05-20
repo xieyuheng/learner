@@ -1,4 +1,4 @@
-import { type Tensor } from "../index.js"
+import { type Tensor } from "../Tensor.js"
 import { add, mul } from "../toys/index.js"
 
 export function line(x: Tensor): (...ps: [Tensor, Tensor]) => Tensor {

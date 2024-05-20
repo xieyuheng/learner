@@ -2,7 +2,7 @@ import {
   gradientStateGetWithDefault,
   gradientStateSet,
   type GradientState,
-} from "./index.js"
+} from "./gradient-descent/index.js"
 
 export type Dual = { "@type": "Dual"; real: number; link: Link }
 
@@ -24,6 +24,12 @@ export type Scalar = number | Dual
 
 export function isScalar(x: any): x is Scalar {
   return typeof x === "number" || isDual(x)
+}
+
+export function assertScalar(t: any): asserts t is Scalar {
+  if (!isScalar(t)) {
+    throw new Error(`[assertScalar] ${t}`)
+  }
 }
 
 export function scalarReal(x: Scalar): number {

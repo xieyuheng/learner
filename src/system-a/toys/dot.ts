@@ -1,4 +1,4 @@
-import { type Tensor } from "../index.js"
+import { type Tensor } from "../Tensor.js"
 import { mul, sum } from "./index.js"
 
 export function dot(w: Tensor, x: Tensor): Tensor {

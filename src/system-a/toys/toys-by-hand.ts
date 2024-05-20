@@ -1,4 +1,4 @@
-import { Dual, scalarLink, scalarReal, type Scalar } from "../index.js"
+import { Dual, scalarLink, scalarReal, type Scalar } from "../Scalar.js"
 
 function addScalar(da: Scalar, db: Scalar): Scalar {
   return Dual(scalarReal(da) + scalarReal(db), (_d, z, state) => {

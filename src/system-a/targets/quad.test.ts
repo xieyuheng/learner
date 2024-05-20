@@ -1,7 +1,7 @@
 import assert from "node:assert"
 import { test } from "node:test"
 import { assertTensorAlmostEqual, tensorReal } from "../Tensor.js"
-import { gradientDescent } from "../gradientDescent.js"
+import { gradientDescent } from "../gradient-descent/index.js"
 import { l2Loss } from "../loss.js"
 import { samplingObjective } from "../samplingObjective.js"
 import { quad } from "./quad.js"

@@ -1,4 +1,4 @@
-import { scalarReal, type Scalar } from "../index.js"
+import { scalarReal, type Scalar } from "../Scalar.js"
 
 export function comparator(
   p: (x: number, y: number) => boolean,
