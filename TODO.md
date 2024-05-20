@@ -1,7 +1,5 @@
 # system-a
 
-[system-a] targets test `gradientDescentVelocity`
-
 # question
 
 [question] 如何用类型安全的方式表达 `tensorMap` 和 `gradient`

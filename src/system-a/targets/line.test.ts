@@ -2,6 +2,7 @@ import assert from "assert"
 import { test } from "node:test"
 import { gradientDescentLonely } from "../gradient-descent/gradientDescentLonely.js"
 import { gradientDescentNaked } from "../gradient-descent/gradientDescentNaked.js"
+import { gradientDescentVelocity } from "../gradient-descent/gradientDescentVelocity.js"
 import type { GradientDescentFn } from "../gradient-descent/index.js"
 import { l2Loss } from "../loss.js"
 import { assertTensorAlmostEqual, tensorReal } from "../tensor/index.js"
@@ -16,7 +17,12 @@ test("line -- extended", () => {
   assert.deepStrictEqual(tensorReal(line([1, 2])(2, 3)), [5, 7])
 })
 
-function testGradientDescentByLine(gradientDescentFn: GradientDescentFn) {
+function testGradientDescentByLine(
+  gradientDescentFn: GradientDescentFn,
+  options: {
+    revs: number
+  },
+) {
   const xs = [2, 1, 4, 3]
   const ys = [1.8, 1.2, 4.2, 3.3]
 
@@ -25,16 +31,32 @@ function testGradientDescentByLine(gradientDescentFn: GradientDescentFn) {
   })
 
   const rs = gradientDescentFn(objective, [0, 0], {
-    revs: 1000,
+    revs: options.revs,
   })
 
   assertTensorAlmostEqual(rs, [1, 0], 10e-1)
 }
 
 test("line -- gradientDescentNaked", () => {
-  testGradientDescentByLine(gradientDescentNaked({ learningRate: 0.01 }))
+  testGradientDescentByLine(gradientDescentNaked({ learningRate: 0.01 }), {
+    revs: 1000,
+  })
 })
 
 test("line -- gradientDescentLonely", () => {
-  testGradientDescentByLine(gradientDescentLonely({ learningRate: 0.01 }))
+  testGradientDescentByLine(gradientDescentLonely({ learningRate: 0.01 }), {
+    revs: 1000,
+  })
+})
+
+test("line -- gradientDescentVelocity", () => {
+  testGradientDescentByLine(
+    gradientDescentVelocity({
+      learningRate: 0.01,
+      relayFactor: 0.9,
+    }),
+    {
+      revs: 100,
+    },
+  )
 })

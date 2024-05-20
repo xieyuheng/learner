@@ -3,6 +3,7 @@ import { test } from "node:test"
 import type { GradientDescentFn } from "../gradient-descent/gradientDescent.js"
 import { gradientDescentLonely } from "../gradient-descent/gradientDescentLonely.js"
 import { gradientDescentNaked } from "../gradient-descent/gradientDescentNaked.js"
+import { gradientDescentVelocity } from "../gradient-descent/gradientDescentVelocity.js"
 import { l2Loss } from "../loss.js"
 import { assertTensorAlmostEqual, tensorReal } from "../tensor/index.js"
 import { samplingObjective } from "../tensor/samplingObjective.js"
@@ -19,7 +20,12 @@ test("quad -- extended", () => {
   )
 })
 
-function testGradientDescentByQuad(gradientDescentFn: GradientDescentFn) {
+function testGradientDescentByQuad(
+  gradientDescentFn: GradientDescentFn,
+  options: {
+    revs: number
+  },
+) {
   const xs = [-1, 0, 1, 2, 3]
   const ys = [2.55, 2.1, 4.35, 10.2, 18.25]
 
@@ -28,16 +34,32 @@ function testGradientDescentByQuad(gradientDescentFn: GradientDescentFn) {
   })
 
   const rs = gradientDescentFn(objective, [0, 0, 0], {
-    revs: 1000,
+    revs: options.revs,
   })
 
   assertTensorAlmostEqual(rs, [1.478, 0.99, 2.05], 10e-2)
 }
 
 test("quad -- gradientDescentNaked", () => {
-  testGradientDescentByQuad(gradientDescentNaked({ learningRate: 0.001 }))
+  testGradientDescentByQuad(gradientDescentNaked({ learningRate: 0.001 }), {
+    revs: 1000,
+  })
 })
 
 test("quad -- gradientDescentLonely", () => {
-  testGradientDescentByQuad(gradientDescentLonely({ learningRate: 0.001 }))
+  testGradientDescentByQuad(gradientDescentLonely({ learningRate: 0.001 }), {
+    revs: 1000,
+  })
+})
+
+test("quad -- gradientDescentVelocity", () => {
+  testGradientDescentByQuad(
+    gradientDescentVelocity({
+      learningRate: 0.001,
+      relayFactor: 0.9,
+    }),
+    {
+      revs: 100,
+    },
+  )
 })
