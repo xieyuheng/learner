@@ -1,9 +1,11 @@
 # system-a
 
-[system-a] `nakedRepresentation`
 [system-a] `lonelyRepresentation`
 [system-a] generalize `gradientDescent`
+[system-a] `gradientDescentNaked `
+[system-a] `gradientDescentLonely`
 [system-a] `velocityRepresentation` -- takes `options: { velocityAccumulationFactor }`
+[system-a] `gradientDescentVelocity`
 
 # the-book
 
