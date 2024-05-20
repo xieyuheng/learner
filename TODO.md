@@ -1,8 +1,14 @@
 # system-a
 
-[system-a] test `gradientDescentLonely` by targets
+[system-a] `tensor/` -- extract `tensorReal`
+[system-a] `tensor/` -- extract `tensorEvery`
+[system-a] `tensor/` -- extract `tensorAlmostEqual`
+[system-a] `tensor/` -- extract `assert`
+
+[system-a] `tensor/` -- `tensorZeros` -- zeros of the same shape
 [system-a] `velocityRepresentation` -- takes `options: { velocityAccumulationFactor }`
 [system-a] `gradientDescentVelocity`
+[system-a] targets test `gradientDescentVelocity`
 
 # question
 

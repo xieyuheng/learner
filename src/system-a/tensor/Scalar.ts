@@ -14,12 +14,6 @@ export function isDual(x: any): x is Dual {
   return x.hasOwnProperty("@type") && x["@type"] === "Dual"
 }
 
-export function assertDual(x: any): asserts x is Dual {
-  if (!isDual(x)) {
-    throw new Error(`[assertDual] ${x}`)
-  }
-}
-
 export type Scalar = number | Dual
 
 export function isScalar(x: any): x is Scalar {

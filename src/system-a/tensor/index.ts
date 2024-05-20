@@ -1,2 +1,6 @@
 export * from "./Scalar.js"
 export * from "./Tensor.js"
+export * from "./tensorMap.js"
+// export * from "./tensorReal.js"
+// export * from "./tensorEvery.js"
+// export * from "./tensorAlmostEqual.js"

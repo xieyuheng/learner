@@ -1,5 +1,6 @@
 import { sub } from "../toys/index.js"
 import { isScalar, scalarReal, type Scalar } from "./Scalar.js"
+import { tensorMap } from "./tensorMap.js"
 
 export type Tensor = Scalar | Array<Tensor>
 
@@ -33,14 +34,6 @@ export function assertTensorArray(x: any): asserts x is Array<Tensor> {
   }
 
   throw new Error(`[assertTensorArray] ${x}`)
-}
-
-export function tensorMap(tensor: Tensor, fn: (x: Scalar) => Scalar): Tensor {
-  if (isScalar(tensor)) {
-    return fn(tensor)
-  } else {
-    return tensor.map((e) => tensorMap(e, fn))
-  }
 }
 
 export function tensorReal(tensor: Tensor): Tensor {
