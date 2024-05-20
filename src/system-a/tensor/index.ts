@@ -1,5 +1,6 @@
 export * from "./Scalar.js"
 export * from "./Tensor.js"
+export * from "./assertions.js"
 export * from "./rank.js"
 export * from "./shape.js"
 export * from "./tensorAlmostEqual.js"
