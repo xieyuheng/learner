@@ -1,5 +1,6 @@
 # system-a
 
+[system-a] extract `tensor/`
 [system-a] `Representation` -- `{ inflate, deflate, update }`
 
 - with `velocityAccumulationFactor`

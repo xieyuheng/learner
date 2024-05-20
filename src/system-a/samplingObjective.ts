@@ -1,18 +1,16 @@
 import { refs } from "../utils/refs.js"
 import { samples } from "../utils/samples.js"
-import { assertTensorArray, type Tensor } from "./Tensor.js"
+import { type Tensor } from "./Tensor.js"
 import type { Expectant, Objective } from "./loss.js"
 
 export function samplingObjective(
   expectant: Expectant,
-  xs: Tensor,
-  ys: Tensor,
+  xs: Array<Tensor>,
+  ys: Array<Tensor>,
   options: {
     batchSize: number
   },
 ): Objective {
-  assertTensorArray(xs)
-  assertTensorArray(ys)
   const size = xs.length
   return (...ps) => {
     const b = samples(size, options.batchSize)
