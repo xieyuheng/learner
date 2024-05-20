@@ -4,7 +4,7 @@ import { assertTensorArray, tensorReal, type Tensor } from "../tensor/index.js"
 import type { Representation } from "./Representation.js"
 import { gradient } from "./index.js"
 
-export function gradientDescentGeneral<R>(representation: Representation<R>): (
+export function gradientDescent<R>(representation: Representation<R>): (
   objective: (...ps: Array<Tensor>) => Scalar,
   ps: Array<Tensor>,
   options: {
