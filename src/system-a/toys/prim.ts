@@ -1,4 +1,4 @@
-import { Dual, scalarLink, scalarReal, type Scalar } from "../Scalar.js"
+import { Dual, scalarLink, scalarReal, type Scalar } from "../tensor/index.js"
 
 export function prim1(
   realFn: (ra: number) => number,

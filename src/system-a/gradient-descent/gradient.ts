@@ -1,5 +1,11 @@
-import { isScalar, scalarLink, scalarTruncate, type Scalar } from "../Scalar.js"
-import { tensorMap, type Tensor } from "../Tensor.js"
+import {
+  isScalar,
+  scalarLink,
+  scalarTruncate,
+  tensorMap,
+  type Scalar,
+  type Tensor,
+} from "../tensor/index.js"
 import {
   emptyGradientState,
   gradientStateGetWithDefault,

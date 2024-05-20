@@ -1,4 +1,4 @@
-import { type Tensor } from "../Tensor.js"
+import { type Tensor } from "../tensor/index.js"
 import { dot } from "../toys/dot.js"
 import { add } from "../toys/index.js"
 

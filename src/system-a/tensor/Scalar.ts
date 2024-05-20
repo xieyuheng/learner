@@ -2,7 +2,7 @@ import {
   gradientStateGetWithDefault,
   gradientStateSet,
   type GradientState,
-} from "./gradient-descent/index.js"
+} from "../gradient-descent/index.js"
 
 export type Dual = { "@type": "Dual"; real: number; link: Link }
 

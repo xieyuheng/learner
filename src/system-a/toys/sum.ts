@@ -1,10 +1,10 @@
-import type { Scalar } from "../Scalar.js"
+import type { Scalar } from "../tensor/index.js"
 import {
   assertTensor1,
   assertTensorArray,
   rank,
   type Tensor,
-} from "../Tensor.js"
+} from "../tensor/index.js"
 import { addScalar } from "./index.js"
 
 export function sum1(xs: Array<Scalar>): Scalar {

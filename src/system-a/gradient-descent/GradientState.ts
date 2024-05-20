@@ -1,4 +1,4 @@
-import { type Scalar } from "../Scalar.js"
+import { type Scalar } from "../tensor/index.js"
 
 export type GradientState = Map<Scalar, number>
 

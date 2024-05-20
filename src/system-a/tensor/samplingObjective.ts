@@ -1,7 +1,7 @@
-import { refs } from "../utils/refs.js"
-import { samples } from "../utils/samples.js"
-import { type Tensor } from "./Tensor.js"
-import type { Expectant, Objective } from "./loss.js"
+import { refs } from "../../utils/refs.js"
+import { samples } from "../../utils/samples.js"
+import type { Expectant, Objective } from "../loss.js"
+import { type Tensor } from "../tensor/index.js"
 
 export function samplingObjective(
   expectant: Expectant,

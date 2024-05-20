@@ -1,5 +1,4 @@
-import { assertScalar, type Scalar } from "./Scalar.js"
-import { type Tensor } from "./Tensor.js"
+import { assertScalar, type Scalar, type Tensor } from "./tensor/index.js"
 import { square, sub, sum } from "./toys/index.js"
 
 export type Target = (xs: Tensor) => (...ps: Array<Tensor>) => Tensor

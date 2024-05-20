@@ -1,6 +1,6 @@
 # system-a
 
-[system-a] extract `tensor/`
+[system-a] `toys/` should not have index.js
 [system-a] `Representation` -- `{ inflate, deflate, update }`
 
 - with `velocityAccumulationFactor`

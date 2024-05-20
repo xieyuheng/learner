@@ -1,6 +1,6 @@
 import { zip } from "../../utils/zip.js"
-import type { Scalar } from "../Scalar.js"
-import { assertTensorArray, tensorReal, type Tensor } from "../Tensor.js"
+import type { Scalar } from "../tensor/index.js"
+import { assertTensorArray, tensorReal, type Tensor } from "../tensor/index.js"
 import { mul, sub } from "../toys/index.js"
 import { gradient } from "./index.js"
 

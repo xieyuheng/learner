@@ -1,5 +1,5 @@
+import { sub } from "../toys/index.js"
 import { isScalar, scalarReal, type Scalar } from "./Scalar.js"
-import { sub } from "./toys/index.js"
 
 export type Tensor = Scalar | Array<Tensor>
 

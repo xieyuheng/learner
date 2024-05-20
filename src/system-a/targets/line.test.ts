@@ -1,9 +1,9 @@
 import assert from "assert"
 import { test } from "node:test"
-import { assertTensorAlmostEqual, tensorReal } from "../Tensor.js"
 import { gradientDescent } from "../gradient-descent/index.js"
 import { l2Loss } from "../loss.js"
-import { samplingObjective } from "../samplingObjective.js"
+import { assertTensorAlmostEqual, tensorReal } from "../tensor/index.js"
+import { samplingObjective } from "../tensor/samplingObjective.js"
 import { line } from "./line.js"
 
 test("line", () => {

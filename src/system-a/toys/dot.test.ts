@@ -1,6 +1,6 @@
 import assert from "node:assert"
 import { test } from "node:test"
-import { tensorReal } from "../Tensor.js"
+import { tensorReal } from "../tensor/index.js"
 import { dot } from "./dot.js"
 
 test("dot", () => {

@@ -1,6 +1,11 @@
 import { zip } from "../../utils/zip.js"
-import { isScalar, type Scalar } from "../Scalar.js"
-import { assertTensorArray, rank, type Tensor } from "../Tensor.js"
+import {
+  assertTensorArray,
+  isScalar,
+  rank,
+  type Scalar,
+  type Tensor,
+} from "../tensor/index.js"
 
 export function extend2(
   fn: (x: Scalar, y: Scalar) => Scalar,
