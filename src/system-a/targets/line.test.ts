@@ -1,6 +1,7 @@
 import assert from "assert"
 import { test } from "node:test"
 import type { GradientDescentFn } from "../gradient-descent/gradientDescent.js"
+import { gradientDescentLonely } from "../gradient-descent/gradientDescentLonely.js"
 import { gradientDescentNaked } from "../gradient-descent/gradientDescentNaked.js"
 import { l2Loss } from "../loss.js"
 import { assertTensorAlmostEqual, tensorReal } from "../tensor/index.js"
@@ -32,4 +33,8 @@ function testGradientDescentByLine(gradientDescentFn: GradientDescentFn) {
 
 test("line -- gradientDescentNaked", () => {
   testGradientDescentByLine(gradientDescentNaked({ learningRate: 0.01 }))
+})
+
+test("line -- gradientDescentLonely", () => {
+  testGradientDescentByLine(gradientDescentLonely({ learningRate: 0.01 }))
 })
