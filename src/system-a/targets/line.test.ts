@@ -56,7 +56,7 @@ test("line -- gradientDescentVelocity", () => {
       relayFactor: 0.9,
     }),
     {
-      revs: 100,
+      revs: 300,
     },
   )
 })
