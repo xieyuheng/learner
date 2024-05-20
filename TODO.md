@@ -1,6 +1,5 @@
 # system-a
 
-[system-a] extract test function for target `testGradientDescentByQuad`
 [system-a] extract test function for target `testGradientDescentByPlane`
 
 [system-a] test `gradientDescentLonely` by targets
