@@ -1,8 +1,4 @@
-import {
-  gradientStateGetWithDefault,
-  gradientStateSet,
-  type GradientState,
-} from "../gradient-descent/index.js"
+import { endOfChain, type Link } from "./Link.js"
 
 export type Dual = { "@type": "Dual"; real: number; link: Link }
 
@@ -38,19 +34,4 @@ export function scalarLink(x: Scalar): Link {
 
 export function scalarTruncate(x: Scalar): Scalar {
   return Dual(scalarReal(x), endOfChain)
-}
-
-export type Link = (
-  y: Scalar,
-  accumulator: number,
-  state: GradientState,
-) => GradientState
-
-export function endOfChain(
-  d: Scalar,
-  z: number,
-  state: GradientState,
-): GradientState {
-  const g = gradientStateGetWithDefault(state, d, 0)
-  return gradientStateSet(state, d, z + g)
 }
