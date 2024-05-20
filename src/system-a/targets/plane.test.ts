@@ -1,6 +1,8 @@
 import assert from "node:assert"
 import { test } from "node:test"
+import { gradientDescentLonely } from "../gradient-descent/gradientDescentLonely.js"
 import { gradientDescentNaked } from "../gradient-descent/gradientDescentNaked.js"
+import type { GradientDescentFn } from "../gradient-descent/index.js"
 import { l2Loss } from "../loss.js"
 import { assertTensorAlmostEqual, tensorReal } from "../tensor/index.js"
 import { samplingObjective } from "../tensor/samplingObjective.js"
@@ -22,7 +24,7 @@ test("plane -- extended", () => {
   )
 })
 
-test("plane -- gradientDescentNaked", () => {
+function testGradientDescentByLine(gradientDescentFn: GradientDescentFn) {
   const xs = [
     [1, 2.05],
     [1, 3],
@@ -37,13 +39,17 @@ test("plane -- gradientDescentNaked", () => {
     batchSize: 4,
   })
 
-  const rs = gradientDescentNaked({ learningRate: 0.001 })(
-    objective,
-    [[0, 0], 0],
-    {
-      revs: 15000,
-    },
-  )
+  const rs = gradientDescentFn(objective, [[0, 0], 0], {
+    revs: 15000,
+  })
 
   assertTensorAlmostEqual(rs, [[3.98, 2.04], 5.78], 0.5)
+}
+
+test("plane -- gradientDescentNaked", () => {
+  testGradientDescentByLine(gradientDescentNaked({ learningRate: 0.001 }))
+})
+
+test("plane -- gradientDescentLonely", () => {
+  testGradientDescentByLine(gradientDescentLonely({ learningRate: 0.001 }))
 })
