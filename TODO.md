@@ -1,12 +1,9 @@
 # system-a
 
-[system-a] `Representation` -- `{ inflate, deflate, update }`
-
-- with `velocityAccumulationFactor`
-
 [system-a] `nakedRepresentation`
 [system-a] `lonelyRepresentation`
-[system-a] `velocityRepresentation` as an instance of `Representation`
+[system-a] generalize `gradientDescent`
+[system-a] `velocityRepresentation` -- takes `options: { velocityAccumulationFactor }`
 
 # the-book
 
