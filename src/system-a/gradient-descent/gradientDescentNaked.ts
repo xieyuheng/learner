@@ -7,8 +7,8 @@ export function nakedRepresentation(options: {
   learningRate: number
 }): Representation<Tensor> {
   return {
-    inflate: (x) => x,
-    deflate: (x) => x,
+    inflate: (p) => p,
+    deflate: (p) => p,
     update: (p, g) => sub(p, mul(options.learningRate, g)),
   }
 }
