@@ -1,6 +1,5 @@
 # system-a
 
-[system-a] `tensor/` -- `tensorZeros` -- zeros of the same shape
 [system-a] `velocityRepresentation` -- takes `options: { velocityAccumulationFactor }`
 [system-a] `gradientDescentVelocity`
 [system-a] targets test `gradientDescentVelocity`
