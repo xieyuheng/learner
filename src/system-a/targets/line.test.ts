@@ -1,6 +1,6 @@
 import assert from "assert"
 import { test } from "node:test"
-import { gradientDescent } from "../gradient-descent/index.js"
+import { gradientDescentNaked } from "../gradient-descent/gradientDescentNaked.js"
 import { l2Loss } from "../loss.js"
 import { assertTensorAlmostEqual, tensorReal } from "../tensor/index.js"
 import { samplingObjective } from "../tensor/samplingObjective.js"
@@ -14,22 +14,21 @@ test("line -- extended", () => {
   assert.deepStrictEqual(tensorReal(line([1, 2])(2, 3)), [5, 7])
 })
 
-test("line -- gradientDescent", () => {
+test("line -- gradientDescentNaked", () => {
   const xs = [2, 1, 4, 3]
   const ys = [1.8, 1.2, 4.2, 3.3]
 
   const objective = l2Loss(line)(xs, ys)
 
-  const rs = gradientDescent(objective, [0, 0], {
+  const rs = gradientDescentNaked({ learningRate: 0.01 })(objective, [0, 0], {
     revs: 1000,
-    learningRate: 0.01,
   })
 
   assertTensorAlmostEqual(rs, [1, 0], 10e-1)
   assertTensorAlmostEqual(rs, [1.05, 0], 10e-6)
 })
 
-test("line -- gradientDescent & samplingObjective ", () => {
+test("line -- gradientDescentNaked & samplingObjective ", () => {
   const xs = [2, 1, 4, 3]
   const ys = [1.8, 1.2, 4.2, 3.3]
 
@@ -37,9 +36,8 @@ test("line -- gradientDescent & samplingObjective ", () => {
     batchSize: 4,
   })
 
-  const rs = gradientDescent(objective, [0, 0], {
+  const rs = gradientDescentNaked({ learningRate: 0.01 })(objective, [0, 0], {
     revs: 1000,
-    learningRate: 0.01,
   })
 
   assertTensorAlmostEqual(rs, [1, 0], 10e-1)

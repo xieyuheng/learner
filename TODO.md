@@ -1,8 +1,6 @@
 # system-a
 
-[system-a] `gradientDescentNaked `
-[system-a] `lonelyRepresentation`
-[system-a] `gradientDescentLonely`
+[system-a] `lonelyRepresentation` & `gradientDescentLonely`
 [system-a] `velocityRepresentation` -- takes `options: { velocityAccumulationFactor }`
 [system-a] `gradientDescentVelocity`
 

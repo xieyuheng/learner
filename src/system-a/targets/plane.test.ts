@@ -1,6 +1,6 @@
 import assert from "node:assert"
 import { test } from "node:test"
-import { gradientDescent } from "../gradient-descent/index.js"
+import { gradientDescentNaked } from "../gradient-descent/gradientDescentNaked.js"
 import { l2Loss } from "../loss.js"
 import { assertTensorAlmostEqual, tensorReal } from "../tensor/index.js"
 import { samplingObjective } from "../tensor/samplingObjective.js"
@@ -22,7 +22,7 @@ test("plane -- extended", () => {
   )
 })
 
-test("plane -- gradientDescent", () => {
+test("plane -- gradientDescentNaked", () => {
   const xs = [
     [1, 2.05],
     [1, 3],
@@ -35,17 +35,20 @@ test("plane -- gradientDescent", () => {
 
   const objective = l2Loss(plane)(xs, ys)
 
-  const rs = gradientDescent(objective, [[0, 0], 0], {
-    revs: 1000,
-    learningRate: 0.001,
-  })
+  const rs = gradientDescentNaked({ learningRate: 0.001 })(
+    objective,
+    [[0, 0], 0],
+    {
+      revs: 1000,
+    },
+  )
 
   assertTensorAlmostEqual(rs, [[3.98, 2.04], 5.78], 10e-3)
 
   assertTensorAlmostEqual(plane([2, 3.91])([3.98, 2.04], 5.78), 22.4, 1)
 })
 
-test("plane -- gradientDescent & samplingObjective", () => {
+test("plane -- gradientDescentNaked & samplingObjective", () => {
   const xs = [
     [1, 2.05],
     [1, 3],
@@ -60,10 +63,13 @@ test("plane -- gradientDescent & samplingObjective", () => {
     batchSize: 4,
   })
 
-  const rs = gradientDescent(objective, [[0, 0], 0], {
-    revs: 15000,
-    learningRate: 0.001,
-  })
+  const rs = gradientDescentNaked({ learningRate: 0.001 })(
+    objective,
+    [[0, 0], 0],
+    {
+      revs: 15000,
+    },
+  )
 
   assertTensorAlmostEqual(rs, [[3.98, 2.04], 5.78], 0.5)
 })
