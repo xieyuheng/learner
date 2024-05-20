@@ -1,6 +1,5 @@
 # system-a
 
-[system-a] `toys/` should not have index.js
 [system-a] `Representation` -- `{ inflate, deflate, update }`
 
 - with `velocityAccumulationFactor`
