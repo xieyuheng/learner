@@ -1,6 +1,7 @@
 # system-a
 
-[system-a] test `gradientDescentLonely`
+[system-a] extract test function for targets
+[system-a] test `gradientDescentLonely` by targets
 [system-a] `velocityRepresentation` -- takes `options: { velocityAccumulationFactor }`
 [system-a] `gradientDescentVelocity`
 
