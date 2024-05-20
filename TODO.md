@@ -1,7 +1,5 @@
 # system-a
 
-[system-a] `velocityRepresentation` -- takes `options: { velocityAccumulationFactor }`
-[system-a] `gradientDescentVelocity`
 [system-a] targets test `gradientDescentVelocity`
 
 # question
