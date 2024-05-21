@@ -15,9 +15,9 @@ export function rmsRepresentation(options: {
   return {
     inflate: (p) => [p, tensorZeros(p)],
     deflate: ([p, _]) => p,
-    update: ([p, average], g) => {
+    update: ([p, learningRateModifier], g) => {
       // NOTE Use `square` to make sure `r` is positive.
-      const r = smooth(options.decayRate, average, square(g))
+      const r = smooth(options.decayRate, learningRateModifier, square(g))
       // NOTE Add `stabilizer` to avoid `div` by zero.
       const adaptiveLearningRate = div(
         options.learningRate,

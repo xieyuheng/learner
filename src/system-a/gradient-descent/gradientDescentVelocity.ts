@@ -10,8 +10,11 @@ export function velocityRepresentation(options: {
   return {
     inflate: (p) => [p, tensorZeros(p)],
     deflate: ([p, _]) => p,
-    update: ([p, w], g) => {
-      const v = sub(mul(w, options.relayFactor), mul(g, options.learningRate))
+    update: ([p, prevVelocity], g) => {
+      const v = sub(
+        mul(prevVelocity, options.relayFactor),
+        mul(g, options.learningRate),
+      )
       return [add(p, v), v]
     },
   }
