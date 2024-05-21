@@ -1,10 +1,7 @@
 # system-a
 
-[system-a] test `gradientDescentAdam` by `plane`
-
 # the-book
 
-9: Be Adamant
 Interlude V: Extensio Magnifico!
 10: Doing the Neuron Dance
 11: In Love with the Shape of Relu

@@ -1,5 +1,6 @@
 import assert from "node:assert"
 import { test } from "node:test"
+import { gradientDescentAdam } from "../gradient-descent/gradientDescentAdam.js"
 import { gradientDescentLonely } from "../gradient-descent/gradientDescentLonely.js"
 import { gradientDescentNaked } from "../gradient-descent/gradientDescentNaked.js"
 import { gradientDescentRms } from "../gradient-descent/gradientDescentRms.js"
@@ -54,27 +55,50 @@ function testGradientDescentByPlane(
 }
 
 test("plane -- gradientDescentNaked", () => {
-  testGradientDescentByPlane(gradientDescentNaked({ learningRate: 0.001 }), {
-    revs: 15000,
-  })
+  testGradientDescentByPlane(
+    gradientDescentNaked({
+      learningRate: 0.001,
+    }),
+    { revs: 15000 },
+  )
 })
 
 test("plane -- gradientDescentLonely", () => {
-  testGradientDescentByPlane(gradientDescentLonely({ learningRate: 0.001 }), {
-    revs: 15000,
-  })
+  testGradientDescentByPlane(
+    gradientDescentLonely({
+      learningRate: 0.001,
+    }),
+    { revs: 15000 },
+  )
 })
 
 test("plane -- gradientDescentVelocity", () => {
   testGradientDescentByPlane(
-    gradientDescentVelocity({ learningRate: 0.001, relayFactor: 0.9 }),
+    gradientDescentVelocity({
+      learningRate: 0.001,
+      relayFactor: 0.9,
+    }),
     { revs: 5000 },
   )
 })
 
 test("plane -- gradientDescentRms", () => {
   testGradientDescentByPlane(
-    gradientDescentRms({ learningRate: 0.01, decayRate: 0.9 }),
+    gradientDescentRms({
+      learningRate: 0.01,
+      decayRate: 0.9,
+    }),
     { revs: 3000 },
+  )
+})
+
+test("plane -- gradientDescentAdam", () => {
+  testGradientDescentByPlane(
+    gradientDescentAdam({
+      learningRate: 0.01,
+      decayRate: 0.9,
+      relayFactor: 0.85,
+    }),
+    { revs: 1500 },
   )
 })
