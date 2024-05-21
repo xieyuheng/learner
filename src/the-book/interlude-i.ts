@@ -50,7 +50,7 @@ export function extend1(fn: (x: number) => number): (x: Tensor) => Tensor {
   }
 }
 
-export const sqrt = extend1(Math.sqrt)
+export const squareRoot = extend1(Math.sqrt)
 export const square = extend1((x) => x * x)
 
 export function sum1(xs: Array<number>): number {
