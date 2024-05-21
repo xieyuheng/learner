@@ -1,6 +1,6 @@
 # system-a
 
-[system-a] rename `sqrt` to `squareRoot`
+[the-book] rename `sqrt` to `squareRoot`
 [system-a] `gradientDescentRms`
 
 # the-book

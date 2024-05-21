@@ -1,5 +1,5 @@
 import { tensorZeros, type Tensor } from "../tensor/index.js"
-import { add, div, mul, sqrt, square, sub } from "../toys/index.js"
+import { add, div, mul, square, squareRoot, sub } from "../toys/index.js"
 import type { Representation } from "./Representation.js"
 import { gradientDescent } from "./gradientDescent.js"
 import { smooth } from "./smooth.js"
@@ -19,7 +19,7 @@ export function gradientDescentRms(options: {
       // NOTE Add `stabilizer` to avoid `div` by zero.
       const adaptiveLearningRate = div(
         options.learningRate,
-        add(stabilizer, sqrt(r)),
+        add(stabilizer, squareRoot(r)),
       )
       return [sub(p, mul(adaptiveLearningRate, g)), r]
     },

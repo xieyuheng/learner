@@ -34,7 +34,7 @@ export const exptScalar = prim2(
   (ra, rb, z) => [rb * ra ** (rb - 1) * z, ra ** rb * Math.log(ra) * z],
 )
 
-export const sqrtScalar = prim1(
+export const squareRootScalar = prim1(
   (x) => Math.sqrt(x),
   (ra, z) => (1 / 2) * ra ** (-1 / 2) * z,
 )
@@ -51,7 +51,7 @@ export const mul = extend2(mulScalar)
 export const div = extend2(divScalar)
 export const log = extend1(logScalar)
 export const expt = extend2(exptScalar)
-export const sqrt = extend1(sqrtScalar)
+export const squareRoot = extend1(squareRootScalar)
 export const square = extend1(squareScalar)
 
 export const lt = comparator((x, y) => x < y)
