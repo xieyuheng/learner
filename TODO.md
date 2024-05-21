@@ -1,5 +1,8 @@
 # system-a
 
+[system-a] rename `sqrt` to `squareRoot`
+[system-a] `gradientDescentRms`
+
 # the-book
 
 9: Be Adamant
