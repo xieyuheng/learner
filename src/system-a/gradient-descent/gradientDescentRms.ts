@@ -6,7 +6,9 @@ import { smooth } from "./smooth.js"
 
 const stabilizer = 1e-8
 
-export function gradientDescentRms(options: {
+// NOTE RMS stands for root mean square.
+
+export function rmsRepresentation(options: {
   learningRate: number
   decayRate: number
 }): Representation<[Tensor, Tensor]> {
@@ -26,9 +28,9 @@ export function gradientDescentRms(options: {
   }
 }
 
-export function gradientDescentVelocity(options: {
+export function gradientDescentRms(options: {
   learningRate: number
   decayRate: number
 }) {
-  return gradientDescent(gradientDescentRms(options))
+  return gradientDescent(rmsRepresentation(options))
 }

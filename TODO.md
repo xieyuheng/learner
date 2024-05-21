@@ -1,6 +1,7 @@
 # system-a
 
-[system-a] `gradientDescentRms`
+[system-a] `gradientDescentAdam`
+[system-a] test `gradientDescentAdam` by `plane`
 
 # the-book
 
