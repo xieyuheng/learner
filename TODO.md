@@ -1,15 +1,7 @@
 # system-a
 
-# question
-
-[question] 如何用类型安全的方式表达 `tensorMap` 和 `gradient`
-这类不改变 `Tensor` 的结构的函数？
-从而避免使用 `assertTensorArray` 或 `assertScalar`。
-
 # the-book
 
-8: The Nearer Your Destination, the Slower You Become
-Interlude IV: Smooth Operator
 9: Be Adamant
 Interlude V: Extensio Magnifico!
 10: Doing the Neuron Dance
