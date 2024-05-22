@@ -36,12 +36,16 @@ export function extend2(
   }
 }
 
-export function extend1(fn: (x: Scalar) => Scalar): (x: Tensor) => Tensor {
+export function extend1<A, B extends Tensor>(
+  fn: (x: A) => B,
+  baseRank: number,
+): (x: Tensor) => Tensor {
   return function extendedFn(x: Tensor): Tensor {
-    if (isScalar(x)) {
-      return fn(x)
+    if (rank(x) === baseRank) {
+      return fn(x as A)
     }
 
-    return x.map((x) => extendedFn(x))
+    assertTensorArray(x)
+    return x.map(extendedFn)
   }
 }

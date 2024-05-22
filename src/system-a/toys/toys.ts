@@ -44,15 +44,15 @@ export const squareScalar = prim1(
   (ra, z) => 2 * ra * z,
 )
 
-export const exp = extend1(expScalar)
+export const exp = extend1(expScalar, 0)
 export const add = extend2(addScalar)
 export const sub = extend2(subScalar)
 export const mul = extend2(mulScalar)
 export const div = extend2(divScalar)
-export const log = extend1(logScalar)
+export const log = extend1(logScalar, 0)
 export const expt = extend2(exptScalar)
-export const squareRoot = extend1(squareRootScalar)
-export const square = extend1(squareScalar)
+export const squareRoot = extend1(squareRootScalar, 0)
+export const square = extend1(squareScalar, 0)
 
 export const lt = comparator((x, y) => x < y)
 export const gt = comparator((x, y) => x > y)
