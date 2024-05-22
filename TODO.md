@@ -1,5 +1,8 @@
 # system-a
 
+[system-a] `flatten`
+[system-a] test `extend1` by `flatten`
+
 # the-book
 
 Interlude V: Extensio Magnifico!

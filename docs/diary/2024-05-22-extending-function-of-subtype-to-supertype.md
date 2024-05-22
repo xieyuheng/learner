@@ -91,13 +91,13 @@ function extend1(
   implicit outputRank: Nat,
   x: Tensor(inputRank)
 ) => Tensor(outputRank) {
-  return function extendedFn(implicit inputRank, implicit outputRank, x) {
+  function extendedFn(implicit inputRank, implicit outputRank, x) {
     if (inputRank === baseRank) {
-      return fn(x)
+      fn(x)
     }
 
     let Tensor::Array(xs) = x
-    return arrayMap(xs, extendedFn)
+    arrayMap(xs, extendedFn)
   }
 }
 ```
@@ -127,13 +127,45 @@ function extend1(
   fn: (Tensor) -> Tensor,
   baseRank: Nat
 ): (Tensor) -> Tensor {
-  return function extendedFn(x) {
+  function extendedFn(x) {
     if (natEqual(rank(x), baseRank)) {
-      return fn(x)
+      fn(x)
     }
 
     let Tensor::Array(xs) = x
-    return arrayMap(xs, extendedFn)
+    arrayMap(xs, extendedFn)
+  }
+}
+```
+
+也许 Tensor 应该直接被定义为一个函数：
+
+```cicada
+function Tensor(n: Nat): Type {
+  match (n) {
+    case Nat::Zero => Scalar
+    case Nat::Add1(prev) => Array(Tensor(prev))
+  }
+}
+
+check 1: Tensor(0)
+check [1, 2, 3]: Tensor(1)
+```
+
+好像还是不行，并且没法用 implicit 了。
+
+```cicada
+function extend1(
+  baseRank: Nat
+  resultRank: Nat
+  fn: (Tensor(baseRank)) -> Tensor(resultRank),
+): (Tensor) -> Tensor {
+  function extendedFn(x) {
+    if (natEqual(rank(x), baseRank)) {
+      fn(x)
+    }
+
+    TODO
   }
 }
 ```
