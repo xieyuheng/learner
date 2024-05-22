@@ -2,6 +2,7 @@
 
 [system-a] `flatten`
 [system-a] test `extend1` by `flatten`
+[system-a] `extend2`
 
 # the-book
 

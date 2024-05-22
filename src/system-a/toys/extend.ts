@@ -7,6 +7,20 @@ import {
   type Tensor,
 } from "../tensor/index.js"
 
+export function extend1<A, B extends Tensor>(
+  fn: (x: A) => B,
+  baseRank: number,
+): (x: Tensor) => Tensor {
+  return function extendedFn(x: Tensor): Tensor {
+    if (rank(x) === baseRank) {
+      return fn(x as A)
+    }
+
+    assertTensorArray(x)
+    return x.map(extendedFn)
+  }
+}
+
 export function extend2(
   fn: (x: Scalar, y: Scalar) => Scalar,
 ): (x: Tensor, y: Tensor) => Tensor {
@@ -33,19 +47,5 @@ export function extend2(
     assertTensorArray(y)
 
     return zip(x, y).map(([x, y]) => extendedFnSameShape(x, y))
-  }
-}
-
-export function extend1<A, B extends Tensor>(
-  fn: (x: A) => B,
-  baseRank: number,
-): (x: Tensor) => Tensor {
-  return function extendedFn(x: Tensor): Tensor {
-    if (rank(x) === baseRank) {
-      return fn(x as A)
-    }
-
-    assertTensorArray(x)
-    return x.map(extendedFn)
   }
 }
