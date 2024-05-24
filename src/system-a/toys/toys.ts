@@ -45,12 +45,12 @@ export const squareScalar = primitive1(
 )
 
 export const exp = extend1(expScalar, 0)
-export const add = extend2(addScalar)
-export const sub = extend2(subScalar)
-export const mul = extend2(mulScalar)
-export const div = extend2(divScalar)
+export const add = extend2(addScalar, 0, 0)
+export const sub = extend2(subScalar, 0, 0)
+export const mul = extend2(mulScalar, 0, 0)
+export const div = extend2(divScalar, 0, 0)
 export const log = extend1(logScalar, 0)
-export const expt = extend2(exptScalar)
+export const expt = extend2(exptScalar, 0, 0)
 export const squareRoot = extend1(squareRootScalar, 0)
 export const square = extend1(squareScalar, 0)
 

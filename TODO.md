@@ -1,10 +1,7 @@
 # system-a
 
-[system-a] `extend2`
-
 # the-book
 
-Interlude V: Extensio Magnifico!
 10: Doing the Neuron Dance
 11: In Love with the Shape of Relu
 12: Rock Around the Block
