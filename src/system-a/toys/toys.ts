@@ -1,45 +1,45 @@
 import { comparator } from "./comparator.js"
 import { extend1, extend2 } from "./extend.js"
-import { prim1, prim2 } from "./prim.js"
+import { primitive1, primitive2 } from "./primitive.js"
 
-export const expScalar = prim1(Math.exp, (ra, z) => Math.exp(ra) * z)
+export const expScalar = primitive1(Math.exp, (ra, z) => Math.exp(ra) * z)
 
-export const addScalar = prim2(
+export const addScalar = primitive2(
   (x, y) => x + y,
   (_ra, _rb, z) => [z, z],
 )
 
-export const subScalar = prim2(
+export const subScalar = primitive2(
   (x, y) => x - y,
   (_ra, _rb, z) => [z, -z],
 )
 
-export const mulScalar = prim2(
+export const mulScalar = primitive2(
   (x, y) => x * y,
   (ra, rb, z) => [rb * z, ra * z],
 )
 
-export const divScalar = prim2(
+export const divScalar = primitive2(
   (x, y) => x / y,
   (ra, rb, z) => [(1 / rb) * z, ((-1 * ra) / (rb * rb)) * z],
 )
 
-export const logScalar = prim1(
+export const logScalar = primitive1(
   (x) => Math.log(x),
   (ra, z) => (1 / ra) * z,
 )
 
-export const exptScalar = prim2(
+export const exptScalar = primitive2(
   (x, y) => x ** y,
   (ra, rb, z) => [rb * ra ** (rb - 1) * z, ra ** rb * Math.log(ra) * z],
 )
 
-export const squareRootScalar = prim1(
+export const squareRootScalar = primitive1(
   (x) => Math.sqrt(x),
   (ra, z) => (1 / 2) * ra ** (-1 / 2) * z,
 )
 
-export const squareScalar = prim1(
+export const squareScalar = primitive1(
   (x) => x * x,
   (ra, z) => 2 * ra * z,
 )

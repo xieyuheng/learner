@@ -1,6 +1,6 @@
 import { Dual, scalarLink, scalarReal, type Scalar } from "../tensor/index.js"
 
-export function prim1(
+export function primitive1(
   realFn: (ra: number) => number,
   gradientFn: (ra: number, z: number) => number,
 ): (da: Scalar) => Scalar {
@@ -12,7 +12,7 @@ export function prim1(
   }
 }
 
-export function prim2(
+export function primitive2(
   realFn: (ra: number, rb: number) => number,
   gradientFn: (ra: number, rb: number, z: number) => [number, number],
 ): (da: Scalar, db: Scalar) => Scalar {
