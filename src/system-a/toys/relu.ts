@@ -16,3 +16,7 @@ export const rectify = extend1(rectifyScalar, 0)
 export function linear(t: Tensor): (weight: Tensor, bias: Tensor) => Tensor {
   return (weight, bias) => add(dot(weight, t), bias)
 }
+
+export function relu(t: Tensor): (weight: Tensor, bias: Tensor) => Tensor {
+  return (weight, bias) => rectify(linear(t)(weight, bias))
+}

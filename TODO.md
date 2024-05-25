@@ -1,6 +1,6 @@
 # system-a
 
-[system-a] `relu`
+[system-a] test `relu`
 
 # the-book
 
