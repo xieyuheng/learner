@@ -1,6 +1,5 @@
 # system-a
 
-[system-a] test `linear`
 [system-a] `relu`
 
 # the-book
