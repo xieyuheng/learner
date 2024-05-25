@@ -2,7 +2,6 @@
 
 # the-book
 
-10: Doing the Neuron Dance
 11: In Love with the Shape of Relu
 12: Rock Around the Block
 13: An Eye for an Iris
