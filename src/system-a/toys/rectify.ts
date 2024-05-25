@@ -1,4 +1,5 @@
 import type { Scalar } from "../tensor/index.js"
+import { extend1 } from "./extend.js"
 import { lt } from "./toys.js"
 
 export function rectifyScalar(s: Scalar): Scalar {
@@ -8,3 +9,5 @@ export function rectifyScalar(s: Scalar): Scalar {
     return s
   }
 }
+
+export const rectify = extend1(rectifyScalar, 0)

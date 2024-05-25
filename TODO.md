@@ -1,7 +1,6 @@
 # system-a
 
-[system-a] `rectify`
-[system-a] `linear11`
+[system-a] `linear`
 
 # the-book
 
