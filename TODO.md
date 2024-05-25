@@ -1,7 +1,5 @@
 # system-a
 
-[system-a] test `relu`
-
 # the-book
 
 10: Doing the Neuron Dance

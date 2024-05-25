@@ -1,6 +1,6 @@
 import assert from "node:assert"
 import { test } from "node:test"
-import { rectify } from "./relu.js"
+import { rectify, relu } from "./relu.js"
 
 test("relu -- rectify", () => {
   assert.deepStrictEqual(
@@ -13,4 +13,8 @@ test("relu -- rectify", () => {
       [1, 2, 3],
     ],
   )
+})
+
+test("relu", () => {
+  assert.deepStrictEqual(relu([2, 1, 3])([7.1, 4.3, -6.4], 0.6), 0)
 })

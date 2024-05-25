@@ -17,6 +17,9 @@ export function linear(t: Tensor): (weight: Tensor, bias: Tensor) => Tensor {
   return (weight, bias) => add(dot(weight, t), bias)
 }
 
+// NOTE The name relu is short for
+// rectifying linear unit.
+
 export function relu(t: Tensor): (weight: Tensor, bias: Tensor) => Tensor {
   return (weight, bias) => rectify(linear(t)(weight, bias))
 }
