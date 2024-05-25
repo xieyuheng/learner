@@ -1,5 +1,8 @@
 # system-a
 
+[system-a] `rectify`
+[system-a] `linear11`
+
 # the-book
 
 10: Doing the Neuron Dance
