@@ -1,10 +1,6 @@
 import { zip } from "../../utils/zip.js"
 import type { Scalar } from "../tensor/index.js"
-import {
-  assertTensorRankAbove1,
-  tensorReal,
-  type Tensor,
-} from "../tensor/index.js"
+import { assertTensorRankAbove1, type Tensor } from "../tensor/index.js"
 import type { Representation } from "./Representation.js"
 import { gradient } from "./index.js"
 import { revise } from "./revise.js"
@@ -29,7 +25,7 @@ export function gradientDescent<R>(
     }
 
     const rs = revise(step, options.revs, ps.map(representation.inflate))
-    const ns = tensorReal(rs.map(representation.deflate))
+    const ns = rs.map(representation.deflate)
     assertTensorRankAbove1(ns)
     return ns
   }

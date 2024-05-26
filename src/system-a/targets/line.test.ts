@@ -5,16 +5,16 @@ import { gradientDescentNaked } from "../gradient-descent/gradientDescentNaked.j
 import { gradientDescentVelocity } from "../gradient-descent/gradientDescentVelocity.js"
 import type { GradientDescentFn } from "../gradient-descent/index.js"
 import { l2Loss } from "../loss.js"
-import { assertTensorAlmostEqual, tensorReal } from "../tensor/index.js"
+import { assertTensorAlmostEqual } from "../tensor/index.js"
 import { samplingObjective } from "../tensor/samplingObjective.js"
 import { line } from "./line.js"
 
 test("line", () => {
-  assert.deepStrictEqual(tensorReal(line(1)(2, 3)), 5)
+  assert.deepStrictEqual(line(1)(2, 3), 5)
 })
 
 test("line -- extended", () => {
-  assert.deepStrictEqual(tensorReal(line([1, 2])(2, 3)), [5, 7])
+  assert.deepStrictEqual(line([1, 2])(2, 3), [5, 7])
 })
 
 function testGradientDescentByLine(

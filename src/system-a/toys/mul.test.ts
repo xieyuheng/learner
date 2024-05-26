@@ -1,6 +1,5 @@
 import assert from "node:assert"
 import { test } from "node:test"
-import { tensorReal } from "../tensor/tensorReal.js"
 import { mul } from "./index.js"
 
 // NOTE Related issues about `ext2`:
@@ -8,14 +7,12 @@ import { mul } from "./index.js"
 
 test("mul -- extended", () => {
   assert.deepStrictEqual(
-    tensorReal(
-      mul(
-        [
-          [1, 2],
-          [3, 4],
-        ],
-        [5, 6],
-      ),
+    mul(
+      [
+        [1, 2],
+        [3, 4],
+      ],
+      [5, 6],
     ),
     [
       [5, 12],
@@ -24,14 +21,12 @@ test("mul -- extended", () => {
   )
 
   assert.deepStrictEqual(
-    tensorReal(
-      mul(
-        [
-          [3, 4, 5],
-          [7, 8, 9],
-        ],
-        [2, 4, 3],
-      ),
+    mul(
+      [
+        [3, 4, 5],
+        [7, 8, 9],
+      ],
+      [2, 4, 3],
     ),
     [
       [6, 16, 15],

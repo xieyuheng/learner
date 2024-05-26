@@ -5,19 +5,16 @@ import { gradientDescentLonely } from "../gradient-descent/gradientDescentLonely
 import { gradientDescentNaked } from "../gradient-descent/gradientDescentNaked.js"
 import { gradientDescentVelocity } from "../gradient-descent/gradientDescentVelocity.js"
 import { l2Loss } from "../loss.js"
-import { assertTensorAlmostEqual, tensorReal } from "../tensor/index.js"
+import { assertTensorAlmostEqual } from "../tensor/index.js"
 import { samplingObjective } from "../tensor/samplingObjective.js"
 import { quad } from "./quad.js"
 
 test("quad", () => {
-  assert.deepStrictEqual(tensorReal(quad(3)(4.5, 2.1, 7.8)), 54.6)
+  assert.deepStrictEqual(quad(3)(4.5, 2.1, 7.8), 54.6)
 })
 
 test("quad -- extended", () => {
-  assert.deepStrictEqual(
-    tensorReal(quad([1, 2, 3])(4.5, 2.1, 7.8)),
-    [14.4, 30, 54.6],
-  )
+  assert.deepStrictEqual(quad([1, 2, 3])(4.5, 2.1, 7.8), [14.4, 30, 54.6])
 })
 
 function testGradientDescentByQuad(

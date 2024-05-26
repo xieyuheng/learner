@@ -7,30 +7,28 @@ import { gradientDescentRms } from "../gradient-descent/gradientDescentRms.js"
 import { gradientDescentVelocity } from "../gradient-descent/gradientDescentVelocity.js"
 import type { GradientDescentFn } from "../gradient-descent/index.js"
 import { l2Loss } from "../loss.js"
-import { assertTensorAlmostEqual, tensorReal } from "../tensor/index.js"
+import { assertTensorAlmostEqual } from "../tensor/index.js"
 import { samplingObjective } from "../tensor/samplingObjective.js"
 import { plane } from "./plane.js"
 
 test("plane", () => {
-  assert.deepStrictEqual(tensorReal(plane([1, 3])([1, 2], 3)), 10)
+  assert.deepStrictEqual(plane([1, 3])([1, 2], 3), 10)
 })
 
 test("plane -- extended", () => {
-  assert.deepStrictEqual(tensorReal(plane([1, 3])([1, 2], 3)), 10)
+  assert.deepStrictEqual(plane([1, 3])([1, 2], 3), 10)
 
-  assert.deepStrictEqual(tensorReal(plane([2, 4])([1, 2], 3)), 13)
+  assert.deepStrictEqual(plane([2, 4])([1, 2], 3), 13)
 
-  assert.deepStrictEqual(tensorReal(plane([[1, 3]])([1, 2], 3)), [10])
+  assert.deepStrictEqual(plane([[1, 3]])([1, 2], 3), [10])
 
-  assert.deepStrictEqual(tensorReal(plane([[2, 4]])([1, 2], 3)), [13])
+  assert.deepStrictEqual(plane([[2, 4]])([1, 2], 3), [13])
 
   assert.deepStrictEqual(
-    tensorReal(
-      plane([
-        [1, 3],
-        [2, 4],
-      ])([1, 2], 3),
-    ),
+    plane([
+      [1, 3],
+      [2, 4],
+    ])([1, 2], 3),
     [10, 13],
   )
 })

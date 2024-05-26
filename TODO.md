@@ -2,8 +2,6 @@
 
 [system-a] `networks/` -- ???
 
-[system-a] find a way to avoid the use of `tensorReal` in test
-
 # the-book
 
 11: In Love with the Shape of Relu

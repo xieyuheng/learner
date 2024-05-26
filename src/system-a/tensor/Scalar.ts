@@ -10,6 +10,10 @@ export function isDual(x: any): x is Dual {
   return x.hasOwnProperty("@type") && x["@type"] === "Dual"
 }
 
+export function isNumber(x: any): x is Number {
+  return typeof x === "number"
+}
+
 export type Scalar = number | Dual
 
 export function isScalar(x: any): x is Scalar {
