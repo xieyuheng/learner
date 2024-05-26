@@ -1,6 +1,6 @@
 import assert from "node:assert"
 import { test } from "node:test"
-import { tensorReal } from "../tensor/index.js"
+import { shape, tensorReal } from "../tensor/index.js"
 import { extend2 } from "./extend.js"
 import { mul } from "./toys.js"
 
@@ -63,5 +63,76 @@ test("extend2 -- mul 2 1", () => {
         [15, 32],
       ],
     ],
+  )
+})
+
+test("extend2 -- mul 2 1 -- shape", () => {
+  const mul21 = extend2(mul, 2, 1)
+
+  assert.deepStrictEqual(
+    // [3, 2], [3, 2] -> [3, 3, 2]
+    [3, 3, 2],
+    shape(
+      mul21(
+        [
+          [8, 1],
+          [7, 3],
+          [5, 4],
+        ],
+        [
+          [6, 2],
+          [4, 9],
+          [3, 8],
+        ],
+      ),
+    ),
+  )
+
+  assert.deepStrictEqual(
+    // [2, 3, 2], [3, 2] -> [2, 3, 3, 2]
+    [2, 3, 3, 2],
+    shape(
+      mul21(
+        [
+          [
+            [8, 1],
+            [7, 3],
+            [5, 4],
+          ],
+          [
+            [6, 2],
+            [4, 9],
+            [3, 8],
+          ],
+        ],
+        [
+          [6, 2],
+          [4, 9],
+          [3, 8],
+        ],
+      ),
+    ),
+  )
+
+  assert.deepStrictEqual(
+    // [2, 3, 2], [1, 2] -> [2, 1, 3, 2]
+    [2, 1, 3, 2],
+    shape(
+      mul21(
+        [
+          [
+            [8, 1],
+            [7, 3],
+            [5, 4],
+          ],
+          [
+            [6, 2],
+            [4, 9],
+            [3, 8],
+          ],
+        ],
+        [[6, 2]],
+      ),
+    ),
   )
 })
