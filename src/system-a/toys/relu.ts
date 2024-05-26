@@ -1,4 +1,9 @@
-import type { Scalar, Tensor } from "../tensor/index.js"
+import type {
+  Scalar,
+  Tensor,
+  TensorRankAbove1,
+  TensorRankAbove2,
+} from "../tensor/index.js"
 import { extend1, extend2 } from "./extend.js"
 import { sum } from "./sum.js"
 import { add, lt, mul } from "./toys.js"
@@ -15,8 +20,8 @@ export const rectify = extend1(rectifyScalar, 0)
 export const matrixVactorMul = extend2(mul, 2, 1)
 
 export function linear(
-  t: Array<Tensor>,
-): (weight: Array<Array<Tensor>>, bias: Tensor) => Tensor {
+  t: TensorRankAbove1,
+): (weight: TensorRankAbove2, bias: Tensor) => Tensor {
   return (weight, bias) => add(sum(matrixVactorMul(weight, t)), bias)
 }
 
@@ -24,7 +29,7 @@ export function linear(
 // rectifying linear unit.
 
 export function relu(
-  t: Array<Tensor>,
-): (weight: Array<Array<Tensor>>, bias: Tensor) => Tensor {
+  t: TensorRankAbove1,
+): (weight: TensorRankAbove2, bias: Tensor) => Tensor {
   return (weight, bias) => rectify(linear(t)(weight, bias))
 }

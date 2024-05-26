@@ -8,13 +8,17 @@ export function assertScalar(t: any): asserts t is Scalar {
   }
 }
 
-export function assertTensorRankAbove1(x: any): asserts x is Array<Tensor> {
+export type TensorRankAbove1 = Array<Tensor>
+
+export function assertTensorRankAbove1(x: any): asserts x is TensorRankAbove1 {
   if (x instanceof Array && x.every(isTensor)) {
     return
   }
 
   throw new Error(`[assertTensorRankAbove1] ${x}`)
 }
+
+export type TensorRankAbove2 = Array<Array<Tensor>>
 
 export function assertTensorAlmostEqual(
   x: Tensor,
