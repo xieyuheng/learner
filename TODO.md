@@ -1,7 +1,9 @@
 # system-a
 
-[system-a] `toys/matrix` -- `matrixMul`
-[system-a] `networks/`
+[system-a] rename `assertTensorArray` to `assertTensorRankAbove1`
+[system-a] extract `TensorRankAbove1` and `TensorRankAbove2`
+
+[system-a] `networks/` -- ???
 
 [system-a] find a way to avoid the use of `tensorReal` in test
 

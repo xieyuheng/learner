@@ -24,3 +24,18 @@ test("dot -- extended", () => {
     [14, 77],
   )
 })
+
+test("dot -- 2 1", () => {
+  assert.deepStrictEqual(
+    tensorReal(
+      dot(
+        [
+          [2, 1, 3.1],
+          [3.7, 4, 6.1],
+        ],
+        [1.3, 0.4, 3.3],
+      ),
+    ),
+    [13.23, 26.54],
+  )
+})

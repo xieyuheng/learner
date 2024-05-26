@@ -1,5 +1,6 @@
 import assert from "node:assert"
 import { test } from "node:test"
+import { assertTensorAlmostEqual } from "../tensor/assertions.js"
 import { rectify, relu } from "./relu.js"
 
 test("relu -- rectify", () => {
@@ -16,5 +17,39 @@ test("relu -- rectify", () => {
 })
 
 test("relu", () => {
-  assert.deepStrictEqual(relu([2, 1, 3])([7.1, 4.3, -6.4], 0.6), 0)
+  assertTensorAlmostEqual(
+    relu([2, 1, 3])(
+      [
+        [7.1, 4.3, -6.4],
+        [7.1, 4.3, -6.4],
+      ],
+      [0.6, 1],
+    ),
+    [0, 0.3],
+    0.01,
+  )
+
+  assertTensorAlmostEqual(
+    relu([2, 1, 3])(
+      [
+        [7.1, 4.3, -6.4],
+        [7.1, 4.3, -6.4],
+      ],
+      [0.6, 0.6],
+    ),
+    [0, 0],
+    0,
+  )
+
+  assertTensorAlmostEqual(
+    relu([2, 1, 3])(
+      [
+        [7.1, 4.3, -6.4],
+        [7.1, 4.3, -6.4],
+      ],
+      0.6,
+    ),
+    [0, 0],
+    0,
+  )
 })
