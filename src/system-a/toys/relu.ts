@@ -18,12 +18,20 @@ export function rectifyScalar(s: Scalar): Scalar {
 }
 
 export const rectify = extend1(rectifyScalar, 0)
-export const matrixVactorMul = extend2(mul, 2, 1)
+
+const mul21 = extend2(mul, 2, 1)
+
+export function matrixVactorMul(
+  m: TensorRankAbove2,
+  v: TensorRankAbove1,
+): Tensor {
+  return sum(mul21(m, v))
+}
 
 export function linear(
   t: TensorRankAbove1,
 ): (weight: TensorRankAbove2, bias: Tensor) => Tensor {
-  return (weight, bias) => add(sum(matrixVactorMul(weight, t)), bias)
+  return (weight, bias) => add(matrixVactorMul(weight, t), bias)
 }
 
 export function linearWrong(
