@@ -4,6 +4,7 @@ import type {
   TensorRankAbove1,
   TensorRankAbove2,
 } from "../tensor/index.js"
+import { dot } from "./dot.js"
 import { extend1, extend2 } from "./extend.js"
 import { sum } from "./sum.js"
 import { add, lt, mul } from "./toys.js"
@@ -23,6 +24,12 @@ export function linear(
   t: TensorRankAbove1,
 ): (weight: TensorRankAbove2, bias: Tensor) => Tensor {
   return (weight, bias) => add(sum(matrixVactorMul(weight, t)), bias)
+}
+
+export function linearMaybeWrong(
+  t: TensorRankAbove1,
+): (weight: TensorRankAbove2, bias: Tensor) => Tensor {
+  return (weight, bias) => add(dot(weight, t), bias)
 }
 
 // NOTE The name relu is short for
