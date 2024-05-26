@@ -1,5 +1,8 @@
 # system-a
 
+[system-a] `toys/matrix` -- `matrixMul`
+[system-a] `networks/`
+
 # the-book
 
 11: In Love with the Shape of Relu
