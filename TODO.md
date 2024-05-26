@@ -1,6 +1,6 @@
 # system-a
 
-[system-a] `network/` -- `multiLayerRelu`
+[system-a] `networks/` -- `multiLayerRelu`
 
 # the-book
 
