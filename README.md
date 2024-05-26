@@ -2,6 +2,15 @@
 
 Reading the book "The Little Learner".
 
+## Development
+
+```sh
+npm install          # Install dependencies
+npm run build        # Compile `src/` to `lib/`
+npm run build:watch  # Compile and watch for file changes
+npm run test         # Run test
+```
+
 ## Contributions
 
 To make a contribution, fork this project and create a pull request.
