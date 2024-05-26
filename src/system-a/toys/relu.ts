@@ -26,7 +26,7 @@ export function linear(
   return (weight, bias) => add(sum(matrixVactorMul(weight, t)), bias)
 }
 
-export function linearMaybeWrong(
+export function linearWrong(
   t: TensorRankAbove1,
 ): (weight: TensorRankAbove2, bias: Tensor) => Tensor {
   return (weight, bias) => add(dot(weight, t), bias)
