@@ -35,10 +35,12 @@ export function extend2<A, B extends Tensor>(
       return y.map((y) => extendedFn(x, y))
     }
 
+    // NOTE We use `rank` instead of `tlen` here,
+    // related issue: https://github.com/themetaschemer/malt/issues/56
+
     if (rank(x) === rank(y)) {
       assertTensorArray(x)
       assertTensorArray(y)
-
       return zip(x, y).map(([x, y]) => extendedFn(x, y))
     }
 

@@ -16,6 +16,14 @@ test("plane", () => {
 })
 
 test("plane -- extended", () => {
+  assert.deepStrictEqual(tensorReal(plane([1, 3])([1, 2], 3)), 10)
+
+  assert.deepStrictEqual(tensorReal(plane([2, 4])([1, 2], 3)), 13)
+
+  assert.deepStrictEqual(tensorReal(plane([[1, 3]])([1, 2], 3)), [10])
+
+  assert.deepStrictEqual(tensorReal(plane([[2, 4]])([1, 2], 3)), [13])
+
   assert.deepStrictEqual(
     tensorReal(
       plane([
