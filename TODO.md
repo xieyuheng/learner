@@ -1,6 +1,5 @@
 # system-a
 
-[system-a] rename `assertTensorArray` to `assertTensorRankAbove1`
 [system-a] extract `TensorRankAbove1` and `TensorRankAbove2`
 
 [system-a] `networks/` -- ???

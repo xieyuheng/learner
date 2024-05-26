@@ -15,12 +15,12 @@ export function assertTensor1(t: Tensor): asserts t is Array<Scalar> {
   }
 }
 
-export function assertTensorArray(x: any): asserts x is Array<Tensor> {
+export function assertTensorRankAbove1(x: any): asserts x is Array<Tensor> {
   if (x instanceof Array && x.every(isTensor)) {
     return
   }
 
-  throw new Error(`[assertTensorArray] ${x}`)
+  throw new Error(`[assertTensorRankAbove1] ${x}`)
 }
 
 export function assertTensorAlmostEqual(

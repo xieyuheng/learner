@@ -1,5 +1,5 @@
 import { zip } from "../../utils/zip.js"
-import { assertTensorArray, rank, type Tensor } from "../tensor/index.js"
+import { assertTensorRankAbove1, rank, type Tensor } from "../tensor/index.js"
 
 export function extend1<A, B extends Tensor>(
   fn: (x: A) => B,
@@ -10,7 +10,7 @@ export function extend1<A, B extends Tensor>(
       return fn(x as A)
     }
 
-    assertTensorArray(x)
+    assertTensorRankAbove1(x)
     return x.map(extendedFn)
   }
 }
@@ -26,12 +26,12 @@ export function extend2<A, B extends Tensor>(
     }
 
     if (rank(y) === secondBaseRank) {
-      assertTensorArray(x)
+      assertTensorRankAbove1(x)
       return x.map((x) => extendedFn(x, y))
     }
 
     if (rank(x) === firstBaseRank) {
-      assertTensorArray(y)
+      assertTensorRankAbove1(y)
       return y.map((y) => extendedFn(x, y))
     }
 
@@ -39,18 +39,18 @@ export function extend2<A, B extends Tensor>(
     // related issue: https://github.com/themetaschemer/malt/issues/56
 
     if (rank(x) === rank(y)) {
-      assertTensorArray(x)
-      assertTensorArray(y)
+      assertTensorRankAbove1(x)
+      assertTensorRankAbove1(y)
       return zip(x, y).map(([x, y]) => extendedFn(x, y))
     }
 
     if (rank(x) > rank(y)) {
-      assertTensorArray(x)
+      assertTensorRankAbove1(x)
       return x.map((x) => extendedFn(x, y))
     }
 
     if (rank(x) < rank(y)) {
-      assertTensorArray(y)
+      assertTensorRankAbove1(y)
       return y.map((y) => extendedFn(x, y))
     }
 
