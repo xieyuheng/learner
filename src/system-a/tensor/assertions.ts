@@ -1,17 +1,10 @@
 import { isScalar, type Scalar } from "./Scalar.js"
 import { isTensor, type Tensor } from "./Tensor.js"
-import { rank } from "./rank.js"
 import { tensorAlmostEqual } from "./tensorAlmostEqual.js"
 
 export function assertScalar(t: any): asserts t is Scalar {
   if (!isScalar(t)) {
     throw new Error(`[assertScalar] ${t}`)
-  }
-}
-
-export function assertTensor1(t: Tensor): asserts t is Array<Scalar> {
-  if (rank(t) !== 1) {
-    throw new Error(`[assertTensor1] ${t}`)
   }
 }
 
