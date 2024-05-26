@@ -1,7 +1,5 @@
 # system-a
 
-[system-a] `networks/` -- `multiLayerRelu`
-
 # the-book
 
 12: Rock Around the Block
