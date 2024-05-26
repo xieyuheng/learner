@@ -1,10 +1,9 @@
 # system-a
 
-[system-a] `networks/` -- ???
+[system-a] `network/` -- `multiLayerRelu`
 
 # the-book
 
-11: In Love with the Shape of Relu
 12: Rock Around the Block
 13: An Eye for an Iris
 Interlude VI: How the Model Trains

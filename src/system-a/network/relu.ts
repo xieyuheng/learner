@@ -4,10 +4,7 @@ import type {
   TensorRankAbove1,
   TensorRankAbove2,
 } from "../tensor/index.js"
-import { dot } from "./dot.js"
-import { extend1, extend2 } from "./extend.js"
-import { sum } from "./sum.js"
-import { add, lt, mul } from "./toys.js"
+import { add, dot, extend1, extend2, lt, mul, sum } from "../toys/index.js"
 
 export function rectifyScalar(s: Scalar): Scalar {
   if (lt(s, 0)) {
