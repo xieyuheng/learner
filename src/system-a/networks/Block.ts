@@ -5,13 +5,13 @@ export type BlockFn = (t: Array<Tensor>) => (...ps: Array<Tensor>) => Tensor
 export type Block = {
   "@type": "Block"
   fn: BlockFn
-  shapes: Array<Shape>
+  shapeList: Array<Shape>
 }
 
-export function Block(fn: BlockFn, shapes: Array<Shape>): Block {
+export function Block(fn: BlockFn, shapeList: Array<Shape>): Block {
   return {
     "@type": "Block",
     fn,
-    shapes,
+    shapeList,
   }
 }
