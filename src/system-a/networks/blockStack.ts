@@ -13,9 +13,23 @@ export function blockFnCompose(f: BlockFn, g: BlockFn, j: number): BlockFn {
 
 export function blockStack2(x: Block, y: Block): Block {
   return Block(
-    blockFnCompose(x.fn, y.fn, x.shapeList.length),
-    arrayAppend(x.shapeList, y.shapeList),
+    blockFnCompose(x.fn, y.fn, x.shapes.length),
+    arrayAppend(x.shapes, y.shapes),
   )
 }
 
-// blockStack
+export const emptyBlock = Block(
+  (t) =>
+    (...ps) =>
+      t,
+  [],
+)
+
+export function blockStack(blocks: Array<Block>): Block {
+  let resultBlock = emptyBlock
+  for (const block of blocks) {
+    resultBlock = blockStack2(resultBlock, block)
+  }
+
+  return resultBlock
+}
