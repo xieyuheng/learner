@@ -1,12 +1,14 @@
 import { isScalar } from "./Scalar.js"
 import { type Tensor } from "./Tensor.js"
 
-export function shape(t: Tensor): Array<number> {
-  const result: Array<number> = []
+export type Shape = Array<number>
+
+export function shape(t: Tensor): Shape {
+  const shape: Shape = []
   while (!isScalar(t)) {
-    result.push(t.length)
+    shape.push(t.length)
     t = t[0]
   }
 
-  return result
+  return shape
 }
