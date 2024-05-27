@@ -1,5 +1,3 @@
-[utils] test `arrayAppend`
-
 # system-a
 
 [system-a] `blockFnCompose`
