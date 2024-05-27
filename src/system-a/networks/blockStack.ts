@@ -1,5 +1,6 @@
 import { arrayAppend } from "../../utils/arrayAppend.js"
 import { Block, type BlockFn } from "./Block.js"
+import { emptyBlock } from "./emptyBlock.js"
 
 // NOTE Be careful about the order of applications,
 // `f` first, then `g`.
@@ -17,13 +18,6 @@ export function blockStack2(x: Block, y: Block): Block {
     arrayAppend(x.shapes, y.shapes),
   )
 }
-
-export const emptyBlock = Block(
-  (t) =>
-    (...ps) =>
-      t,
-  [],
-)
 
 export function blockStack(blocks: Array<Block>): Block {
   let resultBlock = emptyBlock
