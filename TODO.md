@@ -1,6 +1,5 @@
 # system-a
 
-[system-a] `blockStack2`
 [system-a] `blockStack` (a.k.a. `stackBlocks`)
 [system-a] `denseBlock`
 
