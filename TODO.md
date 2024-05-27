@@ -1,7 +1,5 @@
 # system-a
 
-[system-a] `denseBlock`
-
 # the-book
 
 [the-book] 12: Rock Around the Block
@@ -13,3 +11,9 @@
 [the-book] Epilogue - We've Only Just Begun
 [the-book] Appendix B: I Could Have Raced All Day
 [the-book] References
+
+# later
+
+[system-a] fix the use of `relu as BlockFn` in `denseBlock`
+
+- `relu` should be extended to all `Tensor` input
