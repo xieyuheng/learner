@@ -1,5 +1,7 @@
 # system-a
 
+[system-a] `randomTensor`
+
 # the-book
 
 [the-book] 13: An Eye for an Iris
