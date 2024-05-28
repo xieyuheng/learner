@@ -1,5 +1,6 @@
 # system-a
 
+[system-a] test `denseBlock`
 [system-a] test `irisModel`
 
 # the-book
