@@ -1,25 +1,29 @@
-import { blockStack, denseBlock } from "../block/index.js"
+import { blockStack, denseBlock, denseInitParameters } from "../block/index.js"
+import { gradientDescentNaked } from "../gradient-descent/gradientDescentNaked.js"
+import { l2Loss } from "../loss.js"
 import type { Tensor } from "../tensor/Tensor.js"
-import { randomTensor } from "../tensor/randomTensor.js"
-import type { Shape } from "../tensor/shape.js"
-import { zeroTensor } from "../tensor/zeroTensor.js"
+import { samplingObjective } from "../tensor/samplingObjective.js"
+import { irisTrainXs, irisTrainYs } from "./irisDataset.js"
 
 export const irisNetwork = blockStack([denseBlock(4, 6), denseBlock(6, 3)])
 
-function initParameters(shapes: Array<Shape>): Array<Tensor> {
-  return shapes.map(initShape)
-}
+export function irisParameters(): Array<Tensor> {
+  const objective = samplingObjective(
+    l2Loss(irisNetwork.fn),
+    irisTrainXs,
+    irisTrainYs,
+    {
+      batchSize: 8,
+    },
+  )
 
-function initShape(shape: Shape): Tensor {
-  if (shape.length === 1) {
-    return zeroTensor(shape)
-  }
+  const gradientDescentFn = gradientDescentNaked({
+    learningRate: 0.0002,
+  })
 
-  if (shape.length === 2) {
-    const mean = 0
-    const deviation = 2 / shape[1]
-    return randomTensor(mean, deviation, shape)
-  }
+  const initParameters = denseInitParameters(irisNetwork.shapes)
 
-  throw new Error(`[initShape] Wrong shape: ${shape}`)
+  return gradientDescentFn(objective, initParameters, {
+    revs: 2000,
+  })
 }
