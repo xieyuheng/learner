@@ -1,12 +1,11 @@
 import { zip } from "../../utils/zip.js"
-import type { Scalar } from "../tensor/index.js"
 import { assertTensorRankAbove1, type Tensor } from "../tensor/index.js"
 import type { Representation } from "./Representation.js"
 import { gradient } from "./index.js"
 import { revise } from "./revise.js"
 
 export type GradientDescentFn = (
-  objective: (...ps: Array<Tensor>) => Scalar,
+  objective: (...ps: Array<Tensor>) => Tensor,
   ps: Array<Tensor>,
   options: {
     revs: number

@@ -4,10 +4,11 @@ import { l2Loss } from "../loss.js"
 import type { Tensor } from "../tensor/Tensor.js"
 import { samplingObjective } from "../tensor/samplingObjective.js"
 import { irisTrainXs, irisTrainYs } from "./irisDataset.js"
+import { model } from "./model.js"
 
 export const irisNetwork = blockStack([denseBlock(4, 6), denseBlock(6, 3)])
 
-export function irisParameters(): Array<Tensor> {
+export function irisTrainParameters(): Array<Tensor> {
   const objective = samplingObjective(
     l2Loss(irisNetwork.fn),
     irisTrainXs,
@@ -17,13 +18,15 @@ export function irisParameters(): Array<Tensor> {
     },
   )
 
+  const initParameters = denseInitParameters(irisNetwork.shapes)
+
   const gradientDescentFn = gradientDescentNaked({
     learningRate: 0.0002,
   })
-
-  const initParameters = denseInitParameters(irisNetwork.shapes)
 
   return gradientDescentFn(objective, initParameters, {
     revs: 2000,
   })
 }
+
+export const irisModel = model(irisNetwork.fn, irisTrainParameters())

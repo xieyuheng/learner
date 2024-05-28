@@ -1,6 +1,6 @@
 # system-a
 
-[system-a] `irisModel`
+[system-a] test `irisModel`
 
 # the-book
 
