@@ -1,6 +1,6 @@
 # system-a
 
-[system-a] move `Block` to `block/`
+[system-a] move `relu` to `neurons/`
 
 [system-a] `tensor/` -- `randomTensor`
 [system-a] `tensor/` -- test `randomTensor`
