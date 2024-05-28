@@ -1,6 +1,5 @@
 # system-a
 
-[system-a] `networks/` -- `initParameters` & `initShape`
 [system-a] `irisTestXs`, `irisTestYs`
 [system-a] `irisTrainXs`, `irisTrainYs`
 [system-a] `model`
