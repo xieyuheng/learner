@@ -1,7 +1,6 @@
 # system-a
 
 [system-a] `irisModel`
-[system-a] `model`
 
 # the-book
 
