@@ -1,8 +1,8 @@
-import { blockStack, denseBlock } from "../../block/index.js"
-import type { Tensor } from "../../tensor/Tensor.js"
-import { randomTensor } from "../../tensor/randomTensor.js"
-import type { Shape } from "../../tensor/shape.js"
-import { zeroTensor } from "../../tensor/zeroTensor.js"
+import { blockStack, denseBlock } from "../block/index.js"
+import type { Tensor } from "../tensor/Tensor.js"
+import { randomTensor } from "../tensor/randomTensor.js"
+import type { Shape } from "../tensor/shape.js"
+import { zeroTensor } from "../tensor/zeroTensor.js"
 
 export const irisNetwork = blockStack([denseBlock(4, 6), denseBlock(6, 3)])
 

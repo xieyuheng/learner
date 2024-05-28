@@ -1,5 +1,6 @@
 # system-a
 
+[system-a] `irisModel`
 [system-a] `irisTestXs`, `irisTestYs`
 [system-a] `irisTrainXs`, `irisTrainYs`
 [system-a] `model`
