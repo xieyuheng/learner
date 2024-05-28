@@ -1,3 +1,5 @@
+[utils] `randomGaussian`
+
 # system-a
 
 [system-a] `tensor/` -- `randomTensor`
