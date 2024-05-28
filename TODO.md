@@ -1,6 +1,13 @@
 # system-a
 
-[system-a] `randomTensor`
+[system-a] `tensor/` -- test `zeroTensor`
+[system-a] `tensor/` -- `randomTensor`
+[system-a] `tensor/` -- test `randomTensor`
+
+[system-a] `networks/` -- `initParameters` & `initShape`
+[system-a] `irisTestXs`, `irisTestYs`
+[system-a] `irisTrainXs`, `irisTrainYs`
+[system-a] `model`
 
 # the-book
 
