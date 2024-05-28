@@ -1,7 +1,5 @@
 # system-a
 
-[system-a] move `relu` to `neurons/`
-
 [system-a] `tensor/` -- `randomTensor`
 [system-a] `tensor/` -- test `randomTensor`
 
