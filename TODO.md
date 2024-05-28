@@ -1,9 +1,4 @@
-[utils] `randomGaussian`
-
 # system-a
-
-[system-a] `tensor/` -- `randomTensor`
-[system-a] `tensor/` -- test `randomTensor`
 
 [system-a] `networks/` -- `initParameters` & `initShape`
 [system-a] `irisTestXs`, `irisTestYs`
