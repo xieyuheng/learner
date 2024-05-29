@@ -1,7 +1,5 @@
 # system-a
 
-[system-a] rename `assertTensorRankAbove1` to `assertTensorArray`
-
 [system-a] test the use of `relu` on shape smaller than `[2, 1]`
 
 - NOTE Just to record the behavior of current `relu`,

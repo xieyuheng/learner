@@ -1,5 +1,5 @@
 import { zip } from "../../utils/zip.js"
-import { assertTensorRankAbove1, type Tensor } from "../tensor/index.js"
+import { assertTensorArray, type Tensor } from "../tensor/index.js"
 import type { Representation } from "./Representation.js"
 import { gradient } from "./index.js"
 import { revise } from "./revise.js"
@@ -19,7 +19,7 @@ export function gradientDescent<R>(
     function step(rs: Array<R>): Array<R> {
       const ps = rs.map(representation.deflate)
       const gs = gradient(objective, ps)
-      assertTensorRankAbove1(gs)
+      assertTensorArray(gs)
       return zip(rs, gs).map(([r, g]) => representation.update(r, g))
     }
 
