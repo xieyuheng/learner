@@ -24,8 +24,6 @@ export function gradientDescent<R>(
     }
 
     const rs = revise(step, options.revs, ps.map(representation.inflate))
-    const ns = rs.map(representation.deflate)
-    assertTensorRankAbove1(ns)
-    return ns
+    return rs.map(representation.deflate)
   }
 }
