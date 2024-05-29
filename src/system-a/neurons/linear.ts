@@ -7,6 +7,8 @@ export function matrixVactorMul(m: Tensor, v: Tensor): Tensor {
   return sum(mul21(m, v))
 }
 
+// NOTE `linear` is not fully extended to all `Tensor`.
+
 export function linear(t: Tensor): (weight: Tensor, bias: Tensor) => Tensor {
   return (weight, bias) => add(matrixVactorMul(weight, t), bias)
 }

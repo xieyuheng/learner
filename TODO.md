@@ -1,10 +1,5 @@
 # system-a
 
-[system-a] test the use of `linear` on shape smaller than `[2, 1]`
-
-- NOTE Just to record the behavior of current `linear`,
-  there might be better ways to extend `linear` to all `Tensor`.
-
 # the-book
 
 [the-book] Interlude VI: How the Model Trains
@@ -14,3 +9,9 @@
 [the-book] Epilogue - We've Only Just Begun
 [the-book] Appendix B: I Could Have Raced All Day
 [the-book] References
+
+# later
+
+[neurons] extended `linear` and `matrixVactorMul` to all `Tensor`.
+
+- Is `matrixVactorMul` already extended to all `Tensor`?
