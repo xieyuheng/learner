@@ -5,5 +5,5 @@ export function model(
   target: Target,
   ps: Array<Tensor>,
 ): (t: Tensor) => Tensor {
-  return (t) => target(t)(ps)
+  return (t) => target(t)(...ps)
 }
