@@ -1,5 +1,7 @@
 # system-a
 
+[toys] `argmax1` and `argmax`
+
 # the-book
 
 [the-book] Interlude VI: How the Model Trains

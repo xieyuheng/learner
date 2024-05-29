@@ -3,6 +3,6 @@ import { irisTestXs, irisTestYs } from "./irisDataset.js"
 import { irisModel } from "./irisModel.js"
 
 test("irisModel", () => {
-  console.log(irisTestXs.map(irisModel))
+  console.log(irisModel(irisTestXs))
   console.log(irisTestYs)
 })
