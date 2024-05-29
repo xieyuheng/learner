@@ -3,10 +3,10 @@ import type { Tensor } from "../tensor/Tensor.js"
 import { randomTensor } from "../tensor/randomTensor.js"
 import type { Shape } from "../tensor/shape.js"
 import { zeroTensor } from "../tensor/zeroTensor.js"
-import { Block, type BlockFn } from "./Block.js"
+import { Block } from "./Block.js"
 
 export function denseBlock(inputSize: number, layerWidth: number): Block {
-  return Block(relu as BlockFn, [[layerWidth, inputSize], [layerWidth]])
+  return Block(relu, [[layerWidth, inputSize], [layerWidth]])
 }
 
 export function denseInitParameters(shapes: Array<Shape>): Array<Tensor> {
