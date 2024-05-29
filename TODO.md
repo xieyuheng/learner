@@ -1,9 +1,9 @@
 # system-a
 
-[system-a] test the use of `relu` on shape smaller than `[2, 1]`
+[system-a] test the use of `linear` on shape smaller than `[2, 1]`
 
-- NOTE Just to record the behavior of current `relu`,
-  there might be better ways to extend `relu` to all `Tensor`.
+- NOTE Just to record the behavior of current `linear`,
+  there might be better ways to extend `linear` to all `Tensor`.
 
 # the-book
 
