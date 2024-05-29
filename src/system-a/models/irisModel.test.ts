@@ -1,4 +1,3 @@
-import assert from "node:assert"
 import { test } from "node:test"
 import { irisTestXs, irisTestYs } from "./irisDataset.js"
 import { irisModel } from "./irisModel.js"
