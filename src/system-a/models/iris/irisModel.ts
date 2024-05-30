@@ -3,7 +3,7 @@ import {
   denseBlock,
   denseInitParameters,
 } from "../../block/index.js"
-import { gradientDescentNaked } from "../../gradient-descent/gradientDescentNaked.js"
+import { gradientDescentAdam } from "../../gradient-descent/gradientDescentAdam.js"
 import { l2Loss } from "../../loss/index.js"
 import type { Tensor } from "../../tensor/Tensor.js"
 import { samplingObjective } from "../../tensor/samplingObjective.js"
@@ -24,12 +24,18 @@ export function irisTrainParameters(): Array<Tensor> {
 
   const initParameters = denseInitParameters(irisNetwork.shapes)
 
-  const gradientDescentFn = gradientDescentNaked({
-    learningRate: 0.0002,
+  // const gradientDescentFn = gradientDescentNaked({
+  //   learningRate: 0.0002,
+  // })
+
+  const gradientDescentFn = gradientDescentAdam({
+    learningRate: 0.002,
+    decayRate: 0.9,
+    relayFactor: 0.85,
   })
 
   return gradientDescentFn(objective, initParameters, {
-    revs: 2000,
+    revs: 1000,
   })
 }
 

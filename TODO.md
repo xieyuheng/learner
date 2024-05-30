@@ -1,5 +1,6 @@
 # system-a
 
+[models] `accurateEnoughIrisTrainParameters`
 [models] `gridSearch`
 
 # the-book
