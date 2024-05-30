@@ -1,7 +1,7 @@
 # system-a
 
+[models] move `l2Loss` to `loss/`
 [models] test `argmax`
-[models] extract `iris/`
 [models] `compareClassification1`
 [models] `compareClassification` -- `extend2` on 1 1
 [models] `accuracy`
