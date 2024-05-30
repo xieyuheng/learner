@@ -1,4 +1,4 @@
-import type { Target } from "../loss.js"
+import type { Target } from "../loss/index.js"
 import type { Tensor } from "../tensor/Tensor.js"
 
 export function model(

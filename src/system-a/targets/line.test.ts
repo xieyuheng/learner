@@ -4,7 +4,7 @@ import { gradientDescentLonely } from "../gradient-descent/gradientDescentLonely
 import { gradientDescentNaked } from "../gradient-descent/gradientDescentNaked.js"
 import { gradientDescentVelocity } from "../gradient-descent/gradientDescentVelocity.js"
 import type { GradientDescentFn } from "../gradient-descent/index.js"
-import { l2Loss } from "../loss.js"
+import { l2Loss } from "../loss/index.js"
 import { assertTensorAlmostEqual } from "../tensor/index.js"
 import { samplingObjective } from "../tensor/samplingObjective.js"
 import { line } from "./line.js"

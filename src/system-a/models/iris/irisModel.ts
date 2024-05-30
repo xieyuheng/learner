@@ -4,7 +4,7 @@ import {
   denseInitParameters,
 } from "../../block/index.js"
 import { gradientDescentNaked } from "../../gradient-descent/gradientDescentNaked.js"
-import { l2Loss } from "../../loss.js"
+import { l2Loss } from "../../loss/index.js"
 import type { Tensor } from "../../tensor/Tensor.js"
 import { samplingObjective } from "../../tensor/samplingObjective.js"
 import { model } from "../model.js"
