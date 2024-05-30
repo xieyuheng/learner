@@ -10,7 +10,12 @@ import { samplingObjective } from "../../tensor/samplingObjective.js"
 import { model } from "../model.js"
 import { irisTrainXs, irisTrainYs } from "./irisDataset.js"
 
-export const irisNetwork = blockStack([denseBlock(4, 6), denseBlock(6, 3)])
+export const irisNetwork = blockStack([
+  denseBlock(4, 6),
+  denseBlock(6, 4),
+  denseBlock(4, 3),
+  denseBlock(3, 3),
+])
 
 export function irisTrainParameters(): Array<Tensor> {
   const objective = samplingObjective(
@@ -29,7 +34,7 @@ export function irisTrainParameters(): Array<Tensor> {
   // })
 
   const gradientDescentFn = gradientDescentAdam({
-    learningRate: 0.002,
+    learningRate: 0.006,
     decayRate: 0.9,
     relayFactor: 0.85,
   })
