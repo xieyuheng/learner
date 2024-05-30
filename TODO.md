@@ -1,6 +1,5 @@
 # system-a
 
-[models] test `argmax`
 [models] `compareClassification1`
 [models] `compareClassification` -- `extend2` on 1 1
 [models] `accuracy`

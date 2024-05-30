@@ -11,7 +11,7 @@ export function argmax(array: Array<Scalar>): number {
 
   let currentIndex = array.length - 1
   let maxIndex = array.length - 1
-  while (currentIndex > 0) {
+  while (currentIndex >= 0) {
     maxIndex = largerArgIndex(array, currentIndex, maxIndex)
     currentIndex--
   }
