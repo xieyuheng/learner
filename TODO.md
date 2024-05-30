@@ -1,6 +1,6 @@
 # system-a
 
-[models] `accuracy`
+[models] use `modelAccuracy` in `irisModel.test.ts`
 
 # the-book
 
