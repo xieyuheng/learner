@@ -1,6 +1,10 @@
 # system-a
 
-[toys] `argmax1` and `argmax`
+[models] test `argmax`
+[models] extract `iris/`
+[models] `compareClassification1`
+[models] `compareClassification` -- `extend2` on 1 1
+[models] `accuracy`
 
 # the-book
 
