@@ -1,7 +1,6 @@
 # system-a
 
-[models] `compareClassification1`
-[models] `compareClassification` -- `extend2` on 1 1
+[models] test `compareClassification`
 [models] `accuracy`
 
 # the-book

@@ -1,0 +1,12 @@
+import type { Scalar } from "../tensor/Scalar.js"
+import { extend2 } from "../toys/extend.js"
+import { argmax } from "./argmax.js"
+
+export function compareClassification1(
+  xs: Array<Scalar>,
+  ys: Array<Scalar>,
+): number {
+  return argmax(xs) === argmax(ys) ? 1 : 0
+}
+
+export const compareClassification = extend2(compareClassification1, 1, 1)
