@@ -1,6 +1,6 @@
 # system-a
 
-[models] use `modelAccuracy` in `irisModel.test.ts`
+[models] `gridSearch`
 
 # the-book
 
