@@ -1,6 +1,5 @@
 # system-a
 
-[models] test `compareClassification`
 [models] `accuracy`
 
 # the-book
