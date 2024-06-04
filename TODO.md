@@ -1,5 +1,3 @@
-`gradientDescent` -- inline `revise` for log
-
 修复鸢尾花模型的问题。
 
 - https://github.com/xieyuheng/learner/issues/2

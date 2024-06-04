@@ -2,7 +2,6 @@ import { zip } from "../../utils/zip.js"
 import { assertTensorArray, type Tensor } from "../tensor/index.js"
 import type { Representation } from "./Representation.js"
 import { gradient } from "./index.js"
-import { revise } from "./revise.js"
 
 export type GradientDescentFn = (
   objective: (...ps: Array<Tensor>) => Tensor,
@@ -23,7 +22,13 @@ export function gradientDescent<R>(
       return zip(rs, gs).map(([r, g]) => representation.update(r, g))
     }
 
-    const rs = revise(step, options.revs, ps.map(representation.inflate))
+    let revs = options.revs
+    let rs = ps.map(representation.inflate)
+    while (revs > 0) {
+      rs = step(rs)
+      revs--
+    }
+
     return rs.map(representation.deflate)
   }
 }
