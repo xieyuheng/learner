@@ -39,17 +39,17 @@ export function irisTrainParameters(): Array<Tensor> {
   // })
 
   gradientDescentRms
-  const gradientDescentFn = gradientDescentRms({
-    learningRate: 0.006,
-    decayRate: 0.9,
-  })
-
-  gradientDescentAdam
-  // const gradientDescentFn = gradientDescentAdam({
+  // const gradientDescentFn = gradientDescentRms({
   //   learningRate: 0.006,
   //   decayRate: 0.9,
-  //   relayFactor: 0.85,
   // })
+
+  gradientDescentAdam
+  const gradientDescentFn = gradientDescentAdam({
+    learningRate: 0.006,
+    decayRate: 0.9,
+    relayFactor: 0.85,
+  })
 
   return gradientDescentFn(objective, initParameters, {
     revs: 2000,
