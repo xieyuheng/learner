@@ -1,8 +1,16 @@
 # system-a
 
+`neurons/relu` -- vs `neurons/recu`
+move `denseBlock` to `neurons/relu` -- maybe rename to `reluBlock`
+
+[neurons] `leakyRelu`
+[neurons] `recuBlock`
+
+[neurons] `recu` -- rectifying correlational unit
+[neurons] `correlate`
+
 [models] `morse/`
 [models] `tenserZip` -- `[d, n] -> [n, d]` -- like transposing a matrix
-[system-a] `leakyRelu`
 
 # the-book
 
