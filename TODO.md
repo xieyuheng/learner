@@ -1,7 +1,5 @@
 # system-a
 
-[system-a] move `denseBlock` to `neurons/relu` -- maybe rename to `reluBlock`
-
 [neurons] `leakyRelu`
 [neurons] `recuBlock`
 

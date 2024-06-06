@@ -1,12 +1,12 @@
-import {
-  blockStack,
-  denseBlock,
-  denseInitParameters,
-} from "../../block/index.js"
+import { blockStack } from "../../block/index.js"
 import { gradientDescentAdam } from "../../gradient-descent/gradientDescentAdam.js"
 import { gradientDescentNaked } from "../../gradient-descent/gradientDescentNaked.js"
 import { gradientDescentRms } from "../../gradient-descent/gradientDescentRms.js"
 import { l2Loss } from "../../loss/index.js"
+import {
+  denseBlock,
+  denseBlockInitParameters,
+} from "../../neurons/relu/index.js"
 import type { Tensor } from "../../tensor/Tensor.js"
 import { samplingObjective } from "../../tensor/samplingObjective.js"
 import { model } from "../model.js"
@@ -31,7 +31,7 @@ export function irisTrainParameters(): Array<Tensor> {
     },
   )
 
-  const initParameters = denseInitParameters(irisNetwork.shapes)
+  const initParameters = denseBlockInitParameters(irisNetwork.shapes)
 
   gradientDescentNaked
   // const gradientDescentFn = gradientDescentNaked({

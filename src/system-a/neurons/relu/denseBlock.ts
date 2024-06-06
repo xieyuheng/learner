@@ -1,15 +1,15 @@
-import { relu } from "../neurons/relu/index.js"
-import type { Tensor } from "../tensor/Tensor.js"
-import { randomTensor } from "../tensor/randomTensor.js"
-import type { Shape } from "../tensor/shape.js"
-import { zeroTensor } from "../tensor/zeroTensor.js"
-import { Block } from "./Block.js"
+import { Block } from "../../block/index.js"
+import { relu } from "../../neurons/relu/index.js"
+import type { Tensor } from "../../tensor/Tensor.js"
+import { randomTensor } from "../../tensor/randomTensor.js"
+import type { Shape } from "../../tensor/shape.js"
+import { zeroTensor } from "../../tensor/zeroTensor.js"
 
 export function denseBlock(inputSize: number, layerWidth: number): Block {
   return Block(relu, [[layerWidth, inputSize], [layerWidth]])
 }
 
-export function denseInitParameters(shapes: Array<Shape>): Array<Tensor> {
+export function denseBlockInitParameters(shapes: Array<Shape>): Array<Tensor> {
   return shapes.map(denseInitParameter)
 }
 
