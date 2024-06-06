@@ -20,7 +20,6 @@ move `denseBlock` to `neurons/relu` -- maybe rename to `reluBlock`
 [the-book] 15: …But It Is Correlated!
 [the-book] Epilogue - We've Only Just Begun
 [the-book] Appendix B: I Could Have Raced All Day
-[the-book] References
 
 # later
 
