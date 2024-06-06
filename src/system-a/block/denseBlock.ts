@@ -19,8 +19,9 @@ export function denseInitParameter(shape: Shape): Tensor {
   }
 
   if (shape.length === 2) {
-    // const mean = 0
-    const mean = 1 / 2
+    // TODO Is it right to use 1 instead of 0
+    // for the mostly positive iris data?
+    const mean = 1
     const deviation = 2 / shape[1]
     return randomTensor(mean, deviation, shape)
   }
