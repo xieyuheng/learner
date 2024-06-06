@@ -4,7 +4,10 @@ import { irisTestXs, irisTestYs } from "./irisDataset.js"
 import { irisModel } from "./irisModel.js"
 
 test("irisModel", () => {
-  console.log(irisModel(irisTestXs))
-  console.log(irisTestYs)
-  console.log(modelAccuracy(irisModel, irisTestXs, irisTestYs))
+  // console.log(irisModel(irisTestXs))
+  // console.log(irisTestYs)
+  console.log(
+    "iris model accuracy:",
+    modelAccuracy(irisModel, irisTestXs, irisTestYs),
+  )
 })

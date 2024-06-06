@@ -1,6 +1,5 @@
-import { inspect } from "../../utils/inspect.js"
 import { zip } from "../../utils/zip.js"
-import { assertTensorArray, shape, type Tensor } from "../tensor/index.js"
+import { assertTensorArray, type Tensor } from "../tensor/index.js"
 import type { Representation } from "./Representation.js"
 import { gradient } from "./index.js"
 
@@ -30,13 +29,6 @@ export function gradientDescent<R>(
       rs = step(rs)
       revs--
     }
-
-    inspect({
-      who: "GradientDescentFn",
-      shapes: ps.map(shape),
-      initialPs: ps,
-      finalPs: rs.map(representation.deflate),
-    })
 
     return rs.map(representation.deflate)
   }
