@@ -1,5 +1,5 @@
-import type { Scalar, Tensor } from "../tensor/index.js"
-import { extend1, lt, mul } from "../toys/index.js"
+import type { Scalar, Tensor } from "../../tensor/index.js"
+import { extend1, lt, mul } from "../../toys/index.js"
 import { linear } from "./linear.js"
 
 export function rectifyScalar(s: Scalar): Scalar {

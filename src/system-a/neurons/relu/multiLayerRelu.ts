@@ -1,4 +1,4 @@
-import type { Tensor } from "../tensor/Tensor.js"
+import type { Tensor } from "../../tensor/Tensor.js"
 import { relu } from "./relu.js"
 
 type Target = (t: Tensor) => (...ps: Array<Tensor>) => Tensor

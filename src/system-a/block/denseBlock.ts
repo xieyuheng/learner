@@ -1,4 +1,4 @@
-import { relu } from "../neurons/relu.js"
+import { relu } from "../neurons/relu/index.js"
 import type { Tensor } from "../tensor/Tensor.js"
 import { randomTensor } from "../tensor/randomTensor.js"
 import type { Shape } from "../tensor/shape.js"

@@ -1,6 +1,5 @@
 # system-a
 
-[system-a] `neurons/relu` -- because there will also be `neurons/recu`
 [system-a] move `denseBlock` to `neurons/relu` -- maybe rename to `reluBlock`
 [system-a] move `gradient` to `gradient/`
 

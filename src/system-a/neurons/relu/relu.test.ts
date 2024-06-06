@@ -1,6 +1,6 @@
 // import assert from "node:assert"
 // import { test } from "node:test"
-// import { assertTensorAlmostEqual } from "../tensor/assertions.js"
+// import { assertTensorAlmostEqual } from "../../tensor/assertions.js"
 // import { rectify, relu } from "./relu.js"
 
 // test("rectify", () => {
