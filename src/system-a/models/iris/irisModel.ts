@@ -46,7 +46,7 @@ export function irisTrainParameters(): Array<Tensor> {
 
   gradientDescentAdam
   const gradientDescentFn = gradientDescentAdam({
-    learningRate: 0.0001,
+    learningRate: 0.0006,
     decayRate: 0.9,
     relayFactor: 0.85,
   })
