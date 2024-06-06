@@ -34,9 +34,9 @@ export function irisTrainParameters(): Array<Tensor> {
   const initParameters = denseBlockInitParameters(irisNetwork.shapes)
 
   gradientDescentNaked
-  const gradientDescentFn = gradientDescentNaked({
-    learningRate: 0.0002,
-  })
+  // const gradientDescentFn = gradientDescentNaked({
+  //   learningRate: 0.0002,
+  // })
 
   gradientDescentRms
   // const gradientDescentFn = gradientDescentRms({
@@ -45,11 +45,11 @@ export function irisTrainParameters(): Array<Tensor> {
   // })
 
   gradientDescentAdam
-  // const gradientDescentFn = gradientDescentAdam({
-  //   learningRate: 0.001,
-  //   decayRate: 0.9,
-  //   relayFactor: 0.85,
-  // })
+  const gradientDescentFn = gradientDescentAdam({
+    learningRate: 0.0001,
+    decayRate: 0.9,
+    relayFactor: 0.85,
+  })
 
   return gradientDescentFn(objective, initParameters, {
     revs: 2000,
