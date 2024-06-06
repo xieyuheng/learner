@@ -9,6 +9,7 @@ npm install          # Install dependencies
 npm run build        # Compile `src/` to `lib/`
 npm run build:watch  # Compile and watch for file changes
 npm run test         # Run test
+npm run format       # Format code
 ```
 
 ## Contributions
