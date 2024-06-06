@@ -1,9 +1,9 @@
 import type { Scalar, Tensor } from "../../tensor/index.js"
-import { extend1, lt, mul } from "../../toys/index.js"
+import { extend1, lt } from "../../toys/index.js"
 import { linear } from "./linear.js"
 
 export function rectifyScalar(s: Scalar): Scalar {
-  return lt(s, 0) ? (mul(-0.01, s) as Scalar) : s
+  return lt(s, 0) ? 0 : s
 }
 
 export const rectify = extend1(rectifyScalar, 0)

@@ -1,10 +1,8 @@
 # system-a
 
-[neurons] `leakyRelu`
-[neurons] `recuBlock`
-
-[neurons] `recu` -- rectifying correlational unit
 [neurons] `correlate`
+[neurons] `recu`
+[neurons] `recuBlock`
 
 [models] `morse/`
 [models] `tenserZip` -- `[d, n] -> [n, d]` -- like transposing a matrix
