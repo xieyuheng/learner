@@ -1,3 +1,6 @@
+已知鸢尾花数据的性质，
+可以尝试利用这些性质调整参数。
+
 # system-a
 
 `neurons/relu` -- vs `neurons/recu`
