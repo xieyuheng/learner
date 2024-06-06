@@ -2,7 +2,7 @@ import {
   gradientStateGetWithDefault,
   gradientStateSet,
   type GradientState,
-} from "../gradient-descent/index.js"
+} from "../gradient/index.js"
 import { type Scalar } from "./Scalar.js"
 
 export type Link = (

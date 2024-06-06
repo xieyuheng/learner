@@ -52,7 +52,7 @@ export function irisTrainParameters(): Array<Tensor> {
   })
 
   return gradientDescentFn(objective, initParameters, {
-    revs: 1000,
+    revs: 2000,
   })
 }
 

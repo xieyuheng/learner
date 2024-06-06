@@ -1,7 +1,7 @@
 import { zip } from "../../utils/zip.js"
+import { gradient } from "../gradient/index.js"
 import { assertTensorArray, type Tensor } from "../tensor/index.js"
 import type { Representation } from "./Representation.js"
-import { gradient } from "./index.js"
 
 export type GradientDescentFn = (
   objective: (...ps: Array<Tensor>) => Tensor,
