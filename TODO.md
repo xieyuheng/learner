@@ -1,4 +1,9 @@
-# system-a
+# Interlude VI: How the Model Trains
+
+[models] `accurateEnoughIrisTrainParameters`
+[models] `gridSearch`
+
+# Chapter 14 & 15
 
 [neurons] `correlate`
 [neurons] `recu`
@@ -9,13 +14,7 @@
 
 # the-book
 
-[the-book] 15: …But It Is Correlated!
 [the-book] Appendix B: I Could Have Raced All Day
-
-# later
-
-[models] `accurateEnoughIrisTrainParameters`
-[models] `gridSearch`
 
 # later
 
