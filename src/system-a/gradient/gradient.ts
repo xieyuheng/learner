@@ -3,7 +3,6 @@ import {
   scalarLink,
   scalarTruncate,
   tensorMap,
-  type Scalar,
   type Tensor,
 } from "../tensor/index.js"
 import {
@@ -14,9 +13,7 @@ import {
 
 // The effect of `gradient` on a `DifferentiableFn`
 // is `sum` of all elements of it's result tensor.
-export type DifferentiableFn =
-  | ((...args: Array<Tensor>) => Tensor)
-  | ((...args: Array<Scalar>) => Tensor)
+export type DifferentiableFn = (...args: Array<Tensor>) => Tensor
 
 export function gradient(fn: DifferentiableFn, args: Array<Tensor>): Tensor {
   const wrt = tensorMap(args, scalarTruncate)
