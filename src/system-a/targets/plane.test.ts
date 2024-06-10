@@ -1,5 +1,3 @@
-import assert from "node:assert"
-import { test } from "node:test"
 import { gradientDescentAdam } from "../gradient-descent/gradientDescentAdam.js"
 import { gradientDescentLonely } from "../gradient-descent/gradientDescentLonely.js"
 import { gradientDescentNaked } from "../gradient-descent/gradientDescentNaked.js"
@@ -10,6 +8,8 @@ import { l2Loss } from "../loss/index.js"
 import { assertTensorAlmostEqual } from "../tensor/index.js"
 import { samplingObjective } from "../tensor/samplingObjective.js"
 import { plane } from "./plane.js"
+import assert from "node:assert"
+import { test } from "node:test"
 
 test("plane", () => {
   assert.deepStrictEqual(plane([1, 3])([1, 2], 3), 10)

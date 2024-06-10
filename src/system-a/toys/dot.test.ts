@@ -1,6 +1,6 @@
+import { dot } from "./dot.js"
 import assert from "node:assert"
 import { test } from "node:test"
-import { dot } from "./dot.js"
 
 test("dot", () => {
   assert.deepStrictEqual(dot([1, 2, 3], [1, 2, 3]), 14)

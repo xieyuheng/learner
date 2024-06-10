@@ -1,6 +1,6 @@
+import { mul } from "./index.js"
 import assert from "node:assert"
 import { test } from "node:test"
-import { mul } from "./index.js"
 
 // NOTE Related issues about `ext2`:
 // https://github.com/themetaschemer/malt/issues/56

@@ -1,6 +1,6 @@
+import { arrayAppend } from "./arrayAppend.js"
 import assert from "node:assert"
 import { test } from "node:test"
-import { arrayAppend } from "./arrayAppend.js"
 
 test("arrayAppend", () => {
   assert.deepStrictEqual(arrayAppend([10], [3]), [10, 3])

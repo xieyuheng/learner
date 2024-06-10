@@ -1,6 +1,6 @@
+import { sum, sum1 } from "../operator.js"
 import assert from "node:assert"
 import test from "node:test"
-import { sum, sum1 } from "../operator.js"
 
 test("mos -- sum1", () => {
   assert.equal(sum1([1, 2, 3, 4, 5, 6]), 21)

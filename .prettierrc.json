@@ -1,5 +1,5 @@
 {
   "semi": false,
   "trailingComma": "all",
-  "plugins": ["prettier-plugin-organize-imports"]  
+  "plugins": ["@trivago/prettier-plugin-sort-imports"]
 }

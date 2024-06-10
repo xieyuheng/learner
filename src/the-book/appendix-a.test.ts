@@ -1,5 +1,3 @@
-import assert from "node:assert"
-import { test } from "node:test"
 import {
   Dual,
   addScalar,
@@ -9,6 +7,8 @@ import {
   scalarTruncate,
   tensorMap,
 } from "./appendix-a.js"
+import assert from "node:assert"
+import { test } from "node:test"
 
 test("appendix-a -- tensorMap", () => {
   assert.deepStrictEqual(
