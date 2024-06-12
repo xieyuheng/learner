@@ -1,3 +1,5 @@
+import assert from "node:assert"
+import { test } from "node:test"
 import type { GradientDescentFn } from "../gradient-descent/gradientDescent.js"
 import { gradientDescentLonely } from "../gradient-descent/gradientDescentLonely.js"
 import { gradientDescentNaked } from "../gradient-descent/gradientDescentNaked.js"
@@ -6,8 +8,6 @@ import { l2Loss } from "../loss/index.js"
 import { assertTensorAlmostEqual } from "../tensor/index.js"
 import { samplingObjective } from "../tensor/samplingObjective.js"
 import { quad } from "./quad.js"
-import assert from "node:assert"
-import { test } from "node:test"
 
 test("quad", () => {
   assert.deepStrictEqual(quad(3)(4.5, 2.1, 7.8), 54.6)

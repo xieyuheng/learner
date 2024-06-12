@@ -1,6 +1,6 @@
-import { linear, linearWrong } from "./linear.js"
 import assert from "node:assert"
 import { test } from "node:test"
+import { linear, linearWrong } from "./linear.js"
 
 test("linear -- matrixVactorMul is necessary", () => {
   assert.deepStrictEqual(

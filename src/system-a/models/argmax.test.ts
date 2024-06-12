@@ -1,6 +1,6 @@
-import { argmax } from "./argmax.js"
 import assert from "node:assert"
 import { test } from "node:test"
+import { argmax } from "./argmax.js"
 
 test("argmax", () => {
   assert.deepStrictEqual(argmax([1, 2, 3]), 2)
