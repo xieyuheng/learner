@@ -6,7 +6,7 @@ import { l2Loss } from "../../loss/index.js"
 import {
   denseBlock,
   denseBlockInitParameters,
-} from "../../neurons/relu/index.js"
+} from "../../perceptrons/relu/index.js"
 import type { Tensor } from "../../tensor/Tensor.js"
 import { samplingObjective } from "../../tensor/samplingObjective.js"
 import { model } from "../model.js"

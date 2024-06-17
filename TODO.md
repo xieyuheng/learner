@@ -5,9 +5,9 @@
 
 # Chapter 14 & 15
 
-[neurons] `correlate`
-[neurons] `recu`
-[neurons] `recuBlock`
+[perceptrons] `correlate`
+[perceptrons] `recu`
+[perceptrons] `recuBlock`
 
 [models] `morse/`
 [models] `tenserZip` -- `[d, n] -> [n, d]` -- like transposing a matrix
@@ -18,6 +18,6 @@
 
 # later
 
-[neurons] extended `linear` and `matrixVactorMul` to all `Tensor`.
+[perceptrons] extended `linear` and `matrixVactorMul` to all `Tensor`.
 
 - Is `matrixVactorMul` already extended to all `Tensor`?
