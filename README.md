@@ -1,6 +1,6 @@
 # Learner
 
-Reading the book "The Little Learner".
+A machine learning library learned from "The Little Learner".
 
 ## Development
 
