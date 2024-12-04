@@ -1,6 +1,6 @@
 import assert from "node:assert"
 import test from "node:test"
-import { rank, shape } from "../tensor.js"
+import { rank, shape } from "../tensor.ts"
 
 test("mos -- shape", () => {
   assert.deepEqual(shape(1), [])

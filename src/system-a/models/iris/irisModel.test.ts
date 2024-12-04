@@ -1,7 +1,7 @@
 import { test } from "node:test"
-import { modelAccuracy } from "../modelAccuracy.js"
-import { irisTestXs, irisTestYs } from "./irisDataset.js"
-import { irisModel } from "./irisModel.js"
+import { modelAccuracy } from "../modelAccuracy.ts"
+import { irisTestXs, irisTestYs } from "./irisDataset.ts"
+import { irisModel } from "./irisModel.ts"
 
 test("irisModel", () => {
   // console.log(irisModel(irisTestXs))

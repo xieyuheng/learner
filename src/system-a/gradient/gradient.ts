@@ -4,12 +4,12 @@ import {
   scalarTruncate,
   tensorMap,
   type Tensor,
-} from "../tensor/index.js"
+} from "../tensor/index.ts"
 import {
   emptyGradientState,
   gradientStateGetWithDefault,
   type GradientState,
-} from "./GradientState.js"
+} from "./GradientState.ts"
 
 // The effect of `gradient` on a `DifferentiableFn`
 // is `sum` of all elements of it's result tensor.

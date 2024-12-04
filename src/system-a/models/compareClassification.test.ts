@@ -1,6 +1,6 @@
 import assert from "node:assert"
 import { test } from "node:test"
-import { compareClassification } from "./compareClassification.js"
+import { compareClassification } from "./compareClassification.ts"
 
 test("compareClassification", () => {
   assert.deepStrictEqual(compareClassification([1, 2, 3], [10, 20, 30]), 1)

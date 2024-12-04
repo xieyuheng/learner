@@ -1,1 +1,1 @@
-export * from "./l2Loss.js"
+export * from "./l2Loss.ts"

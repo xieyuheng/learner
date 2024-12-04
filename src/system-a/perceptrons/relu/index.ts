@@ -1,3 +1,3 @@
-export * from "./denseBlock.js"
-export * from "./leakyRelu.js"
-export * from "./relu.js"
+export * from "./denseBlock.ts"
+export * from "./leakyRelu.ts"
+export * from "./relu.ts"

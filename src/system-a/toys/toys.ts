@@ -1,6 +1,6 @@
-import { comparator } from "./comparator.js"
-import { extend1, extend2 } from "./extend.js"
-import { primitive1, primitive2 } from "./primitive.js"
+import { comparator } from "./comparator.ts"
+import { extend1, extend2 } from "./extend.ts"
+import { primitive1, primitive2 } from "./primitive.ts"
 
 export const expScalar = primitive1(Math.exp, (ra, z) => Math.exp(ra) * z)
 

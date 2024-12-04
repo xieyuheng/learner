@@ -1,11 +1,11 @@
-import { zip } from "../utils/zip.js"
+import { zip } from "../utils/zip.ts"
 import {
   assertNotScalar,
   assertTensor1,
   isScalar,
   rank,
   type Tensor,
-} from "./chapter-2.js"
+} from "./chapter-2.ts"
 
 export function extend2(
   fn: (x: number, y: number) => number,

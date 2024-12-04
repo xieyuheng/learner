@@ -1,7 +1,7 @@
-import { sub } from "../toys/index.js"
-import { scalarReal } from "./Scalar.js"
-import { type Tensor } from "./Tensor.js"
-import { tensorEvery } from "./tensorEvery.js"
+import { sub } from "../toys/index.ts"
+import { scalarReal } from "./Scalar.ts"
+import { type Tensor } from "./Tensor.ts"
+import { tensorEvery } from "./tensorEvery.ts"
 
 export function tensorAlmostEqual(
   x: Tensor,

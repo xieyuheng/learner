@@ -1,6 +1,6 @@
-import { arrayAppend } from "../../utils/arrayAppend.js"
-import { Block, type BlockFn } from "./Block.js"
-import { emptyBlock } from "./emptyBlock.js"
+import { arrayAppend } from "../../utils/arrayAppend.ts"
+import { Block, type BlockFn } from "./Block.ts"
+import { emptyBlock } from "./emptyBlock.ts"
 
 // NOTE Be careful about the order of applications,
 // `f` first, then `g`.

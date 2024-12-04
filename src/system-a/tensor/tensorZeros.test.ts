@@ -1,6 +1,6 @@
 import assert from "node:assert"
 import { test } from "node:test"
-import { tensorZeros } from "./tensorZeros.js"
+import { tensorZeros } from "./tensorZeros.ts"
 
 test("tensorZeros", () => {
   assert.deepStrictEqual(

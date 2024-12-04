@@ -1,5 +1,5 @@
-import type { Target } from "../loss/index.js"
-import type { Tensor } from "../tensor/Tensor.js"
+import type { Target } from "../loss/index.ts"
+import type { Tensor } from "../tensor/Tensor.ts"
 
 export type Model = (t: Tensor) => Tensor
 

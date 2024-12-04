@@ -1,4 +1,4 @@
-import { scalarReal, type Scalar } from "../tensor/index.js"
+import { scalarReal, type Scalar } from "../tensor/index.ts"
 
 export function comparator(
   p: (x: number, y: number) => boolean,

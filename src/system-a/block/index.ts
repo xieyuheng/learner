@@ -1,3 +1,3 @@
-export * from "./Block.js"
-export * from "./blockStack.js"
-export * from "./emptyBlock.js"
+export * from "./Block.ts"
+export * from "./blockStack.ts"
+export * from "./emptyBlock.ts"

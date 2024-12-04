@@ -1,13 +1,13 @@
 import assert from "assert"
 import { test } from "node:test"
-import { gradientDescentLonely } from "../gradient-descent/gradientDescentLonely.js"
-import { gradientDescentNaked } from "../gradient-descent/gradientDescentNaked.js"
-import { gradientDescentVelocity } from "../gradient-descent/gradientDescentVelocity.js"
-import type { GradientDescentFn } from "../gradient-descent/index.js"
-import { l2Loss } from "../loss/index.js"
-import { assertTensorAlmostEqual } from "../tensor/index.js"
-import { samplingObjective } from "../tensor/samplingObjective.js"
-import { line } from "./line.js"
+import { gradientDescentLonely } from "../gradient-descent/gradientDescentLonely.ts"
+import { gradientDescentNaked } from "../gradient-descent/gradientDescentNaked.ts"
+import { gradientDescentVelocity } from "../gradient-descent/gradientDescentVelocity.ts"
+import type { GradientDescentFn } from "../gradient-descent/index.ts"
+import { l2Loss } from "../loss/index.ts"
+import { assertTensorAlmostEqual } from "../tensor/index.ts"
+import { samplingObjective } from "../tensor/samplingObjective.ts"
+import { line } from "./line.ts"
 
 test("line", () => {
   assert.deepStrictEqual(line(1)(2, 3), 5)

@@ -1,5 +1,5 @@
-import { zip } from "../../utils/zip.js"
-import { assertTensorArray, rank, type Tensor } from "../tensor/index.js"
+import { zip } from "../../utils/zip.ts"
+import { assertTensorArray, rank, type Tensor } from "../tensor/index.ts"
 
 export function extend1<A, B extends Tensor>(
   fn: (x: A) => B,

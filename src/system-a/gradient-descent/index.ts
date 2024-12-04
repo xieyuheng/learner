@@ -1,1 +1,1 @@
-export * from "./gradientDescent.js"
+export * from "./gradientDescent.ts"

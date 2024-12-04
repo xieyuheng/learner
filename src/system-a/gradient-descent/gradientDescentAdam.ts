@@ -1,8 +1,8 @@
-import { tensorZeros, type Tensor } from "../tensor/index.js"
-import { add, div, mul, square, squareRoot, sub } from "../toys/index.js"
-import type { Representation } from "./Representation.js"
-import { gradientDescent } from "./gradientDescent.js"
-import { smooth } from "./smooth.js"
+import { tensorZeros, type Tensor } from "../tensor/index.ts"
+import { add, div, mul, square, squareRoot, sub } from "../toys/index.ts"
+import type { Representation } from "./Representation.ts"
+import { gradientDescent } from "./gradientDescent.ts"
+import { smooth } from "./smooth.ts"
 
 const stabilizer = 1e-8
 

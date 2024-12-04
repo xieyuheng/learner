@@ -1,5 +1,5 @@
-import { type Tensor } from "../tensor/index.js"
-import { square, sub, sum } from "../toys/index.js"
+import { type Tensor } from "../tensor/index.ts"
+import { square, sub, sum } from "../toys/index.ts"
 
 export type Target = (xs: Tensor) => (...ps: Array<Tensor>) => Tensor
 export type Expectant = (xs: Tensor, ys: Tensor) => Objective

@@ -1,4 +1,4 @@
-import { endOfChain, type Link } from "./Link.js"
+import { endOfChain, type Link } from "./Link.ts"
 
 export type Dual = { "@type": "Dual"; real: number; link: Link }
 

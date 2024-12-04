@@ -2,8 +2,8 @@ import {
   gradientStateGetWithDefault,
   gradientStateSet,
   type GradientState,
-} from "../gradient/index.js"
-import { type Scalar } from "./Scalar.js"
+} from "../gradient/index.ts"
+import { type Scalar } from "./Scalar.ts"
 
 export type Link = (
   y: Scalar,

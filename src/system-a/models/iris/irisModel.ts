@@ -1,16 +1,16 @@
-import { blockStack } from "../../block/index.js"
-import { gradientDescentAdam } from "../../gradient-descent/gradientDescentAdam.js"
-import { gradientDescentNaked } from "../../gradient-descent/gradientDescentNaked.js"
-import { gradientDescentRms } from "../../gradient-descent/gradientDescentRms.js"
-import { l2Loss } from "../../loss/index.js"
+import { blockStack } from "../../block/index.ts"
+import { gradientDescentAdam } from "../../gradient-descent/gradientDescentAdam.ts"
+import { gradientDescentNaked } from "../../gradient-descent/gradientDescentNaked.ts"
+import { gradientDescentRms } from "../../gradient-descent/gradientDescentRms.ts"
+import { l2Loss } from "../../loss/index.ts"
 import {
   denseBlock,
   denseBlockInitParameters,
-} from "../../perceptrons/relu/index.js"
-import type { Tensor } from "../../tensor/Tensor.js"
-import { samplingObjective } from "../../tensor/samplingObjective.js"
-import { model } from "../model.js"
-import { irisTrainXs, irisTrainYs } from "./irisDataset.js"
+} from "../../perceptrons/relu/index.ts"
+import type { Tensor } from "../../tensor/Tensor.ts"
+import { samplingObjective } from "../../tensor/samplingObjective.ts"
+import { model } from "../model.ts"
+import { irisTrainXs, irisTrainYs } from "./irisDataset.ts"
 
 // export const irisNetwork = blockStack([
 //   denseBlock(4, 6),

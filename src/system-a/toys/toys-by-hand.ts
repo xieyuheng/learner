@@ -1,4 +1,4 @@
-import { Dual, scalarLink, scalarReal, type Scalar } from "../tensor/index.js"
+import { Dual, scalarLink, scalarReal, type Scalar } from "../tensor/index.ts"
 
 function addScalar(da: Scalar, db: Scalar): Scalar {
   return Dual(scalarReal(da) + scalarReal(db), (_d, z, state) => {

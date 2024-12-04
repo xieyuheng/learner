@@ -1,6 +1,6 @@
-import { isScalar, type Scalar } from "./Scalar.js"
-import { isTensor, type Tensor } from "./Tensor.js"
-import { tensorAlmostEqual } from "./tensorAlmostEqual.js"
+import { isScalar, type Scalar } from "./Scalar.ts"
+import { isTensor, type Tensor } from "./Tensor.ts"
+import { tensorAlmostEqual } from "./tensorAlmostEqual.ts"
 
 export function assertScalar(t: any): asserts t is Scalar {
   if (!isScalar(t)) {

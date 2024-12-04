@@ -1,5 +1,5 @@
-import type { Tensor } from "../../tensor/index.js"
-import { add, dot, extend2, mul, sum } from "../../toys/index.js"
+import type { Tensor } from "../../tensor/index.ts"
+import { add, dot, extend2, mul, sum } from "../../toys/index.ts"
 
 const mul21 = extend2(mul, 2, 1)
 

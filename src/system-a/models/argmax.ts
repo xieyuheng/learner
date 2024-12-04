@@ -1,4 +1,4 @@
-import { scalarReal, type Scalar } from "../tensor/Scalar.js"
+import { scalarReal, type Scalar } from "../tensor/Scalar.ts"
 
 // NOTE `argmax` is only meaningful for `Tensor1`,
 // for general nested `Tensor` a list of indexed

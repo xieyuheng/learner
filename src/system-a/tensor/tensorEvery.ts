@@ -1,5 +1,5 @@
-import { isScalar, type Scalar } from "./Scalar.js"
-import { type Tensor } from "./Tensor.js"
+import { isScalar, type Scalar } from "./Scalar.ts"
+import { type Tensor } from "./Tensor.ts"
 
 export function tensorEvery(
   tensor: Tensor,

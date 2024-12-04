@@ -1,5 +1,5 @@
-import type { Tensor } from "../../tensor/Tensor.js"
-import { relu } from "./relu.js"
+import type { Tensor } from "../../tensor/Tensor.ts"
+import { relu } from "./relu.ts"
 
 type Target = (t: Tensor) => (...ps: Array<Tensor>) => Tensor
 

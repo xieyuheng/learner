@@ -1,5 +1,5 @@
-import { type Tensor } from "./chapter-2.js"
-import { square, sub, sum } from "./interlude-i.js"
+import { type Tensor } from "./chapter-2.ts"
+import { square, sub, sum } from "./interlude-i.ts"
 
 export function l2Loss<Parameters extends Tensor>(
   target: (xs: Tensor) => (ps: Parameters) => Tensor,

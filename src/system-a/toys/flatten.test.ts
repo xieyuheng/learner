@@ -1,6 +1,6 @@
 import assert from "node:assert"
 import { test } from "node:test"
-import { flatten } from "./flatten.js"
+import { flatten } from "./flatten.ts"
 
 test("flatten", () => {
   assert.deepStrictEqual(

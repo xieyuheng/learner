@@ -1,4 +1,4 @@
-import { randomNat } from "./randomNat.js"
+import { randomNat } from "./randomNat.ts"
 
 export function samples(n: number, s: number): Array<number> {
   const results: Array<number> = []

@@ -1,6 +1,6 @@
-import type { Scalar } from "../tensor/Scalar.js"
-import { extend2 } from "../toys/extend.js"
-import { argmax } from "./argmax.js"
+import type { Scalar } from "../tensor/Scalar.ts"
+import { extend2 } from "../toys/extend.ts"
+import { argmax } from "./argmax.ts"
 
 export type Classification = Array<Scalar>
 

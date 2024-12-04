@@ -8,7 +8,7 @@ import {
   mulScalar,
   scalarTruncate,
   tensorMap,
-} from "./appendix-a.js"
+} from "./appendix-a.ts"
 
 test("appendix-a -- tensorMap", () => {
   assert.deepStrictEqual(

@@ -1,6 +1,6 @@
-import type { Scalar } from "../tensor/index.js"
-import { extend1 } from "./extend.js"
-import { addScalar } from "./index.js"
+import type { Scalar } from "../tensor/index.ts"
+import { extend1 } from "./extend.ts"
+import { addScalar } from "./index.ts"
 
 export function sum1(xs: Array<Scalar>): Scalar {
   return xs.reduce((x, result) => addScalar(x, result), 0)

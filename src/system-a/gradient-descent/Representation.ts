@@ -1,4 +1,4 @@
-import type { Tensor } from "../tensor/index.js"
+import type { Tensor } from "../tensor/index.ts"
 
 export interface Representation<R> {
   inflate: (p: Tensor) => R

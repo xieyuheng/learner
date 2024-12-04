@@ -1,6 +1,6 @@
 import assert from "node:assert"
 import { test } from "node:test"
-import { shape } from "./chapter-2.js"
+import { shape } from "./chapter-2.ts"
 
 test("chapter-2 -- shape", () => {
   assert.deepStrictEqual(shape(1), [])

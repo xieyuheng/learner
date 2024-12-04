@@ -1,7 +1,7 @@
 import assert from "node:assert"
 import { test } from "node:test"
-import { l2Loss } from "./chapter-3.js"
-import { line } from "./interlude-i.js"
+import { l2Loss } from "./chapter-3.ts"
+import { line } from "./interlude-i.ts"
 
 test("chapter-3 -- l2Loss", () => {
   const lineXs = [2, 1, 4, 3]

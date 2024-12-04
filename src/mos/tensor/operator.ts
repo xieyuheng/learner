@@ -1,4 +1,4 @@
-import { assertTensor1, isScalar, isTensor1, type Tensor } from "./tensor.js"
+import { assertTensor1, isScalar, isTensor1, type Tensor } from "./tensor.ts"
 
 export function sum1(t: Tensor): number {
   assertTensor1(t)

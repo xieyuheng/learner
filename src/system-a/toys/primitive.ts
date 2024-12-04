@@ -4,7 +4,7 @@ import {
   scalarLink,
   scalarReal,
   type Scalar,
-} from "../tensor/index.js"
+} from "../tensor/index.ts"
 
 export function primitive1(
   realFn: (ra: number) => number,

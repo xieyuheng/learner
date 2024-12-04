@@ -1,7 +1,7 @@
-import { tensorZeros, type Tensor } from "../tensor/index.js"
-import { add, mul, sub } from "../toys/index.js"
-import type { Representation } from "./Representation.js"
-import { gradientDescent } from "./gradientDescent.js"
+import { tensorZeros, type Tensor } from "../tensor/index.ts"
+import { add, mul, sub } from "../toys/index.ts"
+import type { Representation } from "./Representation.ts"
+import { gradientDescent } from "./gradientDescent.ts"
 
 export function velocityRepresentation(options: {
   learningRate: number

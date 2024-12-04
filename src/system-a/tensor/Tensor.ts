@@ -1,4 +1,4 @@
-import { isScalar, type Scalar } from "./Scalar.js"
+import { isScalar, type Scalar } from "./Scalar.ts"
 
 export type Tensor = Scalar | Array<Tensor>
 

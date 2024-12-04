@@ -1,6 +1,6 @@
 import assert from "node:assert"
 import { test } from "node:test"
-import { samples } from "./samples.js"
+import { samples } from "./samples.ts"
 
 test("samples", () => {
   assert.deepStrictEqual(samples(10, 3).length, 3)
